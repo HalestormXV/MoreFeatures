@@ -1,0 +1,18 @@
+{
+  "item.morefeatures.sapphire": "Sapphire",
+
+  "item.morefeatures.sapphire_sword": "Sapphire Sword",
+  "item.morefeatures.sapphire_pickaxe": "Sapphire Pickaxe",
+  "item.morefeatures.sapphire_axe": "Sapphire Axe",
+  "item.morefeatures.sapphire_shovel": "Sapphire Shovel",
+  "item.morefeatures.sapphire_hoe": "Sapphire Hoe",
+
+  "item.morefeatures.sapphire_helmet": "Sapphire Helmet",
+  "item.morefeatures.sapphire_chestplate": "Sapphire Chestplate",
+  "item.morefeatures.sapphire_leggings": "Sapphire Leggings",
+  "item.morefeatures.sapphire_boots": "Sapphire Boots",
+
+  "block.morefeatures.sapphire_block": "Sapphire Block",
+
+  "itemGroup.morefeatures": "MoreFeatures"
+}
