@@ -7,12 +7,15 @@
   "item.morefeatures.sapphire_shovel": "Sapphire Shovel",
   "item.morefeatures.sapphire_hoe": "Sapphire Hoe",
 
+  "item.morefeatures.corrupted_sword": "Corrupted Sword",
+
   "item.morefeatures.sapphire_helmet": "Sapphire Helmet",
   "item.morefeatures.sapphire_chestplate": "Sapphire Chestplate",
   "item.morefeatures.sapphire_leggings": "Sapphire Leggings",
   "item.morefeatures.sapphire_boots": "Sapphire Boots",
 
   "block.morefeatures.sapphire_block": "Sapphire Block",
+  "block.morefeatures.sapphire_ore": "Sapphire Ore",
 
   "itemGroup.morefeatures": "MoreFeatures"
 }
