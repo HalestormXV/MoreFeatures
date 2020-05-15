@@ -3,5 +3,9 @@
   "promos": {
     "1.15.2-recommended": "1.15.2-1.0.0-alpha2",
     "1.15.2-latest": "1.15.2-1.0.0-alpha2"
+  },
+  "1.15.2": {
+    "1.15.2-1.0.0-alpha2": "Multiple feature additions and bug fixes",
+    "1.15.2-1.0.0-alpha1": "First public version"
   }
 }
