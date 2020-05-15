@@ -3,7 +3,7 @@ name: Feature request
 about: Suggest an idea for this project
 title: New feature that adds [insert addition]
 labels: enhancement
-assignees: ''
+assignees: xf8b
 
 ---
 
