@@ -12,7 +12,7 @@ modId="morefeatures" #mandatory
 version="${version}" #mandatory
 # A display name for the mod
 displayName="MoreFeatures" #mandatory
-# A URL to query for updates for this mod. See the JSON update specification <here>
+# A URL to query for updates for this mod. See the JSON update specification in the Forge documentation.
 updateJSONURL="https://github.com/xf8b/MoreFeatures/blob/1.15.2/update.json?raw=true" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="https://www.curseforge.com/minecraft/mc-mods/morefeatures" #optional

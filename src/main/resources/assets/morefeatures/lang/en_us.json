@@ -9,6 +9,11 @@
 
   "item.morefeatures.corrupted_sword": "Corrupted Sword",
 
+  "item.morefeatures.coal_helmet": "Coal Helmet",
+  "item.morefeatures.coal_chestplate": "Coal Chestplate",
+  "item.morefeatures.coal_leggings": "Coal Leggings",
+  "item.morefeatures.coal_boots": "Coal Boots",
+
   "item.morefeatures.sapphire_helmet": "Sapphire Helmet",
   "item.morefeatures.sapphire_chestplate": "Sapphire Chestplate",
   "item.morefeatures.sapphire_leggings": "Sapphire Leggings",
@@ -21,6 +26,8 @@
 
   "block.morefeatures.sapphire_block": "Sapphire Block",
   "block.morefeatures.sapphire_ore": "Sapphire Ore",
+
+  "death.attack.morefeatures.engulfedInFireWhileWearingCoal": "%1$s was engulfed in flames while wearing coal",
 
   "itemGroup.morefeatures": "MoreFeatures"
 }

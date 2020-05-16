@@ -13,6 +13,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.function.Supplier;
 
 public enum MoreFeaturesArmorMaterial implements IArmorMaterial {
+    COAL(MoreFeatures.MOD_ID + ":coal", 3, new int[] {1, 1, 2, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f, () -> {
+        return Ingredient.fromItems(Items.COAL);
+    }),
     SAPPHIRE(MoreFeatures.MOD_ID + ":sapphire", 24, new int[] {3, 6, 7, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0f, () -> {
         return Ingredient.fromItems(MoreFeaturesRegistries.SAPPHIRE.get());
     }),

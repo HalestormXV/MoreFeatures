@@ -1,10 +1,11 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/morefeatures",
   "promos": {
-    "1.15.2-recommended": "1.15.2-1.0.0-alpha3",
-    "1.15.2-latest": "1.15.2-1.0.0-alpha3"
+    "1.15.2-recommended": "1.15.2-1.0.0-alpha4",
+    "1.15.2-latest": "1.15.2-1.0.0-alpha4"
   },
   "1.15.2": {
+    "1.15.2-1.0.0-alpha4": "Added armor made of all ores",
     "1.15.2-1.0.0-alpha3": "Added new armor and updated to Forge 31.2.0",
     "1.15.2-1.0.0-alpha2": "Multiple feature additions and bug fixes",
     "1.15.2-1.0.0-alpha1": "First public version"

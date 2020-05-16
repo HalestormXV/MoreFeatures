@@ -11,7 +11,7 @@ assignees: xf8b
 A clear and concise description of what the problem is. [e.g. I'm always frustrated when [...]]
 
 **Describe the new feature you'd like**
-A clear and concise description of the feature you recommend.
+A clear and concise description of the feature you would like added.
 
 **Describe alternatives you've considered**
 A clear and concise description of any alternative solutions or features you've considered.
