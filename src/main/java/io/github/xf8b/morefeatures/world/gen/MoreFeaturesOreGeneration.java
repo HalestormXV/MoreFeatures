@@ -11,7 +11,6 @@ import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class MoreFeaturesOreGeneration {
-
     public static void generateOre() {
         for(Biome biome : ForgeRegistries.BIOMES) {
             ConfiguredPlacement customConfig = Placement.COUNT_RANGE

@@ -16,6 +16,9 @@ public enum MoreFeaturesArmorMaterial implements IArmorMaterial {
     COAL(MoreFeatures.MOD_ID + ":coal", 3, new int[] {1, 1, 2, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f, () -> {
         return Ingredient.fromItems(Items.COAL);
     }),
+    LAPIS(MoreFeatures.MOD_ID + ":lapis", 20, new int[] {3, 5, 6, 3}, 30, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f, () -> {
+        return Ingredient.fromItems(Items.LAPIS_LAZULI);
+    }),
     SAPPHIRE(MoreFeatures.MOD_ID + ":sapphire", 24, new int[] {3, 6, 7, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0f, () -> {
         return Ingredient.fromItems(MoreFeaturesRegistries.SAPPHIRE.get());
     }),

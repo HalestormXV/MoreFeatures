@@ -31,6 +31,16 @@ public class MoreFeaturesRegistries {
     public static RegistryObject<CorruptedSword> CORRUPTED_SWORD = ITEMS.register("corrupted_sword", () -> new CorruptedSword());
 
     //Armor
+    //Coal
+    public static RegistryObject<CoalHelmet> COAL_HELMET = ITEMS.register("coal_helmet", () -> new CoalHelmet());
+    public static RegistryObject<CoalChestplate> COAL_CHESTPLATE = ITEMS.register("coal_chestplate", () -> new CoalChestplate());
+    public static RegistryObject<CoalLeggings> COAL_LEGGINGS = ITEMS.register("coal_leggings", () -> new CoalLeggings());
+    public static RegistryObject<CoalBoots> COAL_BOOTS = ITEMS.register("coal_boots", () -> new CoalBoots());
+    //Lapis
+    public static RegistryObject<LapisHelmet> LAPIS_HELMET = ITEMS.register("lapis_helmet", () -> new LapisHelmet());
+    public static RegistryObject<LapisChestplate> LAPIS_CHESTPLATE = ITEMS.register("lapis_chestplate", () -> new LapisChestplate());
+    public static RegistryObject<LapisLeggings> LAPIS_LEGGINGS = ITEMS.register("lapis_leggings", () -> new LapisLeggings());
+    public static RegistryObject<LapisBoots> LAPIS_BOOTS = ITEMS.register("lapis_boots", () -> new LapisBoots());
     //Sapphire
     public static RegistryObject<SapphireHelmet> SAPPHIRE_HELMET = ITEMS.register("sapphire_helmet", () -> new SapphireHelmet());
     public static RegistryObject<SapphireChestplate> SAPPHIRE_CHESTPLATE = ITEMS.register("sapphire_chestplate", () -> new SapphireChestplate());
@@ -41,11 +51,6 @@ public class MoreFeaturesRegistries {
     public static RegistryObject<ObsidianChestplate> OBSIDIAN_CHESTPLATE = ITEMS.register("obsidian_chestplate", () -> new ObsidianChestplate());
     public static RegistryObject<ObsidianLeggings> OBSIDIAN_LEGGINGS = ITEMS.register("obsidian_leggings", () -> new ObsidianLeggings());
     public static RegistryObject<ObsidianBoots> OBSIDIAN_BOOTS = ITEMS.register("obsidian_boots", () -> new ObsidianBoots());
-    //Coal
-    public static RegistryObject<CoalHelmet> COAL_HELMET = ITEMS.register("coal_helmet", () -> new CoalHelmet());
-    public static RegistryObject<CoalChestplate> COAL_CHESTPLATE = ITEMS.register("coal_chestplate", () -> new CoalChestplate());
-    public static RegistryObject<CoalLeggings> COAL_LEGGINGS = ITEMS.register("coal_leggings", () -> new CoalLeggings());
-    public static RegistryObject<CoalBoots> COAL_BOOTS = ITEMS.register("coal_boots", () -> new CoalBoots());
 
     //Blocks
     public static RegistryObject<SapphireBlock> SAPPHIRE_BLOCK = BLOCKS.register("sapphire_block", () -> new SapphireBlock());
