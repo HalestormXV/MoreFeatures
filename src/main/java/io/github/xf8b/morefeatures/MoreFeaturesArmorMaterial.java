@@ -2,6 +2,7 @@ package io.github.xf8b.morefeatures;
 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;
@@ -12,11 +13,14 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.function.Supplier;
 
 public enum MoreFeaturesArmorMaterial implements IArmorMaterial {
-    SAPPHIRE(MoreFeatures.MOD_ID + ":sapphire", 24, new int[] { 3, 6, 7, 3 }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0f, () -> {
+    SAPPHIRE(MoreFeatures.MOD_ID + ":sapphire", 24, new int[] {3, 6, 7, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0f, () -> {
         return Ingredient.fromItems(MoreFeaturesRegistries.SAPPHIRE.get());
+    }),
+    OBSIDIAN(MoreFeatures.MOD_ID + ":obsidian", 42, new int[] {6, 9, 11, 6}, 7, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 4.0f, () -> {
+        return Ingredient.fromItems(Items.OBSIDIAN);
     });
 
-    private static final int[] MAX_DAMAGE_ARRAY = new int[] { 4, 7, 9, 4 };
+    private static final int[] MAX_DAMAGE_ARRAY = new int[] {13, 15, 16, 11};
     private final String name;
     private final int maxDamageFactor;
     private final int[] damageReductionAmountArray;

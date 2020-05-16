@@ -3,10 +3,7 @@ package io.github.xf8b.morefeatures;
 import io.github.xf8b.morefeatures.blocks.SapphireBlock;
 import io.github.xf8b.morefeatures.blocks.SapphireOre;
 import io.github.xf8b.morefeatures.items.Sapphire;
-import io.github.xf8b.morefeatures.items.armor.SapphireBoots;
-import io.github.xf8b.morefeatures.items.armor.SapphireChestplate;
-import io.github.xf8b.morefeatures.items.armor.SapphireHelmet;
-import io.github.xf8b.morefeatures.items.armor.SapphireLeggings;
+import io.github.xf8b.morefeatures.items.armor.*;
 import io.github.xf8b.morefeatures.items.tools.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -34,10 +31,16 @@ public class MoreFeaturesRegistries {
     public static RegistryObject<CorruptedSword> CORRUPTED_SWORD = ITEMS.register("corrupted_sword", () -> new CorruptedSword());
 
     //Armor
+    //Sapphire
     public static RegistryObject<SapphireHelmet> SAPPHIRE_HELMET = ITEMS.register("sapphire_helmet", () -> new SapphireHelmet());
     public static RegistryObject<SapphireChestplate> SAPPHIRE_CHESTPLATE = ITEMS.register("sapphire_chestplate", () -> new SapphireChestplate());
     public static RegistryObject<SapphireLeggings> SAPPHIRE_LEGGINGS = ITEMS.register("sapphire_leggings", () -> new SapphireLeggings());
     public static RegistryObject<SapphireBoots> SAPPHIRE_BOOTS = ITEMS.register("sapphire_boots", () -> new SapphireBoots());
+    //Obsidian
+    public static RegistryObject<ObsidianHelmet> OBSIDIAN_HELMET = ITEMS.register("obsidian_helmet", () -> new ObsidianHelmet());
+    public static RegistryObject<ObsidianChestplate> OBSIDIAN_CHESTPLATE = ITEMS.register("obsidian_chestplate", () -> new ObsidianChestplate());
+    public static RegistryObject<ObsidianLeggings> OBSIDIAN_LEGGINGS = ITEMS.register("obsidian_leggings", () -> new ObsidianLeggings());
+    public static RegistryObject<ObsidianBoots> OBSIDIAN_BOOTS = ITEMS.register("obsidian_boots", () -> new ObsidianBoots());
 
     //Blocks
     public static RegistryObject<SapphireBlock> SAPPHIRE_BLOCK = BLOCKS.register("sapphire_block", () -> new SapphireBlock());

@@ -10,17 +10,17 @@ issueTrackerURL="https://github.com/xf8b/MoreFeatures/issues/" #optional
 modId="morefeatures" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 version="${version}" #mandatory
- # A display name for the mod
+# A display name for the mod
 displayName="MoreFeatures" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 updateJSONURL="https://github.com/xf8b/MoreFeatures/blob/1.15.2/update.json?raw=true" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="https://www.curseforge.com/minecraft/mc-mods/morefeatures" #optional
-# A file name (in the root of the mod JAR) containing a logo for display
+# A file (in the resources folder) containing a logo for display
 logoFile="logo.png" #optional
 # A text field displayed in the mod UI
 credits="xf8b (Author), TurtyWurty, McJty (Tutorial Creators)" #optional
 # A text field displayed in the mod UI
 authors="xf8b" #optional
-# The description text for the mod (multi line!) (#mandatory)
+# The description text for the mod (#mandatory)
 description="MoreFeatures is a Minecraft mod that adds more features to Minecraft to enhance the Player Experience™."
