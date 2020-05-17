@@ -7,10 +7,10 @@ import net.minecraft.util.LazyValue;
 import java.util.function.Supplier;
 
 public enum MoreFeaturesItemTier implements IItemTier {
-    SAPPHIRE(4, 905, 7.0f, 7, 12, () -> {
+    CORRUPTED(-1, 1, 1.0f, 0, 0, () -> {
         return Ingredient.fromItems(MoreFeaturesRegistries.SAPPHIRE.get());
     }),
-    CORRUPTED(-1, 1, 1.0f, 0, 0, () -> {
+    SAPPHIRE(4, 905, 7.0f, 7, 12, () -> {
         return Ingredient.fromItems(MoreFeaturesRegistries.SAPPHIRE.get());
     });
 

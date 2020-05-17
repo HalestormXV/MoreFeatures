@@ -15,18 +15,14 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class CorruptedSword extends SwordItem {
-    private static int attackDamage = 0;
-    private static float attackSpeed = 0;
+    private static int randomAttackDamage = ThreadLocalRandom.current().nextInt(0, 10 + 1);
+    private static float randomAttackSpeed = (float) ThreadLocalRandom.current().nextDouble(0, 5 + 1);
 
     public CorruptedSword() {
-        super(MoreFeaturesItemTier.CORRUPTED,
-                attackDamage = ThreadLocalRandom.current().nextInt(0, 10 + 1),
-                attackSpeed = (float) ThreadLocalRandom.current().nextDouble(0, 5 + 1),
-        new Item.Properties()
+        super(MoreFeaturesItemTier.CORRUPTED, randomAttackDamage, randomAttackSpeed, new Item.Properties()
                 .maxStackSize(1)
                 .setNoRepair()
-                .group(MoreFeatures.instance.itemGroup)
-        );
+                .group(MoreFeatures.instance.itemGroup));
     }
 
     @Override
