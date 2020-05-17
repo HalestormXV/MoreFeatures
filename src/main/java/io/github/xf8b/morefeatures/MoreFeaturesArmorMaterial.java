@@ -16,10 +16,13 @@ public enum MoreFeaturesArmorMaterial implements IArmorMaterial {
     COAL(MoreFeatures.MOD_ID + ":coal", 3, new int[] {1, 1, 2, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f, () -> {
         return Ingredient.fromItems(Items.COAL);
     }),
-    LAPIS(MoreFeatures.MOD_ID + ":lapis", 20, new int[] {3, 5, 6, 3}, 30, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f, () -> {
+    LAPIS(MoreFeatures.MOD_ID + ":lapis", 20, new int[] {2, 4, 5, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f, () -> {
         return Ingredient.fromItems(Items.LAPIS_LAZULI);
     }),
-    SAPPHIRE(MoreFeatures.MOD_ID + ":sapphire", 24, new int[] {3, 6, 7, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0f, () -> {
+    EMERALD(MoreFeatures.MOD_ID + ":emerald", 24, new int[] {3, 5, 6, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.5f, () -> {
+        return Ingredient.fromItems(Items.EMERALD);
+    }),
+    SAPPHIRE(MoreFeatures.MOD_ID + ":sapphire", 27, new int[] {3, 6, 7, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 1.0f, () -> {
         return Ingredient.fromItems(MoreFeaturesRegistries.SAPPHIRE.get());
     }),
     OBSIDIAN(MoreFeatures.MOD_ID + ":obsidian", 42, new int[] {6, 9, 11, 6}, 7, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 4.0f, () -> {
