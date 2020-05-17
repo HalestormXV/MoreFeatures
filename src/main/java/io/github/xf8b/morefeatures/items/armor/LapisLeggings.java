@@ -19,9 +19,8 @@ public class LapisLeggings extends ArmorItem {
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        if(TickCounter.count > 2400) {
+        if(TickCounter.count == 2400) {
             player.giveExperiencePoints(5);
-            System.out.println("Gave 5 experience points to " + player.getScoreboardName());
         }
     }
 }

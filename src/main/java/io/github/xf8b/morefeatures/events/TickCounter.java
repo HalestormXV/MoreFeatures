@@ -8,16 +8,11 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = MoreFeatures.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class TickCounter {
     public static int count = 0;
-    private static boolean stopCounterNotification = false;
+
     @SubscribeEvent
     public static void tickCounter(TickEvent.ClientTickEvent event) {
         count++;
-        if(count > 1200 && stopCounterNotification == false) {
-            System.out.println("1 minute or 1200 ticks have passed");
-            stopCounterNotification = true;
-        }
-        if(count > 2401) {
-            System.out.println("Resetting counter");
+        if(count == 2401) {
             count = 0;
         }
     }
