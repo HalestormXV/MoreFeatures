@@ -23,9 +23,11 @@ import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireBoots;
 import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireChestplate;
 import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireHelmet;
 import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireLeggings;
+import io.github.xf8b.morefeatures.items.food.IronApple;
 import io.github.xf8b.morefeatures.items.tools.corrupted.CorruptedSword;
 import io.github.xf8b.morefeatures.items.tools.sapphire.*;
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -35,10 +37,16 @@ public class MoreFeaturesRegistries {
     //Deferred Registries
     public static DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, MoreFeatures.MOD_ID);
     public static DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, MoreFeatures.MOD_ID);
+    public static DeferredRegister<Enchantment> ENCHANTMENTS = new DeferredRegister<>(ForgeRegistries.ENCHANTMENTS, MoreFeatures.MOD_ID);
 
     //Registry Objects
+    //Enchantments
+
     //Items
     public static RegistryObject<Sapphire> SAPPHIRE = ITEMS.register("sapphire", () -> new Sapphire());
+
+    //Foods
+    public static RegistryObject<IronApple> IRON_APPLE = ITEMS.register("iron_apple", () -> new IronApple());
 
     //Tools
     //Sapphire

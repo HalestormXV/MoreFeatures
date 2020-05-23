@@ -5,6 +5,7 @@ import io.github.xf8b.morefeatures.MoreFeaturesArmorMaterial;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -15,6 +16,7 @@ public class ObsidianChestplate extends ArmorItem {
         super(MoreFeaturesArmorMaterial.OBSIDIAN, EquipmentSlotType.CHEST, new Properties()
                 .maxStackSize(1)
                 .group(MoreFeatures.instance.itemGroup)
+                .group(ItemGroup.COMBAT)
         );
     }
 

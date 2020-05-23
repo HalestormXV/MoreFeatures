@@ -3,6 +3,7 @@ package io.github.xf8b.morefeatures;
 import io.github.xf8b.morefeatures.world.gen.MoreFeaturesOreGeneration;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,6 +36,7 @@ public class MoreFeatures {
         MinecraftForge.EVENT_BUS.register(this);
 
         //Register deferred registries
+        MoreFeaturesRegistries.ENCHANTMENTS.register(modEventBus);
         MoreFeaturesRegistries.ITEMS.register(modEventBus);
         MoreFeaturesRegistries.BLOCKS.register(modEventBus);
     }
@@ -62,7 +64,7 @@ public class MoreFeatures {
         public static void onItemRegistry(final RegistryEvent.Register<Item> event) {
             final IForgeRegistry<Item> registry = event.getRegistry();
             MoreFeaturesRegistries.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
-                final Item.Properties properties = new Item.Properties().group(MoreFeatures.instance.itemGroup);
+                final Item.Properties properties = new Item.Properties().group(MoreFeatures.instance.itemGroup).group(ItemGroup.BUILDING_BLOCKS);
                 final BlockItem blockItem = new BlockItem(block, properties);
                 blockItem.setRegistryName(block.getRegistryName());
                 registry.register(blockItem);
