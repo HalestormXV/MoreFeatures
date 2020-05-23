@@ -3,6 +3,7 @@
 
 ![MoreFeatures Downloads](http://cf.way2muchnoise.eu/full_382035_downloads.svg)
 ![MoreFeatures Versions](http://cf.way2muchnoise.eu/versions/382035.svg)
+
 ## Description
 **MoreFeatures** is a **Minecraft mod** that adds **more features** to Minecraft to enhance the **Player Experience™**.
 ## Download Links:
