@@ -5,7 +5,6 @@ import io.github.xf8b.morefeatures.MoreFeaturesItemTier;
 import io.github.xf8b.morefeatures.util.helpers.KeyboardChecker;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.util.text.ITextComponent;
@@ -24,7 +23,6 @@ public class CorruptedSword extends SwordItem {
                 .maxStackSize(1)
                 .setNoRepair()
                 .group(MoreFeatures.instance.itemGroup)
-                .group(ItemGroup.COMBAT)
         );
     }
 

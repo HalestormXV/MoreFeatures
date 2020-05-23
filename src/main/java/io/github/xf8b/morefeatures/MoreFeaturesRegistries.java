@@ -24,6 +24,7 @@ import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireChestplate;
 import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireHelmet;
 import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireLeggings;
 import io.github.xf8b.morefeatures.items.food.IronApple;
+import io.github.xf8b.morefeatures.items.food.RedstoneApple;
 import io.github.xf8b.morefeatures.items.tools.corrupted.CorruptedSword;
 import io.github.xf8b.morefeatures.items.tools.sapphire.*;
 import net.minecraft.block.Block;
@@ -47,6 +48,7 @@ public class MoreFeaturesRegistries {
 
     //Foods
     public static RegistryObject<IronApple> IRON_APPLE = ITEMS.register("iron_apple", () -> new IronApple());
+    public static RegistryObject<RedstoneApple> REDSTONE_APPLE = ITEMS.register("redstone_apple", () -> new RedstoneApple());
 
     //Tools
     //Sapphire

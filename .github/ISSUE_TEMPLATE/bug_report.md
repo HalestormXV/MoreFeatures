@@ -19,7 +19,7 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
+**Versions (please complete):**
  - Mod Version [e.g. 1.15.2-1.0.9]
  - Forge Version [e.g 31.1.0]
  - Minecraft Version [e.g. 1.8.9]
