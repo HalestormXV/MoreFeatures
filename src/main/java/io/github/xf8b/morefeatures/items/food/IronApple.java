@@ -10,7 +10,6 @@ public class IronApple extends Item {
     public IronApple() {
         super(new Item.Properties()
                 .group(MoreFeatures.instance.itemGroup)
-
                 .food(new Food.Builder()
                         .setAlwaysEdible()
                         .hunger(4)

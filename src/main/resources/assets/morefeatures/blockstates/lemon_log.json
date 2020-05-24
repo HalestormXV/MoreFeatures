@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y":    { "model": "morefeatures:block/lemon_log" },
+    "axis=z":     { "model": "morefeatures:block/lemon_log", "x": 90 },
+    "axis=x":     { "model": "morefeatures:block/lemon_log", "x": 90, "y": 90 }
+  }
+}

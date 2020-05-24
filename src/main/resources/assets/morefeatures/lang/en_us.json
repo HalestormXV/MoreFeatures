@@ -3,6 +3,7 @@
 
   "item.morefeatures.iron_apple": "Iron Apple",
   "item.morefeatures.redstone_apple": "Redstone Apple",
+  "item.morefeatures.lemon": "Lemon",
 
   "item.morefeatures.sapphire_sword": "Sapphire Sword",
   "item.morefeatures.sapphire_pickaxe": "Sapphire Pickaxe",
@@ -38,6 +39,15 @@
   "item.morefeatures.obsidian_boots": "Obsidian Boots",
 
   "block.morefeatures.sapphire_block": "Sapphire Block",
+
+  "block.morefeatures.lemon_sapling": "Lemon Sapling",
+
+  "block.morefeatures.lemon_log": "Lemon Log",
+
+  "block.morefeatures.lemon_leaves": "Lemon Leaves",
+
+  "block.morefeatures.lemon_planks": "Lemon Planks",
+
   "block.morefeatures.sapphire_ore": "Sapphire Ore",
 
   "death.attack.morefeatures.engulfedInFireWhileWearingCoal": "%1$s was engulfed in flames while wearing coal",

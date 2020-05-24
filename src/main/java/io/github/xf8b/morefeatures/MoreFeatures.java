@@ -1,6 +1,7 @@
 package io.github.xf8b.morefeatures;
 
 import io.github.xf8b.morefeatures.world.gen.MoreFeaturesOreGeneration;
+import net.minecraft.block.ComposterBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
@@ -41,6 +42,7 @@ public class MoreFeatures {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+        ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.LEMON.get());
         DeferredWorkQueue.runLater(MoreFeaturesOreGeneration::generateOre);
     }
 

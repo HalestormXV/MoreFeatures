@@ -1,7 +1,6 @@
 package io.github.xf8b.morefeatures;
 
-import io.github.xf8b.morefeatures.blocks.SapphireBlock;
-import io.github.xf8b.morefeatures.blocks.SapphireOre;
+import io.github.xf8b.morefeatures.blocks.*;
 import io.github.xf8b.morefeatures.items.Sapphire;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalBoots;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalChestplate;
@@ -24,6 +23,7 @@ import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireChestplate;
 import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireHelmet;
 import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireLeggings;
 import io.github.xf8b.morefeatures.items.food.IronApple;
+import io.github.xf8b.morefeatures.items.food.Lemon;
 import io.github.xf8b.morefeatures.items.food.RedstoneApple;
 import io.github.xf8b.morefeatures.items.tools.corrupted.CorruptedSword;
 import io.github.xf8b.morefeatures.items.tools.sapphire.*;
@@ -49,6 +49,7 @@ public class MoreFeaturesRegistries {
     //Foods
     public static RegistryObject<IronApple> IRON_APPLE = ITEMS.register("iron_apple", () -> new IronApple());
     public static RegistryObject<RedstoneApple> REDSTONE_APPLE = ITEMS.register("redstone_apple", () -> new RedstoneApple());
+    public static RegistryObject<Lemon> LEMON = ITEMS.register("lemon", () -> new Lemon());
 
     //Tools
     //Sapphire
@@ -89,6 +90,14 @@ public class MoreFeaturesRegistries {
 
     //Blocks
     public static RegistryObject<SapphireBlock> SAPPHIRE_BLOCK = BLOCKS.register("sapphire_block", () -> new SapphireBlock());
+    //Leaves
+    public static RegistryObject<LemonSapling> LEMON_SAPLING = BLOCKS.register("lemon_sapling", () -> new LemonSapling());
+    //Logs
+    public static RegistryObject<LemonLog> LEMON_LOG = BLOCKS.register("lemon_log", () -> new LemonLog());
+    //Leaves
+    public static RegistryObject<LemonLeaves> LEMON_LEAVES = BLOCKS.register("lemon_leaves", () -> new LemonLeaves());
+    //Planks
+    public static RegistryObject<LemonPlanks> LEMON_PLANKS = BLOCKS.register("lemon_planks", () -> new LemonPlanks());
 
     //Ores
     public static RegistryObject<SapphireOre> SAPPHIRE_ORE = BLOCKS.register("sapphire_ore", () -> new SapphireOre());
