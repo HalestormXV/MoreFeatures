@@ -11,6 +11,7 @@ import io.github.xf8b.morefeatures.blocks.planks.OrangePlanks;
 import io.github.xf8b.morefeatures.blocks.sapling.LemonSapling;
 import io.github.xf8b.morefeatures.blocks.sapling.OrangeSapling;
 import io.github.xf8b.morefeatures.enchantments.FireRetardant;
+import io.github.xf8b.morefeatures.enchantments.SoulHarvester;
 import io.github.xf8b.morefeatures.items.Sapphire;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalBoots;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalChestplate;
@@ -54,6 +55,7 @@ public class MoreFeaturesRegistries {
     //Registry Objects
     //Enchantments
     public static RegistryObject<FireRetardant> FIRE_RETARDANT = ENCHANTMENTS.register("fire_retardant", () -> new FireRetardant());
+    public static RegistryObject<SoulHarvester> SOUL_HARVESTER = ENCHANTMENTS.register("soul_harvester", () -> new SoulHarvester());
 
     //Items
     public static RegistryObject<Sapphire> SAPPHIRE = ITEMS.register("sapphire", () -> new Sapphire());
