@@ -50,6 +50,8 @@
 
   "block.morefeatures.sapphire_ore": "Sapphire Ore",
 
+  "enchantment.morefeatures.fire_retardant": "Fire Retardant",
+
   "death.attack.morefeatures.engulfedInFireWhileWearingCoal": "%1$s was engulfed in flames while wearing coal",
 
   "itemGroup.morefeatures": "MoreFeatures"

@@ -1,6 +1,7 @@
 package io.github.xf8b.morefeatures;
 
 import io.github.xf8b.morefeatures.blocks.*;
+import io.github.xf8b.morefeatures.enchantments.FireRetardant;
 import io.github.xf8b.morefeatures.items.Sapphire;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalBoots;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalChestplate;
@@ -42,6 +43,7 @@ public class MoreFeaturesRegistries {
 
     //Registry Objects
     //Enchantments
+    public static RegistryObject<FireRetardant> FIRE_RETARDANT = ENCHANTMENTS.register("fire_retardant", () -> new FireRetardant());
 
     //Items
     public static RegistryObject<Sapphire> SAPPHIRE = ITEMS.register("sapphire", () -> new Sapphire());
