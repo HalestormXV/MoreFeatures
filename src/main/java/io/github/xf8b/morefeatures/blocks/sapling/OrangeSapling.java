@@ -1,6 +1,6 @@
-package io.github.xf8b.morefeatures.blocks;
+package io.github.xf8b.morefeatures.blocks.sapling;
 
-import io.github.xf8b.morefeatures.world.feature.LemonTree;
+import io.github.xf8b.morefeatures.world.feature.OrangeTree;
 import net.minecraft.block.*;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.state.IntegerProperty;
@@ -17,14 +17,14 @@ import net.minecraftforge.event.ForgeEventFactory;
 import java.util.Random;
 import java.util.function.Supplier;
 
-public class LemonSapling extends BushBlock implements IGrowable {
+public class OrangeSapling extends BushBlock implements IGrowable {
     public static final IntegerProperty STAGE = BlockStateProperties.STAGE_0_1;
     protected static final VoxelShape SHAPE = Block.makeCuboidShape(2, 0, 2, 14, 12, 14);
     private final Supplier<Tree> tree;
 
-    public LemonSapling() {
+    public OrangeSapling() {
         super(Properties.from(Blocks.OAK_SAPLING));
-        this.tree = () -> new LemonTree();
+        this.tree = () -> new OrangeTree();
     }
 
     @Override

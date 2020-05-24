@@ -1,4 +1,4 @@
-package io.github.xf8b.morefeatures.blocks;
+package io.github.xf8b.morefeatures.blocks.leaves;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;

@@ -42,7 +42,10 @@ public class MoreFeatures {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+        ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.LEMON_LEAVES.get());
+        ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.ORANGE_LEAVES.get());
         ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.LEMON.get());
+        ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.ORANGE.get());
         DeferredWorkQueue.runLater(MoreFeaturesOreGeneration::generateOre);
     }
 

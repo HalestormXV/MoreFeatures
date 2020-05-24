@@ -2,6 +2,7 @@
   "replace": false,
   "values":
   [
-    "morefeatures:lemon_log"
+    "morefeatures:lemon_log",
+    "morefeatures:orange_log"
   ]
 }

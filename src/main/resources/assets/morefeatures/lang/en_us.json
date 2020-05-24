@@ -4,6 +4,7 @@
   "item.morefeatures.iron_apple": "Iron Apple",
   "item.morefeatures.redstone_apple": "Redstone Apple",
   "item.morefeatures.lemon": "Lemon",
+  "item.morefeatures.orange": "Orange",
 
   "item.morefeatures.sapphire_sword": "Sapphire Sword",
   "item.morefeatures.sapphire_pickaxe": "Sapphire Pickaxe",
@@ -41,12 +42,16 @@
   "block.morefeatures.sapphire_block": "Sapphire Block",
 
   "block.morefeatures.lemon_sapling": "Lemon Sapling",
+  "block.morefeatures.orange_sapling": "Orange Sapling",
 
   "block.morefeatures.lemon_log": "Lemon Log",
+  "block.morefeatures.orange_log": "Orange Log",
 
   "block.morefeatures.lemon_leaves": "Lemon Leaves",
+  "block.morefeatures.orange_leaves": "Orange Leaves",
 
   "block.morefeatures.lemon_planks": "Lemon Planks",
+  "block.morefeatures.orange_planks": "Orange Planks",
 
   "block.morefeatures.sapphire_ore": "Sapphire Ore",
 
