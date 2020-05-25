@@ -23,7 +23,10 @@ import java.util.Map;
 @Mod.EventBusSubscriber(modid = MoreFeatures.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class SoulHarvester extends Enchantment {
     public SoulHarvester() {
-        super(Rarity.VERY_RARE, EnchantmentType.WEAPON, new EquipmentSlotType[] {EquipmentSlotType.MAINHAND, EquipmentSlotType.OFFHAND});
+        super(Rarity.VERY_RARE, EnchantmentType.WEAPON, new EquipmentSlotType[] {
+                EquipmentSlotType.MAINHAND,
+                EquipmentSlotType.OFFHAND
+        });
     }
 
     @Override
@@ -43,6 +46,9 @@ public class SoulHarvester extends Enchantment {
         if(event.getSource().getTrueSource() instanceof PlayerEntity) {
             souls++;
             PlayerEntity playerEntity = (PlayerEntity) event.getSource().getTrueSource();
+            if(playerEntity.getHeldItem(Hand.MAIN_HAND) == ItemStack.EMPTY) {
+                return;
+            }
             ItemStack heldItem = playerEntity.getHeldItem(Hand.MAIN_HAND);
             Map<Enchantment, Integer> enchantmentsOnHeldItem = EnchantmentHelper.getEnchantments(heldItem);
             heldItem.getTag().putInt(MoreFeatures.MOD_ID + ":souls", souls);

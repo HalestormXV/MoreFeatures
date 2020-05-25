@@ -40,6 +40,12 @@ public class FireRetardant extends Enchantment {
     @SubscribeEvent
     public static void onFireDamage(LivingDamageEvent event) {
         if(event.getSource().isFireDamage()) {
+            if(event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.HEAD) == ItemStack.EMPTY &&
+                    event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.CHEST) == ItemStack.EMPTY &&
+                    event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.LEGS) == ItemStack.EMPTY &&
+                    event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET) == ItemStack.EMPTY) {
+                return;
+            }
             ItemStack itemOnHead = event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.HEAD);
             ItemStack itemOnChest = event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.CHEST);
             ItemStack itemOnLegs = event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.LEGS);
