@@ -2,6 +2,7 @@ package io.github.xf8b.morefeatures.enchantments;
 
 import io.github.xf8b.morefeatures.MoreFeatures;
 import io.github.xf8b.morefeatures.MoreFeaturesRegistries;
+import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentType;
@@ -53,18 +54,19 @@ public class SoulHarvester extends Enchantment {
             Map<Enchantment, Integer> enchantmentsOnHeldItem = EnchantmentHelper.getEnchantments(heldItem);
             heldItem.getTag().putInt(MoreFeatures.MOD_ID + ":souls", souls);
             if(enchantmentsOnHeldItem.containsKey(MoreFeaturesRegistries.SOUL_HARVESTER.get())) {
-                if(heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") <= 250) {
+                if(heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") <= MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp * 5) {
                     int previousSharpnessLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.SHARPNESS, heldItem);
                     int newSharpnessLevel = 0;
                     boolean isSoulsHighEnough = false;
-                    if(heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") % 50 == 0 && !(heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") == 0)) {
+                    if(heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") % MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp == 0 &&
+                            !(heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") == 0)) {
                         isSoulsHighEnough = true;
                     }
                     if(isSoulsHighEnough) {
-                        if(previousSharpnessLevel < heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") / 50) {
+                        if(previousSharpnessLevel < heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") / MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp) {
                             enchantmentsOnHeldItem.remove(Enchantments.SHARPNESS);
                             EnchantmentHelper.setEnchantments(enchantmentsOnHeldItem, heldItem);
-                            newSharpnessLevel = heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") / 50;
+                            newSharpnessLevel = heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") / MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp;
                             heldItem.addEnchantment(Enchantments.SHARPNESS, newSharpnessLevel);
                         }
                     }
@@ -79,7 +81,7 @@ public class SoulHarvester extends Enchantment {
         Map<Enchantment, Integer> enchantmentsOnItem = EnchantmentHelper.getEnchantments(itemStack);
         if(enchantmentsOnItem.containsKey(MoreFeaturesRegistries.SOUL_HARVESTER.get())) {
             List<ITextComponent> tooltip = event.getToolTip();
-            tooltip.add(new StringTextComponent("For every 50 souls, a Sharpness level is added."));
+            tooltip.add(new StringTextComponent("For every " + MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp + " souls, a Sharpness level is added."));
             tooltip.add(new StringTextComponent("The maximum level of Sharpness is 5."));
             tooltip.add(new StringTextComponent("Souls: " + itemStack.getTag().getInt(MoreFeatures.MOD_ID + ":souls")));
         }

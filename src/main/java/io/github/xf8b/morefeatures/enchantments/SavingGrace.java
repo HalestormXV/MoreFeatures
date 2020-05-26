@@ -2,6 +2,7 @@ package io.github.xf8b.morefeatures.enchantments;
 
 import io.github.xf8b.morefeatures.MoreFeatures;
 import io.github.xf8b.morefeatures.MoreFeaturesRegistries;
+import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentType;
@@ -45,11 +46,10 @@ public class SavingGrace extends Enchantment {
         ItemStack itemOnFeet = event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET);
         Map<Enchantment, Integer> enchantmentsOnItemOnFeet = EnchantmentHelper.getEnchantments(itemOnFeet);
         Random random = new Random();
-        double[] probabilities = {0.7, 0.3};
         int randomInt = random.nextInt(100);
-        if(randomInt <= 70) {
+        if(randomInt <= 100 - MoreFeaturesConfig.savingGraceActivationChance) {
             willActivate = false;
-        } else if(randomInt > 70) {
+        } else if(randomInt > 100 - MoreFeaturesConfig.savingGraceActivationChance) {
             willActivate = true;
         }
         itemOnFeet.getTag().putBoolean(MoreFeatures.MOD_ID + ":saving_grace_will_activate", willActivate);

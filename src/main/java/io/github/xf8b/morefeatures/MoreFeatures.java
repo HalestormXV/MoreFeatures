@@ -1,5 +1,6 @@
 package io.github.xf8b.morefeatures;
 
+import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import io.github.xf8b.morefeatures.world.gen.MoreFeaturesOreGeneration;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.item.BlockItem;
@@ -8,9 +9,10 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DeferredWorkQueue;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -29,6 +31,7 @@ public class MoreFeatures {
 
     public MoreFeatures() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
@@ -39,6 +42,8 @@ public class MoreFeatures {
         MoreFeaturesRegistries.ENCHANTMENTS.register(modEventBus);
         MoreFeaturesRegistries.ITEMS.register(modEventBus);
         MoreFeaturesRegistries.BLOCKS.register(modEventBus);
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, MoreFeaturesConfig.CLIENT_SPEC);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -46,7 +51,7 @@ public class MoreFeatures {
         ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.ORANGE_LEAVES.get());
         ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.LEMON.get());
         ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.ORANGE.get());
-        DeferredWorkQueue.runLater(MoreFeaturesOreGeneration::generateOre);
+        MoreFeaturesOreGeneration.generateOre();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
