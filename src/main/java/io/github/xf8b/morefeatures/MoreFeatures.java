@@ -42,7 +42,9 @@ public class MoreFeatures {
         MoreFeaturesRegistries.ENCHANTMENTS.register(modEventBus);
         MoreFeaturesRegistries.ITEMS.register(modEventBus);
         MoreFeaturesRegistries.BLOCKS.register(modEventBus);
+        MoreFeaturesRegistries.EFFECTS.register(modEventBus);
 
+        //Register config
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, MoreFeaturesConfig.CLIENT_SPEC);
     }
 

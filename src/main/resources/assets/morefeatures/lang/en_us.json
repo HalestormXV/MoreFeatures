@@ -14,6 +14,8 @@
 
   "item.morefeatures.corrupted_sword": "Corrupted Sword",
 
+  "item.morefeatures.mask": "Cloth Mask",
+
   "item.morefeatures.coal_helmet": "Coal Helmet",
   "item.morefeatures.coal_chestplate": "Coal Chestplate",
   "item.morefeatures.coal_leggings": "Coal Leggings",
@@ -40,6 +42,8 @@
   "item.morefeatures.obsidian_boots": "Obsidian Boots",
 
   "block.morefeatures.sapphire_block": "Sapphire Block",
+  "block.morefeatures.blast_proof_glass": "Blast-Proof Glass",
+  "block.morefeatures.asbestos": "Asbestos",
 
   "block.morefeatures.lemon_sapling": "Lemon Sapling",
   "block.morefeatures.orange_sapling": "Orange Sapling",
@@ -58,8 +62,15 @@
   "enchantment.morefeatures.fire_retardant": "Fire Retardant",
   "enchantment.morefeatures.soul_harvester": "Soul Harvester",
   "enchantment.morefeatures.saving_grace": "Saving Grace",
+  "enchantment.morefeatures.slowness_curse": "Curse of Slowness",
+  "enchantment.morefeatures.weight_curse": "Curse of Weight",
+  "enchantment.morefeatures.harming_curse": "Curse of Harming",
+
+  "effect.morefeatures.asbestosis": "Asbestosis",
 
   "death.attack.morefeatures.engulfedInFireWhileWearingCoal": "%1$s was engulfed in flames while wearing coal",
+  "death.attack.morefeatures.asbestosis": "%1$s died from asbestosis",
+  "death.attack.morefeatures.killedByArmor": "%1$s was killed by their armor",
 
   "itemGroup.morefeatures": "MoreFeatures"
 }

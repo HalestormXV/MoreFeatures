@@ -1,5 +1,7 @@
 package io.github.xf8b.morefeatures;
 
+import io.github.xf8b.morefeatures.blocks.Asbestos;
+import io.github.xf8b.morefeatures.blocks.BlastProofGlass;
 import io.github.xf8b.morefeatures.blocks.SapphireBlock;
 import io.github.xf8b.morefeatures.blocks.SapphireOre;
 import io.github.xf8b.morefeatures.blocks.leaves.LemonLeaves;
@@ -10,10 +12,10 @@ import io.github.xf8b.morefeatures.blocks.planks.LemonPlanks;
 import io.github.xf8b.morefeatures.blocks.planks.OrangePlanks;
 import io.github.xf8b.morefeatures.blocks.sapling.LemonSapling;
 import io.github.xf8b.morefeatures.blocks.sapling.OrangeSapling;
-import io.github.xf8b.morefeatures.enchantments.FireRetardant;
-import io.github.xf8b.morefeatures.enchantments.SavingGrace;
-import io.github.xf8b.morefeatures.enchantments.SoulHarvester;
+import io.github.xf8b.morefeatures.effects.Asbestosis;
+import io.github.xf8b.morefeatures.enchantments.*;
 import io.github.xf8b.morefeatures.items.Sapphire;
+import io.github.xf8b.morefeatures.items.armor.Mask;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalBoots;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalChestplate;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalHelmet;
@@ -43,6 +45,7 @@ import io.github.xf8b.morefeatures.items.tools.sapphire.*;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effect;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -52,13 +55,9 @@ public class MoreFeaturesRegistries {
     public static DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, MoreFeatures.MOD_ID);
     public static DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, MoreFeatures.MOD_ID);
     public static DeferredRegister<Enchantment> ENCHANTMENTS = new DeferredRegister<>(ForgeRegistries.ENCHANTMENTS, MoreFeatures.MOD_ID);
+    public static DeferredRegister<Effect> EFFECTS = new DeferredRegister<>(ForgeRegistries.POTIONS, MoreFeatures.MOD_ID);
 
     //Registry Objects
-    //Enchantments
-    public static RegistryObject<FireRetardant> FIRE_RETARDANT = ENCHANTMENTS.register("fire_retardant", () -> new FireRetardant());
-    public static RegistryObject<SoulHarvester> SOUL_HARVESTER = ENCHANTMENTS.register("soul_harvester", () -> new SoulHarvester());
-    public static RegistryObject<SavingGrace> SAVING_GRACE = ENCHANTMENTS.register("saving_grace", () -> new SavingGrace());
-
     //Items
     public static RegistryObject<Sapphire> SAPPHIRE = ITEMS.register("sapphire", () -> new Sapphire());
 
@@ -79,6 +78,8 @@ public class MoreFeaturesRegistries {
     public static RegistryObject<CorruptedSword> CORRUPTED_SWORD = ITEMS.register("corrupted_sword", () -> new CorruptedSword());
 
     //Armor
+    //Mask
+    public static RegistryObject<Mask> MASK = ITEMS.register("mask", () -> new Mask());
     //Coal
     public static RegistryObject<CoalHelmet> COAL_HELMET = ITEMS.register("coal_helmet", () -> new CoalHelmet());
     public static RegistryObject<CoalChestplate> COAL_CHESTPLATE = ITEMS.register("coal_chestplate", () -> new CoalChestplate());
@@ -107,6 +108,8 @@ public class MoreFeaturesRegistries {
 
     //Blocks
     public static RegistryObject<SapphireBlock> SAPPHIRE_BLOCK = BLOCKS.register("sapphire_block", () -> new SapphireBlock());
+    public static RegistryObject<BlastProofGlass> BLAST_PROOF_GLASS = BLOCKS.register("blast_proof_glass", () -> new BlastProofGlass());
+    public static RegistryObject<Asbestos> ASBESTOS = BLOCKS.register("asbestos", () -> new Asbestos());
 
     //Saplings
     public static RegistryObject<LemonSapling> LEMON_SAPLING = BLOCKS.register("lemon_sapling", () -> new LemonSapling());
@@ -125,4 +128,16 @@ public class MoreFeaturesRegistries {
 
     //Ores
     public static RegistryObject<SapphireOre> SAPPHIRE_ORE = BLOCKS.register("sapphire_ore", () -> new SapphireOre());
+
+    //Enchantments
+    public static RegistryObject<FireRetardant> FIRE_RETARDANT = ENCHANTMENTS.register("fire_retardant", () -> new FireRetardant());
+    public static RegistryObject<SoulHarvester> SOUL_HARVESTER = ENCHANTMENTS.register("soul_harvester", () -> new SoulHarvester());
+    public static RegistryObject<SavingGrace> SAVING_GRACE = ENCHANTMENTS.register("saving_grace", () -> new SavingGrace());
+    //Curses
+    public static RegistryObject<SlownessCurse> SLOWNESS_CURSE = ENCHANTMENTS.register("slowness_curse", () -> new SlownessCurse());
+    public static RegistryObject<HarmingCurse> HARMING_CURSE = ENCHANTMENTS.register("harming_curse", () -> new HarmingCurse());
+    public static RegistryObject<WeightCurse> WEIGHT_CURSE = ENCHANTMENTS.register("weight_curse", () -> new WeightCurse());
+
+    //Effects
+    public static RegistryObject<Asbestosis> ASBESTOSIS = EFFECTS.register("asbestosis", () -> new Asbestosis());
 }

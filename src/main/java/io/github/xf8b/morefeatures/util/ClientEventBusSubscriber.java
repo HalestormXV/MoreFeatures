@@ -15,5 +15,6 @@ public class ClientEventBusSubscriber {
     public static void clientSetup(FMLClientSetupEvent event) {
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.LEMON_SAPLING.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.ORANGE_SAPLING.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.BLAST_PROOF_GLASS.get(), RenderType.getCutout());
     }
 }

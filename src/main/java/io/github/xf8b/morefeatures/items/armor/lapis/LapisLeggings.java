@@ -2,13 +2,17 @@ package io.github.xf8b.morefeatures.items.armor.lapis;
 
 import io.github.xf8b.morefeatures.MoreFeatures;
 import io.github.xf8b.morefeatures.MoreFeaturesArmorMaterial;
-import io.github.xf8b.morefeatures.events.TickCounter;
+import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(modid = MoreFeatures.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class LapisLeggings extends ArmorItem {
     public LapisLeggings() {
         super(MoreFeaturesArmorMaterial.LAPIS, EquipmentSlotType.LEGS, new Properties()
@@ -19,8 +23,20 @@ public class LapisLeggings extends ArmorItem {
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        if(TickCounter.count == 2400) {
-            player.giveExperiencePoints(5);
+        if(count == 2400) {
+            player.giveExperiencePoints(MoreFeaturesConfig.lapisArmorExperienceGiven);
+        }
+    }
+
+    public static int count = 0;
+
+    @SubscribeEvent
+    public static void tickCounter(TickEvent.ClientTickEvent event) {
+        if(event.phase == TickEvent.Phase.END) {
+            count++;
+            if(count > 2400) {
+                count = 0;
+            }
         }
     }
 }

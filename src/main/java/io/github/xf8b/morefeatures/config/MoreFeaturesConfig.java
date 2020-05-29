@@ -20,9 +20,19 @@ public class MoreFeaturesConfig {
 
     //Generation Settings
     public static boolean isOreGenerationEnabled;
+
     //Enchantment Settings
     public static int savingGraceActivationChance;
     public static int soulsRequiredForSharpnessLevelUp;
+    //Curses
+    public static int slownessCurseSlownessLevel;
+    public static double harmingCurseDamageGiven;
+
+    //Effect Settings
+    public static double asbestosisDamageGiven;
+
+    //Armor Settings
+    public static int lapisArmorExperienceGiven;
 
     @SubscribeEvent
     public static void onModConfigEvent(final ModConfig.ModConfigEvent configEvent) {
@@ -35,5 +45,9 @@ public class MoreFeaturesConfig {
         isOreGenerationEnabled = CLIENT.isOreGenerationEnabled.get();
         savingGraceActivationChance = CLIENT.savingGraceActivationChance.get();
         soulsRequiredForSharpnessLevelUp = CLIENT.soulsRequiredForSharpnessLevelUp.get();
+        slownessCurseSlownessLevel = CLIENT.slownessCurseSlownessLevel.get();
+        harmingCurseDamageGiven = CLIENT.harmingCurseDamageGiven.get();
+        asbestosisDamageGiven = CLIENT.asbestosisDamageGiven.get();
+        lapisArmorExperienceGiven = CLIENT.lapisArmorExperienceGiven.get();
     }
 }
