@@ -5,6 +5,7 @@
     "1.15.2-latest": "1.15.2-1.0.0-alpha5"
   },
   "1.15.2": {
+    "1.15.2-1.0.0-alpha6": "Added crops, effects, curses, config, and new blocks",
     "1.15.2-1.0.0-alpha5": "Added new foods and enchantments",
     "1.15.2-1.0.0-alpha4": "Added armor made of all ores",
     "1.15.2-1.0.0-alpha3": "Added new armor and updated to Forge 31.2.0",
