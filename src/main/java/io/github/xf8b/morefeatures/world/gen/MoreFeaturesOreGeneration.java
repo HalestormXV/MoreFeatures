@@ -15,11 +15,16 @@ public class MoreFeaturesOreGeneration {
     public static void generateOre() {
         for(Biome biome : ForgeRegistries.BIOMES) {
             if(MoreFeaturesConfig.isOreGenerationEnabled) {
-                ConfiguredPlacement customConfig = Placement.COUNT_RANGE
+                ConfiguredPlacement sapphireOreConfig = Placement.COUNT_RANGE
                         .configure(new CountRangeConfig(1, 0, 0, 12));
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
                         .withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreFeaturesRegistries.SAPPHIRE_ORE.get().getDefaultState(), 4))
-                        .withPlacement(customConfig));
+                        .withPlacement(sapphireOreConfig));
+                ConfiguredPlacement asbestosConfig = Placement.COUNT_RANGE
+                        .configure(new CountRangeConfig(4, 0, 0, 40));
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
+                        .withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreFeaturesRegistries.ASBESTOS.get().getDefaultState(), 6))
+                        .withPlacement(asbestosConfig));
             }
         }
     }
