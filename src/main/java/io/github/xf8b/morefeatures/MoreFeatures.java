@@ -1,5 +1,6 @@
 package io.github.xf8b.morefeatures;
 
+import io.github.xf8b.morefeatures.blocks.CornCrop;
 import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import io.github.xf8b.morefeatures.world.gen.MoreFeaturesOreGeneration;
 import net.minecraft.block.ComposterBlock;
@@ -9,6 +10,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
@@ -51,9 +53,11 @@ public class MoreFeatures {
     private void setup(final FMLCommonSetupEvent event) {
         ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.LEMON_LEAVES.get());
         ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.ORANGE_LEAVES.get());
+        ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.CORN_SEEDS.get());
         ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.LEMON.get());
         ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.ORANGE.get());
-        MoreFeaturesOreGeneration.generateOre();
+        ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.CORN.get());
+        DeferredWorkQueue.runLater(MoreFeaturesOreGeneration::generateOre);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -74,7 +78,10 @@ public class MoreFeatures {
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> event) {
             final IForgeRegistry<Item> registry = event.getRegistry();
-            MoreFeaturesRegistries.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
+            MoreFeaturesRegistries.BLOCKS.getEntries()
+                    .stream()
+                    .filter(block -> !(block.get() instanceof CornCrop))
+                    .map(RegistryObject::get).forEach(block -> {
                 final Item.Properties properties = new Item.Properties().group(MoreFeatures.instance.itemGroup);
                 final BlockItem blockItem = new BlockItem(block, properties);
                 blockItem.setRegistryName(block.getRegistryName());

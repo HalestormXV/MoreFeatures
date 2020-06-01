@@ -23,7 +23,7 @@ public class LemonSapling extends BushBlock implements IGrowable {
     private final Supplier<Tree> tree;
 
     public LemonSapling() {
-        super(Properties.from(Blocks.OAK_SAPLING));
+        super(Block.Properties.from(Blocks.OAK_SAPLING));
         this.tree = () -> new LemonTree();
     }
 

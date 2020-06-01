@@ -1,10 +1,12 @@
 {
   "item.morefeatures.sapphire": "Sapphire",
+  "item.morefeatures.corrupted_item": "Corrupted Item",
 
   "item.morefeatures.iron_apple": "Iron Apple",
   "item.morefeatures.redstone_apple": "Redstone Apple",
   "item.morefeatures.lemon": "Lemon",
   "item.morefeatures.orange": "Orange",
+  "item.morefeatures.corn": "Corn",
 
   "item.morefeatures.sapphire_sword": "Sapphire Sword",
   "item.morefeatures.sapphire_pickaxe": "Sapphire Pickaxe",
@@ -13,6 +15,10 @@
   "item.morefeatures.sapphire_hoe": "Sapphire Hoe",
 
   "item.morefeatures.corrupted_sword": "Corrupted Sword",
+  "item.morefeatures.corrupted_pickaxe": "Corrupted Pickaxe",
+  "item.morefeatures.corrupted_axe": "Corrupted Axe",
+  "item.morefeatures.corrupted_shovel": "Corrupted Shovel",
+  "item.morefeatures.corrupted_hoe": "Corrupted Hoe",
 
   "item.morefeatures.mask": "Cloth Mask",
 
@@ -56,6 +62,8 @@
 
   "block.morefeatures.lemon_planks": "Lemon Planks",
   "block.morefeatures.orange_planks": "Orange Planks",
+
+  "block.morefeatures.corn_crop": "Corn Seeds",
 
   "block.morefeatures.sapphire_ore": "Sapphire Ore",
 

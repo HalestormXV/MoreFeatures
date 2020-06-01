@@ -7,8 +7,8 @@ import net.minecraft.util.LazyValue;
 import java.util.function.Supplier;
 
 public enum MoreFeaturesItemTier implements IItemTier {
-    CORRUPTED(-1, 1, 1.0f, 0, 0, () -> {
-        return Ingredient.fromItems(MoreFeaturesRegistries.SAPPHIRE.get());
+    CORRUPTED(-1, 125, 0.0f, 0, 0, () -> {
+        return Ingredient.fromItems(MoreFeaturesRegistries.CORRUPTED_ITEM.get());
     }),
     SAPPHIRE(4, 905, 7.0f, 7, 12, () -> {
         return Ingredient.fromItems(MoreFeaturesRegistries.SAPPHIRE.get());
@@ -21,7 +21,7 @@ public enum MoreFeaturesItemTier implements IItemTier {
     private final int enchantability;
     private final LazyValue<Ingredient> repairMaterial;
 
-    private MoreFeaturesItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
+    MoreFeaturesItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
         this.harvestLevel = harvestLevel;
         this.maxUses = maxUses;
         this.efficiency = efficiency;

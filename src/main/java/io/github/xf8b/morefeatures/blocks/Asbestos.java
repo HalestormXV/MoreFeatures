@@ -17,7 +17,7 @@ import net.minecraftforge.common.ToolType;
 
 public class Asbestos extends Block {
     public Asbestos() {
-        super(Properties.create(Material.MISCELLANEOUS, MaterialColor.GRAY)
+        super(Block.Properties.create(Material.MISCELLANEOUS, MaterialColor.GRAY)
                 .hardnessAndResistance(0.5f)
                 .harvestTool(ToolType.PICKAXE)
                 .harvestLevel(2)

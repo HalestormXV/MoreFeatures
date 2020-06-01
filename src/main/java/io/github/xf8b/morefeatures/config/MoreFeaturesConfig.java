@@ -34,6 +34,10 @@ public class MoreFeaturesConfig {
     //Armor Settings
     public static int lapisArmorExperienceGiven;
 
+    //Tool Settings
+    public static int corruptedToolAttackDamageMax;
+    public static double corruptedToolAttackSpeedMax;
+
     @SubscribeEvent
     public static void onModConfigEvent(final ModConfig.ModConfigEvent configEvent) {
         if (configEvent.getConfig().getSpec() == MoreFeaturesConfig.CLIENT_SPEC) {
@@ -49,5 +53,7 @@ public class MoreFeaturesConfig {
         harmingCurseDamageGiven = CLIENT.harmingCurseDamageGiven.get();
         asbestosisDamageGiven = CLIENT.asbestosisDamageGiven.get();
         lapisArmorExperienceGiven = CLIENT.lapisArmorExperienceGiven.get();
+        corruptedToolAttackDamageMax = CLIENT.corruptedToolAttackDamageMax.get();
+        corruptedToolAttackSpeedMax = CLIENT.corruptedToolAttackSpeedMax.get();
     }
 }

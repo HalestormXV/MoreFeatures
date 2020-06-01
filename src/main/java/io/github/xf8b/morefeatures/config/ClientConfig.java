@@ -20,6 +20,10 @@ public class ClientConfig {
     //Armor Settings
     public final ForgeConfigSpec.IntValue lapisArmorExperienceGiven;
 
+    //Tool Settings
+    public final ForgeConfigSpec.IntValue corruptedToolAttackDamageMax;
+    public final ForgeConfigSpec.DoubleValue corruptedToolAttackSpeedMax;
+
     public ClientConfig(ForgeConfigSpec.Builder builder) {
         builder.push("Generation Settings");
         isOreGenerationEnabled = builder
@@ -62,5 +66,15 @@ public class ClientConfig {
                 .translation(MoreFeatures.MOD_ID + ".config." + "lapisArmorExperienceGiven")
                 .defineInRange("lapisArmorExperienceGiven", 5, 0, 2147483647);
         builder.pop();
+
+        builder.push("Tool Settings");
+        corruptedToolAttackDamageMax = builder
+                .comment("The maximum attack damage for Corrupted Tools")
+                .translation(MoreFeatures.MOD_ID + ".config." + "corruptedToolAttackDamageMax")
+                .defineInRange("corruptedToolAttackDamageMax", 10, 0, 2147483647);
+        corruptedToolAttackSpeedMax = builder
+                .comment("The maximum attack speed for Corrupted Tools")
+                .translation(MoreFeatures.MOD_ID + ".config." + "corruptedToolAttackSpeedMax")
+                .defineInRange("corruptedToolAttackSpeedMax", 3d, 0d, 2147483647d);
     }
 }
