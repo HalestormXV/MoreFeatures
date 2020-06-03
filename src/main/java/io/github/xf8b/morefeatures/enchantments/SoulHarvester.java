@@ -52,6 +52,9 @@ public class SoulHarvester extends Enchantment {
             }
             ItemStack heldItem = playerEntity.getHeldItem(Hand.MAIN_HAND);
             Map<Enchantment, Integer> enchantmentsOnHeldItem = EnchantmentHelper.getEnchantments(heldItem);
+            if (heldItem.getTag() == null) {
+                return;
+            }
             heldItem.getTag().putInt(MoreFeatures.MOD_ID + ":souls", souls);
             if (enchantmentsOnHeldItem.containsKey(MoreFeaturesRegistries.SOUL_HARVESTER.get())) {
                 if (heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") <= MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp * 5) {

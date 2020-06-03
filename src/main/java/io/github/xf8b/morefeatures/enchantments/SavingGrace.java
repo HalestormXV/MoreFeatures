@@ -52,6 +52,9 @@ public class SavingGrace extends Enchantment {
         } else if (randomInt > 100 - MoreFeaturesConfig.savingGraceActivationChance) {
             willActivate = true;
         }
+        if (itemOnFeet.getTag() == null) {
+            return;
+        }
         itemOnFeet.getTag().putBoolean(MoreFeatures.MOD_ID + ":saving_grace_will_activate", willActivate);
         if (enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.SAVING_GRACE.get()) &&
                 itemOnFeet.getTag().getBoolean(MoreFeatures.MOD_ID + ":saving_grace_will_activate")) {
