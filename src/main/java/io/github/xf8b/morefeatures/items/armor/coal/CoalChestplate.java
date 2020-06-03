@@ -21,7 +21,7 @@ public class CoalChestplate extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
         DamageSource engulfedInFireWhileWearingCoal = new DamageSource("morefeatures.engulfedInFireWhileWearingCoal").setDamageBypassesArmor();
-        if(player.isBurning() && !player.isCreative()) {
+        if (player.isBurning() && !player.isCreative()) {
             player.attackEntityFrom(engulfedInFireWhileWearingCoal, 20f);
         }
     }

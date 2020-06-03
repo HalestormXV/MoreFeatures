@@ -27,7 +27,7 @@ public class Asbestosis extends Effect {
 
     @Override
     public void performEffect(LivingEntity entityLivingBaseIn, int amplifier) {
-        if(count > 30) {
+        if (count > 30) {
             count = 0;
             DamageSource asbestosDisease = new DamageSource("morefeatures.asbestosis");
             entityLivingBaseIn.attackEntityFrom(asbestosDisease, (float) MoreFeaturesConfig.asbestosisDamageGiven);
@@ -38,20 +38,20 @@ public class Asbestosis extends Effect {
 
     @SubscribeEvent
     public static void tickCounter(TickEvent.ClientTickEvent event) {
-        if(event.phase == TickEvent.Phase.END) {
+        if (event.phase == TickEvent.Phase.END) {
             count++;
         }
     }
 
     @SubscribeEvent
     public static void onTick(TickEvent.PlayerTickEvent event) {
-        if(event.phase == TickEvent.Phase.END) {
-           Map<Effect, EffectInstance> effects = event.player.getActivePotionMap();
-           if(effects.containsKey(MoreFeaturesRegistries.ASBESTOSIS.get()) && count > 30) {
-               count = 0;
-               DamageSource asbestosDisease = new DamageSource("morefeatures.asbestosis");
-               event.player.attackEntityFrom(asbestosDisease, (float) MoreFeaturesConfig.asbestosisDamageGiven);
-           }
+        if (event.phase == TickEvent.Phase.END) {
+            Map<Effect, EffectInstance> effects = event.player.getActivePotionMap();
+            if (effects.containsKey(MoreFeaturesRegistries.ASBESTOSIS.get()) && count > 30) {
+                count = 0;
+                DamageSource asbestosDisease = new DamageSource("morefeatures.asbestosis");
+                event.player.attackEntityFrom(asbestosDisease, (float) MoreFeaturesConfig.asbestosisDamageGiven);
+            }
         }
     }
 }

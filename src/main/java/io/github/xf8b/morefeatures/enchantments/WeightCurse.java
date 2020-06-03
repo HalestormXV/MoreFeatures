@@ -48,8 +48,8 @@ public class WeightCurse extends Enchantment {
 
     @SubscribeEvent
     public static void onTick(TickEvent.PlayerTickEvent event) {
-        if(event.phase == TickEvent.Phase.END) {
-            if(event.player.getItemStackFromSlot(EquipmentSlotType.HEAD) == ItemStack.EMPTY &&
+        if (event.phase == TickEvent.Phase.END) {
+            if (event.player.getItemStackFromSlot(EquipmentSlotType.HEAD) == ItemStack.EMPTY &&
                     event.player.getItemStackFromSlot(EquipmentSlotType.CHEST) == ItemStack.EMPTY &&
                     event.player.getItemStackFromSlot(EquipmentSlotType.LEGS) == ItemStack.EMPTY &&
                     event.player.getItemStackFromSlot(EquipmentSlotType.FEET) == ItemStack.EMPTY) {
@@ -63,7 +63,7 @@ public class WeightCurse extends Enchantment {
             Map<Enchantment, Integer> enchantmentsOnItemOnChest = EnchantmentHelper.getEnchantments(itemOnChest);
             Map<Enchantment, Integer> enchantmentsOnItemOnLegs = EnchantmentHelper.getEnchantments(itemOnLegs);
             Map<Enchantment, Integer> enchantmentsOnItemOnFeet = EnchantmentHelper.getEnchantments(itemOnFeet);
-            if(enchantmentsOnItemOnHead.containsKey(MoreFeaturesRegistries.WEIGHT_CURSE.get()) ||
+            if (enchantmentsOnItemOnHead.containsKey(MoreFeaturesRegistries.WEIGHT_CURSE.get()) ||
                     enchantmentsOnItemOnChest.containsKey(MoreFeaturesRegistries.WEIGHT_CURSE.get()) ||
                     enchantmentsOnItemOnLegs.containsKey(MoreFeaturesRegistries.WEIGHT_CURSE.get()) ||
                     enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.WEIGHT_CURSE.get())) {

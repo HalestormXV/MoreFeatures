@@ -1,6 +1,8 @@
 package io.github.xf8b.morefeatures;
 
 import io.github.xf8b.morefeatures.blocks.CornCrop;
+import io.github.xf8b.morefeatures.commands.HungerCommand;
+import io.github.xf8b.morefeatures.commands.InformationCommand;
 import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import io.github.xf8b.morefeatures.world.gen.MoreFeaturesOreGeneration;
 import net.minecraft.block.ComposterBlock;
@@ -51,12 +53,14 @@ public class MoreFeatures {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.LEMON_LEAVES.get());
-        ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.ORANGE_LEAVES.get());
-        ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.CORN_SEEDS.get());
-        ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.LEMON.get());
-        ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.ORANGE.get());
-        ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.CORN.get());
+        DeferredWorkQueue.runLater(() -> {
+            ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.LEMON_LEAVES.get());
+            ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.ORANGE_LEAVES.get());
+            ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.CORN_SEEDS.get());
+            ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.LEMON.get());
+            ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.ORANGE.get());
+            ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.CORN.get());
+        });
         DeferredWorkQueue.runLater(MoreFeaturesOreGeneration::generateOre);
     }
 
@@ -71,9 +75,11 @@ public class MoreFeatures {
 
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
+        InformationCommand.register(event.getCommandDispatcher());
+        HungerCommand.register(event.getCommandDispatcher());
     }
 
-    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> event) {

@@ -24,7 +24,7 @@ public class LapisHelmet extends ArmorItem {
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        if(count == 2400) {
+        if (count == 2400) {
             player.giveExperiencePoints(MoreFeaturesConfig.lapisArmorExperienceGiven);
         }
     }
@@ -33,9 +33,9 @@ public class LapisHelmet extends ArmorItem {
 
     @SubscribeEvent
     public static void tickCounter(TickEvent.ClientTickEvent event) {
-        if(event.phase == TickEvent.Phase.END) {
+        if (event.phase == TickEvent.Phase.END) {
             count++;
-            if(count > 2400) {
+            if (count > 2400) {
                 count = 0;
             }
         }

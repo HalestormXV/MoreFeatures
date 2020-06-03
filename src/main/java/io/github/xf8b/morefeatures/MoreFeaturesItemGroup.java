@@ -10,7 +10,8 @@ public class MoreFeaturesItemGroup {
             return new ItemStack(MoreFeaturesRegistries.SAPPHIRE.get());
         }
     };
-    public void init(){
+
+    public void init() {
 
     }
 }

@@ -38,12 +38,12 @@ public class CorruptedPickaxe extends PickaxeItem {
 
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        if(KeyboardChecker.isHoldingShift()) {
+        if (KeyboardChecker.isHoldingShift()) {
             tooltip.add(new StringTextComponent("This tool has been corrupted."));
             tooltip.add(new StringTextComponent("The attack damage and speed will be random."));
             tooltip.add(new StringTextComponent("Good luck, and pray to the RNG gods."));
         } else {
-            tooltip.add(new StringTextComponent("Hold "+ "\u00A7e" + "SHIFT " + "\u00A77" +  "to see info."));
+            tooltip.add(new StringTextComponent("Hold " + "\u00A7e" + "SHIFT " + "\u00A77" + "to see info."));
         }
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
@@ -51,7 +51,7 @@ public class CorruptedPickaxe extends PickaxeItem {
     @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(EquipmentSlotType equipmentSlot, ItemStack stack) {
         Multimap<String, AttributeModifier> multimap = HashMultimap.create();
-        if(equipmentSlot == EquipmentSlotType.MAINHAND) {
+        if (equipmentSlot == EquipmentSlotType.MAINHAND) {
             multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(
                     ATTACK_DAMAGE_MODIFIER,
                     "Weapon modifier",

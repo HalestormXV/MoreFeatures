@@ -16,12 +16,13 @@ public class LemonTree extends Tree {
     public static final TreeFeatureConfig LEMON_TREE_CONFIG = (new TreeFeatureConfig.Builder(
             new SimpleBlockStateProvider(MoreFeaturesRegistries.LEMON_LOG.get().getDefaultState()),
             new SimpleBlockStateProvider(MoreFeaturesRegistries.LEMON_LEAVES.get().getDefaultState()),
-            new BlobFoliagePlacer(2,0)))
+            new BlobFoliagePlacer(2, 0)))
             .baseHeight(4)
             .heightRandA(2)
             .foliageHeight(2)
             .setSapling((IPlantable) MoreFeaturesRegistries.LEMON_SAPLING.get())
             .build();
+
     @Nullable
     @Override
     protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean p_225546_2_) {

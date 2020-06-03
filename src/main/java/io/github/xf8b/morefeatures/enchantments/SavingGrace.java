@@ -40,27 +40,27 @@ public class SavingGrace extends Enchantment {
 
     @SubscribeEvent
     public static void onLivingDeath(LivingDeathEvent event) {
-        if(event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET) == ItemStack.EMPTY) {
+        if (event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET) == ItemStack.EMPTY) {
             return;
         }
         ItemStack itemOnFeet = event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET);
         Map<Enchantment, Integer> enchantmentsOnItemOnFeet = EnchantmentHelper.getEnchantments(itemOnFeet);
         Random random = new Random();
         int randomInt = random.nextInt(100);
-        if(randomInt <= 100 - MoreFeaturesConfig.savingGraceActivationChance) {
+        if (randomInt <= 100 - MoreFeaturesConfig.savingGraceActivationChance) {
             willActivate = false;
-        } else if(randomInt > 100 - MoreFeaturesConfig.savingGraceActivationChance) {
+        } else if (randomInt > 100 - MoreFeaturesConfig.savingGraceActivationChance) {
             willActivate = true;
         }
         itemOnFeet.getTag().putBoolean(MoreFeatures.MOD_ID + ":saving_grace_will_activate", willActivate);
-        if(enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.SAVING_GRACE.get()) &&
+        if (enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.SAVING_GRACE.get()) &&
                 itemOnFeet.getTag().getBoolean(MoreFeatures.MOD_ID + ":saving_grace_will_activate")) {
-                PlayerEntity playerEntity = (PlayerEntity) event.getEntityLiving();
-                playerEntity.setHealth(1.0F);
-                playerEntity.clearActivePotions();
-                playerEntity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 900, 1));
-                playerEntity.addPotionEffect(new EffectInstance(Effects.ABSORPTION, 100, 1));
-                event.setCanceled(true);
+            PlayerEntity playerEntity = (PlayerEntity) event.getEntityLiving();
+            playerEntity.setHealth(1.0F);
+            playerEntity.clearActivePotions();
+            playerEntity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 900, 1));
+            playerEntity.addPotionEffect(new EffectInstance(Effects.ABSORPTION, 100, 1));
+            event.setCanceled(true);
         }
     }
 }

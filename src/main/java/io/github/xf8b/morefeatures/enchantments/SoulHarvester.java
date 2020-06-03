@@ -44,26 +44,26 @@ public class SoulHarvester extends Enchantment {
 
     @SubscribeEvent
     public static void onDeath(LivingDeathEvent event) {
-        if(event.getSource().getTrueSource() instanceof PlayerEntity) {
+        if (event.getSource().getTrueSource() instanceof PlayerEntity) {
             souls++;
             PlayerEntity playerEntity = (PlayerEntity) event.getSource().getTrueSource();
-            if(playerEntity.getHeldItem(Hand.MAIN_HAND) == ItemStack.EMPTY) {
+            if (playerEntity.getHeldItem(Hand.MAIN_HAND) == ItemStack.EMPTY) {
                 return;
             }
             ItemStack heldItem = playerEntity.getHeldItem(Hand.MAIN_HAND);
             Map<Enchantment, Integer> enchantmentsOnHeldItem = EnchantmentHelper.getEnchantments(heldItem);
             heldItem.getTag().putInt(MoreFeatures.MOD_ID + ":souls", souls);
-            if(enchantmentsOnHeldItem.containsKey(MoreFeaturesRegistries.SOUL_HARVESTER.get())) {
-                if(heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") <= MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp * 5) {
+            if (enchantmentsOnHeldItem.containsKey(MoreFeaturesRegistries.SOUL_HARVESTER.get())) {
+                if (heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") <= MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp * 5) {
                     int previousSharpnessLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.SHARPNESS, heldItem);
                     int newSharpnessLevel = 0;
                     boolean isSoulsHighEnough = false;
-                    if(heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") % MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp == 0 &&
+                    if (heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") % MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp == 0 &&
                             !(heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") == 0)) {
                         isSoulsHighEnough = true;
                     }
-                    if(isSoulsHighEnough) {
-                        if(previousSharpnessLevel < heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") / MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp) {
+                    if (isSoulsHighEnough) {
+                        if (previousSharpnessLevel < heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") / MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp) {
                             enchantmentsOnHeldItem.remove(Enchantments.SHARPNESS);
                             EnchantmentHelper.setEnchantments(enchantmentsOnHeldItem, heldItem);
                             newSharpnessLevel = heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") / MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp;
@@ -79,7 +79,7 @@ public class SoulHarvester extends Enchantment {
     public static void onItemTooltip(ItemTooltipEvent event) {
         ItemStack itemStack = event.getItemStack();
         Map<Enchantment, Integer> enchantmentsOnItem = EnchantmentHelper.getEnchantments(itemStack);
-        if(enchantmentsOnItem.containsKey(MoreFeaturesRegistries.SOUL_HARVESTER.get())) {
+        if (enchantmentsOnItem.containsKey(MoreFeaturesRegistries.SOUL_HARVESTER.get())) {
             List<ITextComponent> tooltip = event.getToolTip();
             tooltip.add(new StringTextComponent("For every " + MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp + " souls, a Sharpness level is added."));
             tooltip.add(new StringTextComponent("The maximum level of Sharpness is 5."));

@@ -13,8 +13,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class MoreFeaturesOreGeneration {
     public static void generateOre() {
-        for(Biome biome : ForgeRegistries.BIOMES) {
-            if(MoreFeaturesConfig.isOreGenerationEnabled) {
+        for (Biome biome : ForgeRegistries.BIOMES) {
+            if (MoreFeaturesConfig.isOreGenerationEnabled) {
                 ConfiguredPlacement sapphireOreConfig = Placement.COUNT_RANGE
                         .configure(new CountRangeConfig(1, 0, 0, 12));
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE

@@ -39,9 +39,9 @@ public class FireRetardant extends Enchantment {
 
     @SubscribeEvent
     public static void onTick(TickEvent.PlayerTickEvent event) {
-        if(event.phase == TickEvent.Phase.END) {
-            if(event.player.getEntity().isBurning()){
-                if(event.player.getItemStackFromSlot(EquipmentSlotType.HEAD) == ItemStack.EMPTY &&
+        if (event.phase == TickEvent.Phase.END) {
+            if (event.player.getEntity().isBurning()) {
+                if (event.player.getItemStackFromSlot(EquipmentSlotType.HEAD) == ItemStack.EMPTY &&
                         event.player.getItemStackFromSlot(EquipmentSlotType.CHEST) == ItemStack.EMPTY &&
                         event.player.getItemStackFromSlot(EquipmentSlotType.LEGS) == ItemStack.EMPTY &&
                         event.player.getItemStackFromSlot(EquipmentSlotType.FEET) == ItemStack.EMPTY) {
@@ -55,7 +55,7 @@ public class FireRetardant extends Enchantment {
                 Map<Enchantment, Integer> enchantmentsOnItemOnChest = EnchantmentHelper.getEnchantments(itemOnChest);
                 Map<Enchantment, Integer> enchantmentsOnItemOnLegs = EnchantmentHelper.getEnchantments(itemOnLegs);
                 Map<Enchantment, Integer> enchantmentsOnItemOnFeet = EnchantmentHelper.getEnchantments(itemOnFeet);
-                if(enchantmentsOnItemOnHead.containsKey(MoreFeaturesRegistries.FIRE_RETARDANT.get()) ||
+                if (enchantmentsOnItemOnHead.containsKey(MoreFeaturesRegistries.FIRE_RETARDANT.get()) ||
                         enchantmentsOnItemOnChest.containsKey(MoreFeaturesRegistries.FIRE_RETARDANT.get()) ||
                         enchantmentsOnItemOnLegs.containsKey(MoreFeaturesRegistries.FIRE_RETARDANT.get()) ||
                         enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.FIRE_RETARDANT.get())) {
@@ -66,7 +66,7 @@ public class FireRetardant extends Enchantment {
     }
 
     @Override
-    protected boolean canApplyTogether(Enchantment ench) {
-        return !(ench instanceof ProtectionEnchantment);
+    protected boolean canApplyTogether(Enchantment enchantment) {
+        return !(enchantment instanceof ProtectionEnchantment);
     }
 }
