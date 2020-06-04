@@ -54,12 +54,12 @@ public class MoreFeatures {
 
     private void setup(final FMLCommonSetupEvent event) {
         DeferredWorkQueue.runLater(() -> {
-            ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.LEMON_LEAVES.get());
-            ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.ORANGE_LEAVES.get());
-            ComposterBlock.registerCompostable(0.3f, MoreFeaturesRegistries.CORN_SEEDS.get());
-            ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.LEMON.get());
-            ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.ORANGE.get());
-            ComposterBlock.registerCompostable(0.65f, MoreFeaturesRegistries.CORN.get());
+            ComposterBlock.CHANCES.put(MoreFeaturesRegistries.LEMON_LEAVES.get().asItem(), 0.3f);
+            ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE_LEAVES.get().asItem(), 0.3f);
+            ComposterBlock.CHANCES.put(MoreFeaturesRegistries.CORN_SEEDS.get().asItem(), 0.3f);
+            ComposterBlock.CHANCES.put(MoreFeaturesRegistries.LEMON.get().asItem(), 0.65f);
+            ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE.get().asItem(), 0.65f);
+            ComposterBlock.CHANCES.put(MoreFeaturesRegistries.CORN.get().asItem(), 0.65f);
         });
         DeferredWorkQueue.runLater(MoreFeaturesOreGeneration::generateOre);
     }

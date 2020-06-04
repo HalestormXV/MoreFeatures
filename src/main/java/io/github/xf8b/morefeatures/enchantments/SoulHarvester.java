@@ -47,7 +47,7 @@ public class SoulHarvester extends Enchantment {
         if (event.getSource().getTrueSource() instanceof PlayerEntity) {
             souls++;
             PlayerEntity playerEntity = (PlayerEntity) event.getSource().getTrueSource();
-            if (playerEntity.getHeldItem(Hand.MAIN_HAND) == ItemStack.EMPTY) {
+            if (playerEntity.getHeldItem(Hand.MAIN_HAND).isEmpty()) {
                 return;
             }
             ItemStack heldItem = playerEntity.getHeldItem(Hand.MAIN_HAND);

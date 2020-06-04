@@ -47,9 +47,9 @@ public class ClientConfig {
                 .translation(MoreFeatures.MOD_ID + ".config." + "slownessCurseSlownessLevel")
                 .defineInRange("slownessCurseSlownessLevel", 4, 0, 255);
         harmingCurseDamageGiven = builder
-                .comment("The level of the poison effect applied when Harming Curse is present")
-                .translation(MoreFeatures.MOD_ID + ".config." + "harmingCursePoisonLevel")
-                .defineInRange("harmingCursePoisonLevel", 0.5, 0, 20);
+                .comment("The amount of damage applied when Harming Curse is present")
+                .translation(MoreFeatures.MOD_ID + ".config." + "harmingCurseDamageGiven")
+                .defineInRange("harmingCurseDamageGiven", 0.5, 0, 20);
         builder.pop();
         builder.pop();
 

@@ -49,10 +49,10 @@ public class HarmingCurse extends Enchantment {
     @SubscribeEvent
     public static void onTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
-            if (event.player.getItemStackFromSlot(EquipmentSlotType.HEAD) == ItemStack.EMPTY &&
-                    event.player.getItemStackFromSlot(EquipmentSlotType.CHEST) == ItemStack.EMPTY &&
-                    event.player.getItemStackFromSlot(EquipmentSlotType.LEGS) == ItemStack.EMPTY &&
-                    event.player.getItemStackFromSlot(EquipmentSlotType.FEET) == ItemStack.EMPTY) {
+            if (event.player.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty() &&
+                    event.player.getItemStackFromSlot(EquipmentSlotType.CHEST).isEmpty() &&
+                    event.player.getItemStackFromSlot(EquipmentSlotType.LEGS).isEmpty() &&
+                    event.player.getItemStackFromSlot(EquipmentSlotType.FEET).isEmpty()) {
                 return;
             }
             ItemStack itemOnHead = event.player.getItemStackFromSlot(EquipmentSlotType.HEAD);

@@ -40,7 +40,7 @@ public class SavingGrace extends Enchantment {
 
     @SubscribeEvent
     public static void onLivingDeath(LivingDeathEvent event) {
-        if (event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET) == ItemStack.EMPTY) {
+        if (event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET).isEmpty()) {
             return;
         }
         ItemStack itemOnFeet = event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET);
