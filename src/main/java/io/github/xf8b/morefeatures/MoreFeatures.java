@@ -5,7 +5,9 @@ import io.github.xf8b.morefeatures.commands.HungerCommand;
 import io.github.xf8b.morefeatures.commands.InformationCommand;
 import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import io.github.xf8b.morefeatures.world.gen.MoreFeaturesOreGeneration;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.block.FireBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
@@ -60,6 +62,14 @@ public class MoreFeatures {
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.LEMON.get().asItem(), 0.65f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE.get().asItem(), 0.65f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.CORN.get().asItem(), 0.65f);
+        });
+        DeferredWorkQueue.runLater(() -> {
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_PLANKS.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_PLANKS.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_LOG.get(), 5, 5);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_LEAVES.get(), 30, 60);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_LEAVES.get(), 30, 60);
         });
         DeferredWorkQueue.runLater(MoreFeaturesOreGeneration::generateOre);
     }

@@ -9,3 +9,5 @@
 ## Download Links:
 - Get at [Curseforge](https://www.curseforge.com/minecraft/mc-mods/morefeatures/files/)  
 - Get at [Github](https://github.com/xf8b/MoreFeatures/releases)
+## Changelog:
+See [CHANGELOG.md](https://github.com/xf8b/MoreFeatures/blob/1.15.2/CHANGELOG.md).
