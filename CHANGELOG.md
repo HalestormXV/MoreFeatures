@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Changed hunger command syntax
+- Made blocks that were supposed to be flammable, flammable.
 
 ### Fixed
 - Fixed [#7](https://github.com/xf8b/MoreFeatures/issues/7) (Effects applied by enchantments are still present after the armor has broken)

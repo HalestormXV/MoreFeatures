@@ -58,6 +58,8 @@ public class MoreFeatures {
         DeferredWorkQueue.runLater(() -> {
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.LEMON_LEAVES.get().asItem(), 0.3f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE_LEAVES.get().asItem(), 0.3f);
+            ComposterBlock.CHANCES.put(MoreFeaturesRegistries.LEMON_SAPLING.get().asItem(), 0.3f);
+            ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE_SAPLING.get().asItem(), 0.3f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.CORN_SEEDS.get().asItem(), 0.3f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.LEMON.get().asItem(), 0.65f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE.get().asItem(), 0.65f);
