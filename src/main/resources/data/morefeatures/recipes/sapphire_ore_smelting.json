@@ -1,5 +1,7 @@
 {
   "type": "minecraft:smelting",
-  "ingredient": { "tag": "morefeatures:sapphire_ore" },
+  "ingredient": {
+    "item": "morefeatures:sapphire_ore"
+  },
   "result": "morefeatures:sapphire"
 }

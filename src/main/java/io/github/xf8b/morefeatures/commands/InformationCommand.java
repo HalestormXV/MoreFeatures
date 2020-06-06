@@ -22,6 +22,8 @@ public class InformationCommand {
         World world = source.getWorld();
         if (!world.getPlayers().isEmpty()) {
             world.getPlayers().stream().forEach(playerEntity -> {
+                int amountOfPlayers = world.getPlayers().size();
+                int amountOfTimesPlayerCouldNotBeFound = 0;
                 if (playerEntity.getScoreboardName().equals(inputPlayerUsername)) {
                     String playerUUID = playerEntity.getUniqueID().toString();
                     double playerPosX = playerEntity.getPosX();
@@ -29,7 +31,10 @@ public class InformationCommand {
                     double playerPosZ = playerEntity.getPosZ();
                     source.sendFeedback(new StringTextComponent("Username: " + inputPlayerUsername + ", UUID: " + playerUUID + ", Coordinates: " + playerPosX + " " + playerPosY + " " + playerPosZ), true);
                 } else {
-                    source.sendErrorMessage(new TranslationTextComponent(MoreFeatures.MOD_ID + ".information_command_failed"));
+                    amountOfTimesPlayerCouldNotBeFound++;
+                }
+                if (amountOfTimesPlayerCouldNotBeFound == amountOfPlayers) {
+                    source.sendErrorMessage(new TranslationTextComponent("command." + MoreFeatures.MOD_ID + ".hunger.invalid_username"));
                 }
             });
         }

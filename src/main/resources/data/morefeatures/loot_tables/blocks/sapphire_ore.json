@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "morefeatures:sapphire_ore"
+          "name": "morefeatures:sapphire"
         }
       ],
       "conditions": [

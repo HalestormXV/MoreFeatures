@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "morefeatures:block/sapphire_ore" }
+    "": {
+      "model": "morefeatures:block/sapphire_ore"
+    }
   }
 }

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "morefeatures:block/lemon_planks" }
+    "": {
+      "model": "morefeatures:block/lemon_planks"
+    }
   }
 }

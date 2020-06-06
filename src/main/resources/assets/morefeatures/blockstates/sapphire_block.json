@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "morefeatures:block/sapphire_block" }
+    "": {
+      "model": "morefeatures:block/sapphire_block"
+    }
   }
 }

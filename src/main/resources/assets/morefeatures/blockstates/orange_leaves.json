@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "morefeatures:block/orange_leaves" }
+    "": {
+      "model": "morefeatures:block/orange_leaves"
+    }
   }
 }

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "morefeatures:block/lemon_sapling" }
+    "": {
+      "model": "morefeatures:block/lemon_sapling"
+    }
   }
 }

@@ -25,4 +25,9 @@ public class CoalBoots extends ArmorItem {
             player.attackEntityFrom(engulfedInFireWhileWearingCoal, 20f);
         }
     }
+
+    @Override
+    public int getBurnTime(ItemStack itemStack) {
+        return 4800;
+    }
 }

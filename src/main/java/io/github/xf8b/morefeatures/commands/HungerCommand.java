@@ -33,6 +33,8 @@ public class HungerCommand {
         World world = source.getWorld();
         if (!world.getPlayers().isEmpty()) {
             world.getPlayers().stream().forEach(playerEntity -> {
+                int amountOfPlayers = world.getPlayers().size();
+                int amountOfTimesPlayerCouldNotBeFound = 0;
                 if (playerEntity.getScoreboardName().equals(inputPlayerUsername)) {
                     if (type.equals("set")) {
                         if (typeToSet.equals("food")) {
@@ -46,13 +48,16 @@ public class HungerCommand {
                             float newSaturationLevel = playerEntity.getFoodStats().getSaturationLevel();
                             source.sendFeedback(new StringTextComponent("Old Saturation Level: " + oldSaturationLevel + ", New Saturation Level: " + newSaturationLevel), true);
                         } else {
-                            source.sendErrorMessage(new TranslationTextComponent(MoreFeatures.MOD_ID + ".hunger_command_failed"));
+                            source.sendErrorMessage(new TranslationTextComponent("command." + MoreFeatures.MOD_ID + ".hunger.invalid_typeToBeSet"));
                         }
                     } else {
-                        source.sendErrorMessage(new TranslationTextComponent(MoreFeatures.MOD_ID + ".hunger_command_failed"));
+                        source.sendErrorMessage(new TranslationTextComponent("command." + MoreFeatures.MOD_ID + ".hunger.invalid_type"));
                     }
                 } else {
-                    source.sendErrorMessage(new TranslationTextComponent(MoreFeatures.MOD_ID + ".hunger_command_failed"));
+                    amountOfTimesPlayerCouldNotBeFound++;
+                }
+                if (amountOfTimesPlayerCouldNotBeFound == amountOfPlayers) {
+                    source.sendErrorMessage(new TranslationTextComponent("command." + MoreFeatures.MOD_ID + ".hunger.invalid_username"));
                 }
             });
         }
@@ -63,16 +68,21 @@ public class HungerCommand {
         World world = source.getWorld();
         if (!world.getPlayers().isEmpty()) {
             world.getPlayers().stream().forEach(playerEntity -> {
+                int amountOfPlayers = world.getPlayers().size();
+                int amountOfTimesPlayerCouldNotBeFound = 0;
                 if (playerEntity.getScoreboardName().equals(inputPlayerUsername)) {
                     if (type.equals("get")) {
                         String foodLevel = String.valueOf(playerEntity.getFoodStats().getFoodLevel());
                         String saturationLevel = String.valueOf(playerEntity.getFoodStats().getSaturationLevel());
                         source.sendFeedback(new StringTextComponent("Food Level: " + foodLevel + ", Saturation Level: " + saturationLevel), true);
                     } else {
-                        source.sendErrorMessage(new TranslationTextComponent(MoreFeatures.MOD_ID + ".hunger_command_failed"));
+                        source.sendErrorMessage(new TranslationTextComponent("command." + MoreFeatures.MOD_ID + ".hunger.invalid_type"));
                     }
                 } else {
-                    source.sendErrorMessage(new TranslationTextComponent(MoreFeatures.MOD_ID + ".hunger_command_failed"));
+                    amountOfTimesPlayerCouldNotBeFound++;
+                }
+                if (amountOfTimesPlayerCouldNotBeFound == amountOfPlayers) {
+                    source.sendErrorMessage(new TranslationTextComponent("command." + MoreFeatures.MOD_ID + ".hunger.invalid_username"));
                 }
             });
         }
