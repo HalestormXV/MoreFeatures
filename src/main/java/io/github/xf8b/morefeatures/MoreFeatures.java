@@ -4,7 +4,7 @@ import io.github.xf8b.morefeatures.blocks.CornCrop;
 import io.github.xf8b.morefeatures.commands.HungerCommand;
 import io.github.xf8b.morefeatures.commands.InformationCommand;
 import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
-import io.github.xf8b.morefeatures.world.gen.MoreFeaturesOreGeneration;
+import io.github.xf8b.morefeatures.world.gen.MoreFeaturesGeneration;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.block.FireBlock;
@@ -73,7 +73,7 @@ public class MoreFeatures {
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_LEAVES.get(), 30, 60);
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_LEAVES.get(), 30, 60);
         });
-        DeferredWorkQueue.runLater(MoreFeaturesOreGeneration::generateOre);
+        DeferredWorkQueue.runLater(MoreFeaturesGeneration::generateFeatures);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

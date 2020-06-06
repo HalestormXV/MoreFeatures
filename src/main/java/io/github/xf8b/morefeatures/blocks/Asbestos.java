@@ -32,7 +32,7 @@ public class Asbestos extends Block {
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         ItemStack itemOnHead = player.getItemStackFromSlot(EquipmentSlotType.HEAD);
-        if (itemOnHead.getItem() != MoreFeaturesRegistries.MASK.get()) {
+        if (itemOnHead.getItem() != MoreFeaturesRegistries.MASK.get() && !player.isCreative()) {
             player.addPotionEffect(new EffectInstance(MoreFeaturesRegistries.ASBESTOSIS.get(), 2400, 0));
         }
     }

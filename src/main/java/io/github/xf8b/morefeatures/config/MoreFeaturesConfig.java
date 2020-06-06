@@ -19,7 +19,7 @@ public class MoreFeaturesConfig {
     }
 
     //Generation Settings
-    public static boolean isOreGenerationEnabled;
+    public static boolean isFeatureGenerationEnabled;
 
     //Enchantment Settings
     public static int savingGraceActivationChance;
@@ -46,7 +46,7 @@ public class MoreFeaturesConfig {
     }
 
     public static void bakeConfig() {
-        isOreGenerationEnabled = CLIENT.isOreGenerationEnabled.get();
+        isFeatureGenerationEnabled = CLIENT.isFeatureGenerationEnabled.get();
         savingGraceActivationChance = CLIENT.savingGraceActivationChance.get();
         soulsRequiredForSharpnessLevelUp = CLIENT.soulsRequiredForSharpnessLevelUp.get();
         slownessCurseSlownessLevel = CLIENT.slownessCurseSlownessLevel.get();

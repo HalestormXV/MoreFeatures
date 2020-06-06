@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added changelog
 - Added leaves' loot tables
 - Added blast-proof glass's loot table
+- Added blocks to tags
+- Added trees to world generation
 
 ### Changed
 - Changed hunger command syntax
@@ -18,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed the sapphire sword and axe's attack damage
 - Changed the orange tree to have orange wood instead of lemon wood (whoops)
 - Changed the way how the saving grace and soul harvester enchantment works
+- Changed asbestos to not apply the effect if you are in creative mode
+- Changed the name of MoreFeaturesOreGeneration to MoreFeaturesGeneration
 
 ### Fixed
 - Fixed [#7](https://github.com/xf8b/MoreFeatures/issues/7) (Effects applied by enchantments are still present after the armor has broken)

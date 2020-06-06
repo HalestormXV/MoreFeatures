@@ -5,7 +5,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ClientConfig {
     //Generation Settings
-    public final ForgeConfigSpec.BooleanValue isOreGenerationEnabled;
+    public final ForgeConfigSpec.BooleanValue isFeatureGenerationEnabled;
 
     //Enchantment Settings
     public final ForgeConfigSpec.IntValue savingGraceActivationChance;
@@ -26,10 +26,10 @@ public class ClientConfig {
 
     public ClientConfig(ForgeConfigSpec.Builder builder) {
         builder.push("Generation Settings");
-        isOreGenerationEnabled = builder
-                .comment("Turns ore generation on or off")
-                .translation(MoreFeatures.MOD_ID + ".config." + "isOreGenerationEnabled")
-                .define("isOreGenerationEnabled", true);
+        isFeatureGenerationEnabled = builder
+                .comment("Turns feature generation on or off")
+                .translation(MoreFeatures.MOD_ID + ".config." + "isFeatureGenerationEnabled")
+                .define("isFeatureGenerationEnabled", true);
         builder.pop();
 
         builder.push("Enchantment Settings");
