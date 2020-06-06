@@ -6,7 +6,7 @@ import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentType;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
@@ -36,8 +36,6 @@ public class SavingGrace extends Enchantment {
         return 1;
     }
 
-    public static boolean willActivate = false;
-
     @SubscribeEvent
     public static void onLivingDeath(LivingDeathEvent event) {
         if (event.getEntityLiving().getItemStackFromSlot(EquipmentSlotType.FEET).isEmpty()) {
@@ -47,22 +45,16 @@ public class SavingGrace extends Enchantment {
         Map<Enchantment, Integer> enchantmentsOnItemOnFeet = EnchantmentHelper.getEnchantments(itemOnFeet);
         Random random = new Random();
         int randomInt = random.nextInt(100);
-        if (randomInt <= 100 - MoreFeaturesConfig.savingGraceActivationChance) {
-            willActivate = false;
-        } else if (randomInt > 100 - MoreFeaturesConfig.savingGraceActivationChance) {
-            willActivate = true;
-        }
         if (itemOnFeet.getTag() == null) {
             return;
         }
-        itemOnFeet.getTag().putBoolean(MoreFeatures.MOD_ID + ":saving_grace_will_activate", willActivate);
         if (enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.SAVING_GRACE.get()) &&
-                itemOnFeet.getTag().getBoolean(MoreFeatures.MOD_ID + ":saving_grace_will_activate")) {
-            PlayerEntity playerEntity = (PlayerEntity) event.getEntityLiving();
-            playerEntity.setHealth(1.0F);
-            playerEntity.clearActivePotions();
-            playerEntity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 900, 1));
-            playerEntity.addPotionEffect(new EffectInstance(Effects.ABSORPTION, 100, 1));
+                randomInt > 100 - MoreFeaturesConfig.savingGraceActivationChance) {
+            LivingEntity livingEntity = event.getEntityLiving();
+            livingEntity.setHealth(1.0F);
+            livingEntity.clearActivePotions();
+            livingEntity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 900, 1));
+            livingEntity.addPotionEffect(new EffectInstance(Effects.ABSORPTION, 100, 1));
             event.setCanceled(true);
         }
     }

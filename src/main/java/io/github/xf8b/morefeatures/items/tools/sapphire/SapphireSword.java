@@ -7,7 +7,7 @@ import net.minecraft.item.SwordItem;
 
 public class SapphireSword extends SwordItem {
     public SapphireSword() {
-        super(MoreFeaturesItemTier.SAPPHIRE, 0, -2.4f, new Item.Properties()
+        super(MoreFeaturesItemTier.SAPPHIRE, -1, -2.4f, new Item.Properties()
                 .maxStackSize(1)
                 .group(MoreFeatures.instance.itemGroup)
         );

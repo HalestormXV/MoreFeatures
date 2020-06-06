@@ -20,8 +20,8 @@ public class ObsidianBoots extends ArmorItem {
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        player.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 0, 3));
-        player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 0, 1));
-        player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 0, -6));
+        player.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 20, 3));
+        player.addPotionEffect(new EffectInstance(Effects.RESISTANCE, 20, 1));
+        player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 20, -6));
     }
 }

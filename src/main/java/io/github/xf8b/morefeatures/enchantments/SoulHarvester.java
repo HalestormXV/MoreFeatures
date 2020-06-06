@@ -9,6 +9,7 @@ import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
@@ -58,12 +59,8 @@ public class SoulHarvester extends Enchantment {
                 if (heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") <= MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp * 5) {
                     int previousSharpnessLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.SHARPNESS, heldItem);
                     int newSharpnessLevel;
-                    boolean isSoulsHighEnough = false;
                     if (heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") % MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp == 0 &&
                             !(heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") == 0)) {
-                        isSoulsHighEnough = true;
-                    }
-                    if (isSoulsHighEnough) {
                         if (previousSharpnessLevel < heldItem.getTag().getInt(MoreFeatures.MOD_ID + ":souls") / MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp) {
                             enchantmentsOnHeldItem.remove(Enchantments.SHARPNESS);
                             EnchantmentHelper.setEnchantments(enchantmentsOnHeldItem, heldItem);
@@ -80,7 +77,8 @@ public class SoulHarvester extends Enchantment {
     public static void onItemTooltip(ItemTooltipEvent event) {
         ItemStack itemStack = event.getItemStack();
         Map<Enchantment, Integer> enchantmentsOnItem = EnchantmentHelper.getEnchantments(itemStack);
-        if (enchantmentsOnItem.containsKey(MoreFeaturesRegistries.SOUL_HARVESTER.get())) {
+        if (enchantmentsOnItem.containsKey(MoreFeaturesRegistries.SOUL_HARVESTER.get())
+                && !(itemStack.getItem() instanceof EnchantedBookItem)) {
             List<ITextComponent> tooltip = event.getToolTip();
             tooltip.add(new StringTextComponent("For every " + MoreFeaturesConfig.soulsRequiredForSharpnessLevelUp + " souls, a Sharpness level is added."));
             tooltip.add(new StringTextComponent("The maximum level of Sharpness is 5."));

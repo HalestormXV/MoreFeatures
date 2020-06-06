@@ -7,13 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added:
 - Added changelog
+- Added leaves' loot tables
+- Added blast-proof glass's loot table
 
 ### Changed
 - Changed hunger command syntax
 - Made blocks that were supposed to be flammable, flammable.
+- Changed lemon and orange saplings to be compostable
+- (Hopefully) changed the soul harvester enchantment to be server compatible
+- Changed the sapphire sword and axe's attack damage
+- Changed the orange tree to have orange wood instead of lemon wood (whoops)
+- Changed the way how the saving grace and soul harvester enchantment works
 
 ### Fixed
 - Fixed [#7](https://github.com/xf8b/MoreFeatures/issues/7) (Effects applied by enchantments are still present after the armor has broken)
+- Fixed a bug like [#7](https://github.com/xf8b/MoreFeatures/issues/7), but with armor which applied effects.
 
 ### Removed:
 - Removed access transformer

@@ -20,7 +20,7 @@ public class EmeraldBoots extends ArmorItem {
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        player.addPotionEffect(new EffectInstance(Effects.LUCK, 0, 0));
-        player.addPotionEffect(new EffectInstance(Effects.HERO_OF_THE_VILLAGE, 0, 0));
+        player.addPotionEffect(new EffectInstance(Effects.LUCK, 20, 0));
+        player.addPotionEffect(new EffectInstance(Effects.HERO_OF_THE_VILLAGE, 20, 0));
     }
 }

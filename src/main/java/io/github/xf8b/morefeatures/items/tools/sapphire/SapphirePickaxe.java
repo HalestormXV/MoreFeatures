@@ -7,7 +7,7 @@ import net.minecraft.item.PickaxeItem;
 
 public class SapphirePickaxe extends PickaxeItem {
     public SapphirePickaxe() {
-        super(MoreFeaturesItemTier.SAPPHIRE, -2, -2.8f, new Item.Properties()
+        super(MoreFeaturesItemTier.SAPPHIRE, -3, -2.8f, new Item.Properties()
                 .maxStackSize(1)
                 .group(MoreFeatures.instance.itemGroup)
         );
