@@ -29,7 +29,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod("morefeatures")
+@Mod(MoreFeatures.MOD_ID)
 public class MoreFeatures {
     public static final String MOD_ID = "morefeatures";
     private static final Logger LOGGER = LogManager.getLogger();
@@ -55,6 +55,7 @@ public class MoreFeatures {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+        //Register items to be compostable
         DeferredWorkQueue.runLater(() -> {
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.LEMON_LEAVES.get().asItem(), 0.3f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE_LEAVES.get().asItem(), 0.3f);
@@ -65,6 +66,7 @@ public class MoreFeatures {
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE.get().asItem(), 0.65f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.CORN.get().asItem(), 0.65f);
         });
+        //Set flammable blocks to be flammable
         DeferredWorkQueue.runLater(() -> {
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_PLANKS.get(), 5, 20);
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_PLANKS.get(), 5, 20);
@@ -73,6 +75,7 @@ public class MoreFeatures {
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_LEAVES.get(), 30, 60);
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_LEAVES.get(), 30, 60);
         });
+        //Generate features in the world
         DeferredWorkQueue.runLater(MoreFeaturesGeneration::generateFeatures);
     }
 
@@ -87,6 +90,7 @@ public class MoreFeatures {
 
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
+        //Register commands
         InformationCommand.register(event.getCommandDispatcher());
         HungerCommand.register(event.getCommandDispatcher());
     }
@@ -95,6 +99,7 @@ public class MoreFeatures {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> event) {
+            //Automatically registers BlockItems for Blocks
             final IForgeRegistry<Item> registry = event.getRegistry();
             MoreFeaturesRegistries.BLOCKS.getEntries()
                     .stream()

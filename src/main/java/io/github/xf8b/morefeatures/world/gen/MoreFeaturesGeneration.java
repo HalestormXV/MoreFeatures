@@ -19,27 +19,31 @@ public class MoreFeaturesGeneration {
     public static void generateFeatures() {
         for (Biome biome : ForgeRegistries.BIOMES) {
             if (MoreFeaturesConfig.isFeatureGenerationEnabled) {
-                ConfiguredPlacement sapphireOreConfig = Placement.COUNT_RANGE
-                        .configure(new CountRangeConfig(1, 0, 0, 12));
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
-                        .withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreFeaturesRegistries.SAPPHIRE_ORE.get().getDefaultState(), 4))
-                        .withPlacement(sapphireOreConfig));
-                ConfiguredPlacement asbestosConfig = Placement.COUNT_RANGE
-                        .configure(new CountRangeConfig(4, 0, 0, 40));
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
-                        .withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreFeaturesRegistries.ASBESTOS.get().getDefaultState(), 6))
-                        .withPlacement(asbestosConfig));
-                if (biome == Biomes.PLAINS) {
-                    ConfiguredPlacement lemonTreeConfig = Placement.COUNT_EXTRA_HEIGHTMAP.
-                            configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1));
-                    biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.NORMAL_TREE
-                            .withConfiguration(LemonTree.LEMON_TREE_CONFIG)
-                            .withPlacement(lemonTreeConfig));
-                    ConfiguredPlacement orangeTreeConfig = Placement.COUNT_EXTRA_HEIGHTMAP.
-                            configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1));
-                    biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.NORMAL_TREE
-                            .withConfiguration(OrangeTree.ORANGE_TREE_CONFIG)
-                            .withPlacement(orangeTreeConfig));
+                if (MoreFeaturesConfig.isOreGenerationEnabled) {
+                    ConfiguredPlacement sapphireOreConfig = Placement.COUNT_RANGE
+                            .configure(new CountRangeConfig(1, 0, 0, 12));
+                    biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
+                            .withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreFeaturesRegistries.SAPPHIRE_ORE.get().getDefaultState(), 4))
+                            .withPlacement(sapphireOreConfig));
+                    ConfiguredPlacement asbestosConfig = Placement.COUNT_RANGE
+                            .configure(new CountRangeConfig(4, 0, 0, 40));
+                    biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE
+                            .withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MoreFeaturesRegistries.ASBESTOS.get().getDefaultState(), 6))
+                            .withPlacement(asbestosConfig));
+                }
+                if (MoreFeaturesConfig.isTreeGenerationEnabled) {
+                    if (biome == Biomes.PLAINS) {
+                        ConfiguredPlacement lemonTreeConfig = Placement.COUNT_EXTRA_HEIGHTMAP.
+                                configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1));
+                        biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.NORMAL_TREE
+                                .withConfiguration(LemonTree.LEMON_TREE_CONFIG)
+                                .withPlacement(lemonTreeConfig));
+                        ConfiguredPlacement orangeTreeConfig = Placement.COUNT_EXTRA_HEIGHTMAP.
+                                configure(new AtSurfaceWithExtraConfig(0, 0.05F, 1));
+                        biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.NORMAL_TREE
+                                .withConfiguration(OrangeTree.ORANGE_TREE_CONFIG)
+                                .withPlacement(orangeTreeConfig));
+                    }
                 }
             }
         }

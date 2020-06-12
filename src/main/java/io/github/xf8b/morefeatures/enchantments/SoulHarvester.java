@@ -26,8 +26,7 @@ import java.util.Map;
 public class SoulHarvester extends Enchantment {
     public SoulHarvester() {
         super(Rarity.VERY_RARE, EnchantmentType.WEAPON, new EquipmentSlotType[] {
-                EquipmentSlotType.MAINHAND,
-                EquipmentSlotType.OFFHAND
+                EquipmentSlotType.MAINHAND
         });
     }
 

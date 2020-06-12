@@ -7,18 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added:
 - Added death messages for when a player died while being attacked by another entity
+- Added config options for tree and ore generation
+- Added comments in main class
 
 ### Changed:
-- Changed hunger command error messages to be more useful
-- Changed "user not found" errors to (hopefully) only show if the command can't find the user.
+- Changed `/hunger`'s error messages to be more useful
+- Changed "user not found" errors to (hopefully) only show if the command can't find the user
 - Reformatted blockstates, tags, and smelting recipes
 - Made coal armor usable as fuel
+- Changed the saving grace enchantment to no longer have a null tag check (It isn't checking NBT anymore)
+- Changed the soul harvester enchantment to no longer have `EquipmentSlotType.OFFHAND` (It doesn't check the offhand)
+- Changed the main class's `@Mod` annotation to use `MOD_ID` in the main class
 
 ### Fixed:
 - Fixed sapling tags
+- Fixed asbestos not playing a breaking sound when broken
 
 ### Removed:
 - Removed mod item tags
+- Removed `isHoldingCtrl()` in KeyboardChecker
+- Removed `init()` in MoreFeaturesItemGroup
 
 ## [1.15.2-1.0.0-beta2] - 2020-6-6
 ### Added:
@@ -29,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added trees to world generation
 
 ### Changed
-- Changed hunger command syntax
+- Changed `/hunger`'s syntax
 - Made blocks that were supposed to be flammable, flammable.
 - Changed lemon and orange saplings to be compostable
 - (Hopefully) changed the soul harvester enchantment to be server compatible

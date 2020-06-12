@@ -45,9 +45,6 @@ public class SavingGrace extends Enchantment {
         Map<Enchantment, Integer> enchantmentsOnItemOnFeet = EnchantmentHelper.getEnchantments(itemOnFeet);
         Random random = new Random();
         int randomInt = random.nextInt(100);
-        if (itemOnFeet.getTag() == null) {
-            return;
-        }
         if (enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.SAVING_GRACE.get()) &&
                 randomInt > 100 - MoreFeaturesConfig.savingGraceActivationChance) {
             LivingEntity livingEntity = event.getEntityLiving();

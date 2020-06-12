@@ -35,5 +35,6 @@ public class Asbestos extends Block {
         if (itemOnHead.getItem() != MoreFeaturesRegistries.MASK.get() && !player.isCreative()) {
             player.addPotionEffect(new EffectInstance(MoreFeaturesRegistries.ASBESTOSIS.get(), 2400, 0));
         }
+        worldIn.playEvent(player, 2001, pos, getStateId(state));
     }
 }
