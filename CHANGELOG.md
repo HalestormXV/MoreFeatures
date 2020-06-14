@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed:
+- Changed MCP mappings version
+- Changed CHANGELOG.md to have the correct comparison links
 
 ## [1.15.2-1.0.0-beta3]
 ### Added:
@@ -153,13 +156,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added sapphire
 - Added sapphire block
 
-[Unreleased]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta3...1.15.2-development
-[1.15.2-1.0.0-beta3]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta3...v1.15.2-1.0.0-beta2
-[1.15.2-1.0.0-beta2]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta2...v1.15.2-1.0.0-beta1
-[1.15.2-1.0.0-beta1]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta1...v1.15.2-1.0.0-alpha6
-[1.15.2-1.0.0-alpha6]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha6...v1.15.2-1.0.0-alpha5
-[1.15.2-1.0.0-alpha5]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha5...v1.15.2-1.0.0-alpha4
-[1.15.2-1.0.0-alpha4]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha4...v1.15.2-1.0.0-alpha3
-[1.15.2-1.0.0-alpha3]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha3...v1.15.2-1.0.0-alpha2
-[1.15.2-1.0.0-alpha2]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha2...v1.15.2-1.0.0-alpha1
+[Unreleased]: https://github.com/xf8b/MoreFeatures/compare/1.15.2-development...v1.15.2-1.0.0-beta3
+[1.15.2-1.0.0-beta3]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta2...v1.15.2-1.0.0-beta3
+[1.15.2-1.0.0-beta2]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta1...v1.15.2-1.0.0-beta2
+[1.15.2-1.0.0-beta1]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha6...v1.15.2-1.0.0-beta1
+[1.15.2-1.0.0-alpha6]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha5...v1.15.2-1.0.0-alpha6
+[1.15.2-1.0.0-alpha5]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha4...v1.15.2-1.0.0-alpha5
+[1.15.2-1.0.0-alpha4]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha3...v1.15.2-1.0.0-alpha4
+[1.15.2-1.0.0-alpha3]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha2...v1.15.2-1.0.0-alpha3
+[1.15.2-1.0.0-alpha2]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha1...v1.15.2-1.0.0-alpha2
 [1.15.2-1.0.0-alpha1]: https://github.com/xf8b/MoreFeatures/compare/192620cdc55ad2400d5ef5300c5c2b39a47276dd...v1.15.2-1.0.0-alpha1
