@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.15.2-1.0.0-beta3]
 ### Added:
 - Added death messages for when a player died while being attacked by another entity
 - Added config options for tree and ore generation
@@ -151,7 +153,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added sapphire
 - Added sapphire block
 
-[Unreleased]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta2...1.15.2-development
+[Unreleased]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta3...1.15.2-development
+[1.15.2-1.0.0-beta3]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta3...v1.15.2-1.0.0-beta2
 [1.15.2-1.0.0-beta2]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta2...v1.15.2-1.0.0-beta1
 [1.15.2-1.0.0-beta1]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta1...v1.15.2-1.0.0-alpha6
 [1.15.2-1.0.0-alpha6]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha6...v1.15.2-1.0.0-alpha5
