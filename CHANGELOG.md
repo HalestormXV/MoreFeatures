@@ -5,11 +5,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added:
+- Added items and blocks to forge tags
+
 ### Changed:
 - Changed MCP mappings version
 - Changed CHANGELOG.md to have the correct comparison links
+- Changed wheat and corn to be flammable
+- Changed commands to take in a player instead of a string and (again) made it (hopefully) server compatible
 
-## [1.15.2-1.0.0-beta3]
+## [1.15.2-1.0.0-beta3] - 2020-6-13
 ### Added:
 - Added death messages for when a player died while being attacked by another entity
 - Added config options for tree and ore generation
@@ -156,7 +161,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added sapphire
 - Added sapphire block
 
-[Unreleased]: https://github.com/xf8b/MoreFeatures/compare/1.15.2-development...v1.15.2-1.0.0-beta3
+[Unreleased]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta3...1.15.2-development
 [1.15.2-1.0.0-beta3]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta2...v1.15.2-1.0.0-beta3
 [1.15.2-1.0.0-beta2]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta1...v1.15.2-1.0.0-beta2
 [1.15.2-1.0.0-beta1]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-alpha6...v1.15.2-1.0.0-beta1

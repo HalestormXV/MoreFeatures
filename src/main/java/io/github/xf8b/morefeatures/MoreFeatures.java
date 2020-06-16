@@ -74,6 +74,8 @@ public class MoreFeatures {
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_LOG.get(), 5, 5);
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_LEAVES.get(), 30, 60);
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_LEAVES.get(), 30, 60);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.CORN_CROP.get(), 40, 60);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.WHEAT, 70, 90);
         });
         //Generate features in the world
         DeferredWorkQueue.runLater(MoreFeaturesGeneration::generateFeatures);
