@@ -27,6 +27,7 @@ public class ClientConfig {
     public final ForgeConfigSpec.DoubleValue corruptedToolAttackSpeedMax;
 
     public ClientConfig(ForgeConfigSpec.Builder builder) {
+        builder.comment("The config file for MoreFeatures. Edit values below to change how certain things work");
         builder.push("Generation Settings");
         isFeatureGenerationEnabled = builder
                 .comment("Turns feature generation on or off")

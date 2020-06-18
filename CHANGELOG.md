@@ -7,12 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added:
 - Added items and blocks to forge tags
+- Added a line to the top of the config file stating what it does
 
 ### Changed:
 - Changed MCP mappings version
 - Changed CHANGELOG.md to have the correct comparison links
 - Changed wheat and corn to be flammable
 - Changed commands to take in a player instead of a string and (again) made it (hopefully) server compatible
+- Changed `isReady()` in asbestosis to return true if count is greater than 30
+- Changed the fire retardant enchantment to check for when a player is damaged instead of every tick
+- Changed some textures to have some noise
 
 ## [1.15.2-1.0.0-beta3] - 2020-6-13
 ### Added:

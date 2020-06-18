@@ -22,7 +22,7 @@ public class Asbestosis extends Effect {
 
     @Override
     public boolean isReady(int duration, int amplifier) {
-        return count == 20;
+        return count > 30;
     }
 
     @Override

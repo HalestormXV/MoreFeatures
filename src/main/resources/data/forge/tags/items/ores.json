@@ -1,7 +1,6 @@
-
 {
   "replace": false,
   "values": [
-    "morefeatures:sapphire_ore"
+    "#forge:ores/sapphire"
   ]
 }
