@@ -43,7 +43,7 @@ public class CorruptedPickaxe extends PickaxeItem {
             tooltip.add(new StringTextComponent("The attack damage and speed will be random."));
             tooltip.add(new StringTextComponent("Good luck, and pray to the RNG gods."));
         } else {
-            tooltip.add(new StringTextComponent("Hold " + "\u00A7e" + "SHIFT " + "\u00A77" + "to see info."));
+            tooltip.add(new StringTextComponent("Hold " + "\u00A7e" + "SHIFT " + "\u00A7r" + "to see info."));
         }
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }

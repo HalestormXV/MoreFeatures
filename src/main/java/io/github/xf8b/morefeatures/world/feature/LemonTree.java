@@ -7,6 +7,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
+import net.minecraftforge.common.IPlantable;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -19,7 +20,7 @@ public class LemonTree extends Tree {
             .baseHeight(4)
             .heightRandA(2)
             .foliageHeight(2)
-            .setSapling(MoreFeaturesRegistries.LEMON_SAPLING.get())
+            .setSapling((IPlantable) MoreFeaturesRegistries.LEMON_SAPLING.get())
             .build();
 
     @Nullable

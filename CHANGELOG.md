@@ -16,7 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed commands to take in a player instead of a string and (again) made it (hopefully) server compatible
 - Changed `isReady()` in asbestosis to return true if count is greater than 30
 - Changed the fire retardant enchantment to check for when a player is damaged instead of every tick
-- Changed some textures to have some noise
+- Changed the lemon texture to have some noise
+- Changed registries to pass in `Item` or `Block` instead of their class
+- Changed things like lapis armor, asbestosis and curse of harming to use `TickHandler`
+
+### Removed:
+- Removed removed command responses in the language file
 
 ## [1.15.2-1.0.0-beta3] - 2020-6-13
 ### Added:

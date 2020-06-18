@@ -3,6 +3,7 @@ package io.github.xf8b.morefeatures.effects;
 import io.github.xf8b.morefeatures.MoreFeatures;
 import io.github.xf8b.morefeatures.MoreFeaturesRegistries;
 import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
+import io.github.xf8b.morefeatures.util.handler.TickHandler;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
@@ -22,24 +23,14 @@ public class Asbestosis extends Effect {
 
     @Override
     public boolean isReady(int duration, int amplifier) {
-        return count > 30;
+        return TickHandler.clientTicksPassed % 30 == 0;
     }
 
     @Override
     public void performEffect(LivingEntity entityLivingBaseIn, int amplifier) {
-        if (count > 30) {
-            count = 0;
+        if (TickHandler.clientTicksPassed % 30 == 0) {
             DamageSource asbestosDisease = new DamageSource("morefeatures.asbestosis");
             entityLivingBaseIn.attackEntityFrom(asbestosDisease, (float) MoreFeaturesConfig.asbestosisDamageGiven);
-        }
-    }
-
-    public static int count = 0;
-
-    @SubscribeEvent
-    public static void tickCounter(TickEvent.ClientTickEvent event) {
-        if (event.phase == TickEvent.Phase.END) {
-            count++;
         }
     }
 
@@ -47,8 +38,7 @@ public class Asbestosis extends Effect {
     public static void onTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
             Map<Effect, EffectInstance> effects = event.player.getActivePotionMap();
-            if (effects.containsKey(MoreFeaturesRegistries.ASBESTOSIS.get()) && count > 30) {
-                count = 0;
+            if (effects.containsKey(MoreFeaturesRegistries.ASBESTOSIS.get()) && TickHandler.clientTicksPassed % 30 == 0) {
                 DamageSource asbestosDisease = new DamageSource("morefeatures.asbestosis");
                 event.player.attackEntityFrom(asbestosDisease, (float) MoreFeaturesConfig.asbestosisDamageGiven);
             }

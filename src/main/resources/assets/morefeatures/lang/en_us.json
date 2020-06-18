@@ -76,10 +76,8 @@
 
   "effect.morefeatures.asbestosis": "Asbestosis",
 
-  "command.morefeatures.information.invalid_player": "The specified player doesn't exist. (Note: This command is case sensitive)",
   "command.morefeatures.hunger.invalid_type": "The action (get or set) is invalid.",
   "command.morefeatures.hunger.invalid_typeToBeSet": "The type to be set (saturation or food) is invalid.",
-  "command.morefeatures.hunger.invalid_username": "The specified player doesn't exist. (Note: The username is case sensitive)",
 
   "death.attack.morefeatures.engulfedInFireWhileWearingCoal": "%1$s was engulfed in flames while wearing coal",
   "death.attack.morefeatures.engulfedInFireWhileWearingCoal.player": "%1$s was engulfed in flames in coal armor while being attacked by %2$s",

@@ -3,6 +3,7 @@ package io.github.xf8b.morefeatures.enchantments;
 import io.github.xf8b.morefeatures.MoreFeatures;
 import io.github.xf8b.morefeatures.MoreFeaturesRegistries;
 import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
+import io.github.xf8b.morefeatures.util.handler.TickHandler;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentType;
@@ -66,7 +67,8 @@ public class HarmingCurse extends Enchantment {
             if (enchantmentsOnItemOnHead.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) ||
                     enchantmentsOnItemOnChest.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) ||
                     enchantmentsOnItemOnLegs.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) ||
-                    enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get())) {
+                    enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) &&
+                            TickHandler.clientTicksPassed % 20 == 0) {
                 DamageSource killedByArmor = new DamageSource(MoreFeatures.MOD_ID + ".killedByArmor");
                 event.player.attackEntityFrom(killedByArmor, (float) MoreFeaturesConfig.harmingCurseDamageGiven);
             }
