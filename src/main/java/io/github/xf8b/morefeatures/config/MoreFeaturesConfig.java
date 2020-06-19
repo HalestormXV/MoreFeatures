@@ -9,13 +9,13 @@ import org.apache.commons.lang3.tuple.Pair;
 
 @Mod.EventBusSubscriber(modid = MoreFeatures.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MoreFeaturesConfig {
-    public static final ClientConfig CLIENT;
-    public static final ForgeConfigSpec CLIENT_SPEC;
+    public static final ServerConfig SERVER;
+    public static final ForgeConfigSpec SERVER_SPEC;
 
     static {
-        final Pair<ClientConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(ClientConfig::new);
-        CLIENT_SPEC = specPair.getRight();
-        CLIENT = specPair.getLeft();
+        final Pair<ServerConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(ServerConfig::new);
+        SERVER_SPEC = specPair.getRight();
+        SERVER = specPair.getLeft();
     }
 
     //Generation Settings
@@ -24,7 +24,7 @@ public class MoreFeaturesConfig {
     public static boolean isTreeGenerationEnabled;
 
     //Enchantment Settings
-    public static int savingGraceActivationChance;
+    public static int savingGraceChanceIncrease;
     public static int soulsRequiredForSharpnessLevelUp;
     //Curses
     public static int slownessCurseSlownessLevel;
@@ -42,22 +42,22 @@ public class MoreFeaturesConfig {
 
     @SubscribeEvent
     public static void onModConfigEvent(final ModConfig.ModConfigEvent configEvent) {
-        if (configEvent.getConfig().getSpec() == MoreFeaturesConfig.CLIENT_SPEC) {
+        if (configEvent.getConfig().getSpec() == MoreFeaturesConfig.SERVER_SPEC) {
             bakeConfig();
         }
     }
 
     public static void bakeConfig() {
-        isFeatureGenerationEnabled = CLIENT.isFeatureGenerationEnabled.get();
-        isOreGenerationEnabled = CLIENT.isOreGenerationEnabled.get();
-        isTreeGenerationEnabled = CLIENT.isTreeGenerationEnabled.get();
-        savingGraceActivationChance = CLIENT.savingGraceActivationChance.get();
-        soulsRequiredForSharpnessLevelUp = CLIENT.soulsRequiredForSharpnessLevelUp.get();
-        slownessCurseSlownessLevel = CLIENT.slownessCurseSlownessLevel.get();
-        harmingCurseDamageGiven = CLIENT.harmingCurseDamageGiven.get();
-        asbestosisDamageGiven = CLIENT.asbestosisDamageGiven.get();
-        lapisArmorExperienceGiven = CLIENT.lapisArmorExperienceGiven.get();
-        corruptedToolAttackDamageMax = CLIENT.corruptedToolAttackDamageMax.get();
-        corruptedToolAttackSpeedMax = CLIENT.corruptedToolAttackSpeedMax.get();
+        isFeatureGenerationEnabled = SERVER.isFeatureGenerationEnabled.get();
+        isOreGenerationEnabled = SERVER.isOreGenerationEnabled.get();
+        isTreeGenerationEnabled = SERVER.isTreeGenerationEnabled.get();
+        savingGraceChanceIncrease = SERVER.savingGraceChanceIncrease.get();
+        soulsRequiredForSharpnessLevelUp = SERVER.soulsRequiredForSharpnessLevelUp.get();
+        slownessCurseSlownessLevel = SERVER.slownessCurseSlownessLevel.get();
+        harmingCurseDamageGiven = SERVER.harmingCurseDamageGiven.get();
+        asbestosisDamageGiven = SERVER.asbestosisDamageGiven.get();
+        lapisArmorExperienceGiven = SERVER.lapisArmorExperienceGiven.get();
+        corruptedToolAttackDamageMax = SERVER.corruptedToolAttackDamageMax.get();
+        corruptedToolAttackSpeedMax = SERVER.corruptedToolAttackSpeedMax.get();
     }
 }

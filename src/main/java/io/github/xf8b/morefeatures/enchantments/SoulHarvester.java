@@ -14,6 +14,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -72,6 +74,7 @@ public class SoulHarvester extends Enchantment {
         }
     }
 
+    @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
         ItemStack itemStack = event.getItemStack();

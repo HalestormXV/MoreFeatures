@@ -3,14 +3,14 @@ package io.github.xf8b.morefeatures.config;
 import io.github.xf8b.morefeatures.MoreFeatures;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-public class ClientConfig {
+public class ServerConfig {
     //Generation Settings
     public final ForgeConfigSpec.BooleanValue isFeatureGenerationEnabled;
     public final ForgeConfigSpec.BooleanValue isOreGenerationEnabled;
     public final ForgeConfigSpec.BooleanValue isTreeGenerationEnabled;
 
     //Enchantment Settings
-    public final ForgeConfigSpec.IntValue savingGraceActivationChance;
+    public final ForgeConfigSpec.IntValue savingGraceChanceIncrease;
     public final ForgeConfigSpec.IntValue soulsRequiredForSharpnessLevelUp;
     //Curses
     public final ForgeConfigSpec.IntValue slownessCurseSlownessLevel;
@@ -26,7 +26,7 @@ public class ClientConfig {
     public final ForgeConfigSpec.IntValue corruptedToolAttackDamageMax;
     public final ForgeConfigSpec.DoubleValue corruptedToolAttackSpeedMax;
 
-    public ClientConfig(ForgeConfigSpec.Builder builder) {
+    public ServerConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("The config file for MoreFeatures. Edit values below to change how certain things work");
         builder.push("Generation Settings");
         isFeatureGenerationEnabled = builder
@@ -44,10 +44,10 @@ public class ClientConfig {
         builder.pop();
 
         builder.push("Enchantment Settings");
-        savingGraceActivationChance = builder
-                .comment("The chance of Saving Grace activating")
-                .translation(MoreFeatures.MOD_ID + ".config." + "savingGraceActivationChance")
-                .defineInRange("savingGraceActivationChance", 30, 0, 100);
+        savingGraceChanceIncrease = builder
+                .comment("The amount of increase in chance every level (e.g 20% for level 1, 40% for level 2)")
+                .translation(MoreFeatures.MOD_ID + ".config." + "savingGraceChanceIncrease")
+                .defineInRange("savingGraceChanceIncrease", 20, 0, 33);
         soulsRequiredForSharpnessLevelUp = builder
                 .comment("The amount of souls required to increase the Sharpness level")
                 .translation(MoreFeatures.MOD_ID + ".config." + "soulsRequiredForSharpnessLevelUp")
@@ -75,17 +75,17 @@ public class ClientConfig {
         lapisArmorExperienceGiven = builder
                 .comment("The amount of experience given every 2 minutes if Lapis Armor is worn")
                 .translation(MoreFeatures.MOD_ID + ".config." + "lapisArmorExperienceGiven")
-                .defineInRange("lapisArmorExperienceGiven", 5, 0, 2147483647);
+                .defineInRange("lapisArmorExperienceGiven", 1, 0, Integer.MAX_VALUE);
         builder.pop();
 
         builder.push("Tool Settings");
         corruptedToolAttackDamageMax = builder
                 .comment("The maximum attack damage for Corrupted Tools")
                 .translation(MoreFeatures.MOD_ID + ".config." + "corruptedToolAttackDamageMax")
-                .defineInRange("corruptedToolAttackDamageMax", 10, 0, 2147483647);
+                .defineInRange("corruptedToolAttackDamageMax", 10, 0, Integer.MAX_VALUE);
         corruptedToolAttackSpeedMax = builder
                 .comment("The maximum attack speed for Corrupted Tools")
                 .translation(MoreFeatures.MOD_ID + ".config." + "corruptedToolAttackSpeedMax")
-                .defineInRange("corruptedToolAttackSpeedMax", 3d, 0d, 2147483647d);
+                .defineInRange("corruptedToolAttackSpeedMax", 3d, 0d, Integer.MAX_VALUE);
     }
 }

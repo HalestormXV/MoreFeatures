@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+### Added:
+- Added some side checks (hopefully in the correct places)
+
+### Changed:
+- Changed config to be for server, not client
+- Changed saving grace to have 3 levels, each with a higher chance of survival
+- Changed the amount of XP given for lapis armor
+
 ## [1.15.2-1.0.0] - 2020-6-18
 ### Added:
 - Added items and blocks to forge tags

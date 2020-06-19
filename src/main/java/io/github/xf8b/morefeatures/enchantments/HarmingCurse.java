@@ -50,27 +50,29 @@ public class HarmingCurse extends Enchantment {
     @SubscribeEvent
     public static void onTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
-            if (event.player.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty() &&
-                    event.player.getItemStackFromSlot(EquipmentSlotType.CHEST).isEmpty() &&
-                    event.player.getItemStackFromSlot(EquipmentSlotType.LEGS).isEmpty() &&
-                    event.player.getItemStackFromSlot(EquipmentSlotType.FEET).isEmpty()) {
-                return;
-            }
-            ItemStack itemOnHead = event.player.getItemStackFromSlot(EquipmentSlotType.HEAD);
-            ItemStack itemOnChest = event.player.getItemStackFromSlot(EquipmentSlotType.CHEST);
-            ItemStack itemOnLegs = event.player.getItemStackFromSlot(EquipmentSlotType.LEGS);
-            ItemStack itemOnFeet = event.player.getItemStackFromSlot(EquipmentSlotType.FEET);
-            Map<Enchantment, Integer> enchantmentsOnItemOnHead = EnchantmentHelper.getEnchantments(itemOnHead);
-            Map<Enchantment, Integer> enchantmentsOnItemOnChest = EnchantmentHelper.getEnchantments(itemOnChest);
-            Map<Enchantment, Integer> enchantmentsOnItemOnLegs = EnchantmentHelper.getEnchantments(itemOnLegs);
-            Map<Enchantment, Integer> enchantmentsOnItemOnFeet = EnchantmentHelper.getEnchantments(itemOnFeet);
-            if (enchantmentsOnItemOnHead.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) ||
-                    enchantmentsOnItemOnChest.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) ||
-                    enchantmentsOnItemOnLegs.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) ||
-                    enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) &&
-                            TickHandler.clientTicksPassed % 20 == 0) {
-                DamageSource killedByArmor = new DamageSource(MoreFeatures.MOD_ID + ".killedByArmor");
-                event.player.attackEntityFrom(killedByArmor, (float) MoreFeaturesConfig.harmingCurseDamageGiven);
+            if (!event.player.getEntityWorld().isRemote) {
+                if (event.player.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty() &&
+                        event.player.getItemStackFromSlot(EquipmentSlotType.CHEST).isEmpty() &&
+                        event.player.getItemStackFromSlot(EquipmentSlotType.LEGS).isEmpty() &&
+                        event.player.getItemStackFromSlot(EquipmentSlotType.FEET).isEmpty()) {
+                    return;
+                }
+                ItemStack itemOnHead = event.player.getItemStackFromSlot(EquipmentSlotType.HEAD);
+                ItemStack itemOnChest = event.player.getItemStackFromSlot(EquipmentSlotType.CHEST);
+                ItemStack itemOnLegs = event.player.getItemStackFromSlot(EquipmentSlotType.LEGS);
+                ItemStack itemOnFeet = event.player.getItemStackFromSlot(EquipmentSlotType.FEET);
+                Map<Enchantment, Integer> enchantmentsOnItemOnHead = EnchantmentHelper.getEnchantments(itemOnHead);
+                Map<Enchantment, Integer> enchantmentsOnItemOnChest = EnchantmentHelper.getEnchantments(itemOnChest);
+                Map<Enchantment, Integer> enchantmentsOnItemOnLegs = EnchantmentHelper.getEnchantments(itemOnLegs);
+                Map<Enchantment, Integer> enchantmentsOnItemOnFeet = EnchantmentHelper.getEnchantments(itemOnFeet);
+                if (enchantmentsOnItemOnHead.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) ||
+                        enchantmentsOnItemOnChest.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) ||
+                        enchantmentsOnItemOnLegs.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) ||
+                        enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) &&
+                                TickHandler.serverTicksPassed % 20 == 0) {
+                    DamageSource killedByArmor = new DamageSource(MoreFeatures.MOD_ID + ".killedByArmor");
+                    event.player.attackEntityFrom(killedByArmor, (float) MoreFeaturesConfig.harmingCurseDamageGiven);
+                }
             }
         }
     }

@@ -51,7 +51,7 @@ public class MoreFeatures {
         MoreFeaturesRegistries.EFFECTS.register(modEventBus);
 
         //Register config
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, MoreFeaturesConfig.CLIENT_SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, MoreFeaturesConfig.SERVER_SPEC);
     }
 
     private void setup(final FMLCommonSetupEvent event) {

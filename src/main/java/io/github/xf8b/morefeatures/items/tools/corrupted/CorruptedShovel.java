@@ -16,6 +16,8 @@ import net.minecraft.item.ShovelItem;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -35,7 +37,7 @@ public class CorruptedShovel extends ShovelItem {
         );
     }
 
-
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (KeyboardChecker.isHoldingShift()) {

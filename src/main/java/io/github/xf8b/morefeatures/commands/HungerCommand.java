@@ -8,9 +8,13 @@ import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.command.arguments.EntityArgument;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.util.FoodStats;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
+
+import java.lang.reflect.Field;
 
 public class HungerCommand {
     public static void register(CommandDispatcher<CommandSource> dispatcher) {
@@ -23,11 +27,18 @@ public class HungerCommand {
                                         EntityArgument.getPlayer(context, "player")))
                                 .then(Commands.argument("typeToBeSet", StringArgumentType.string())
                                         .then(Commands.argument("amount", IntegerArgumentType.integer())
-                                                .executes(context -> changeHunger(context.getSource(),
-                                                        StringArgumentType.getString(context, "type"),
-                                                        EntityArgument.getPlayer(context, "player"),
-                                                        StringArgumentType.getString(context, "typeToBeSet"),
-                                                        IntegerArgumentType.getInteger(context, "amount")))))))
+                                                .executes(context -> {
+                                                    try {
+                                                        return changeHunger(context.getSource(),
+                                                                StringArgumentType.getString(context, "type"),
+                                                                EntityArgument.getPlayer(context, "player"),
+                                                                StringArgumentType.getString(context, "typeToBeSet"),
+                                                                IntegerArgumentType.getInteger(context, "amount"));
+                                                    } catch (IllegalAccessException e) {
+                                                        e.printStackTrace();
+                                                        return 0;
+                                                    }
+                                                })))))
         );
     }
 
@@ -45,7 +56,7 @@ public class HungerCommand {
         return 1;
     }
 
-    public static int changeHunger(CommandSource source, String type, ServerPlayerEntity playerEntity, String typeToSet, int amount) {
+    public static int changeHunger(CommandSource source, String type, ServerPlayerEntity playerEntity, String typeToSet, int amount) throws IllegalAccessException {
         World world = source.getWorld();
         if (!world.getPlayers().isEmpty()) {
             if (type.equals("set")) {
@@ -56,7 +67,8 @@ public class HungerCommand {
                     source.sendFeedback(new StringTextComponent("Old Food Level: " + oldFoodLevel + ", New Food Level: " + newFoodLevel), true);
                 } else if (typeToSet.equals("saturation")) {
                     float oldSaturationLevel = playerEntity.getFoodStats().getSaturationLevel();
-                    playerEntity.getFoodStats().setFoodSaturationLevel(amount);
+                    Field saturationLevel = ObfuscationReflectionHelper.findField(FoodStats.class, "field_75125_b");
+                    saturationLevel.set(playerEntity.getFoodStats(), amount);
                     float newSaturationLevel = playerEntity.getFoodStats().getSaturationLevel();
                     source.sendFeedback(new StringTextComponent("Old Saturation Level: " + oldSaturationLevel + ", New Saturation Level: " + newSaturationLevel), true);
                 } else {

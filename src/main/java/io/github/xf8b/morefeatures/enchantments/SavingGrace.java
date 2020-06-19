@@ -33,7 +33,7 @@ public class SavingGrace extends Enchantment {
 
     @Override
     public int getMaxLevel() {
-        return 1;
+        return 3;
     }
 
     @SubscribeEvent
@@ -45,14 +45,15 @@ public class SavingGrace extends Enchantment {
         Map<Enchantment, Integer> enchantmentsOnItemOnFeet = EnchantmentHelper.getEnchantments(itemOnFeet);
         Random random = new Random();
         int randomInt = random.nextInt(100);
-        if (enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.SAVING_GRACE.get()) &&
-                randomInt > 100 - MoreFeaturesConfig.savingGraceActivationChance) {
-            LivingEntity livingEntity = event.getEntityLiving();
-            livingEntity.setHealth(1.0F);
-            livingEntity.clearActivePotions();
-            livingEntity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 900, 1));
-            livingEntity.addPotionEffect(new EffectInstance(Effects.ABSORPTION, 100, 1));
-            event.setCanceled(true);
+        if (enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.SAVING_GRACE.get())) {
+            if (randomInt > 100 - (MoreFeaturesConfig.savingGraceChanceIncrease * enchantmentsOnItemOnFeet.get(MoreFeaturesRegistries.SAVING_GRACE.get()))) {
+                LivingEntity livingEntity = event.getEntityLiving();
+                livingEntity.setHealth(1.0F);
+                livingEntity.clearActivePotions();
+                livingEntity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 900, 1));
+                livingEntity.addPotionEffect(new EffectInstance(Effects.ABSORPTION, 100, 1));
+                event.setCanceled(true);
+            }
         }
     }
 }
