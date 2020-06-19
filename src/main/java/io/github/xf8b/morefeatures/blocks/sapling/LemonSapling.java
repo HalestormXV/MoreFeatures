@@ -32,7 +32,6 @@ public class LemonSapling extends BushBlock implements IGrowable {
         return SHAPE;
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
         super.tick(state, worldIn, pos, rand);

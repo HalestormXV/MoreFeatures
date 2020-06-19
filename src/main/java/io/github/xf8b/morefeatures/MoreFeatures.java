@@ -103,8 +103,7 @@ public class MoreFeatures {
         public static void onItemRegistry(final RegistryEvent.Register<Item> event) {
             //Automatically registers BlockItems for Blocks
             final IForgeRegistry<Item> registry = event.getRegistry();
-            MoreFeaturesRegistries.BLOCKS.getEntries()
-                    .stream()
+            MoreFeaturesRegistries.BLOCKS.getEntries().stream()
                     .filter(block -> !(block.get() instanceof CornCrop))
                     .map(RegistryObject::get).forEach(block -> {
                 final Item.Properties properties = new Item.Properties().group(MoreFeatures.instance.itemGroup);
