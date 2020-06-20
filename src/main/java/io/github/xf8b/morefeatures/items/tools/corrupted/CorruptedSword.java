@@ -70,11 +70,11 @@ public class CorruptedSword extends SwordItem {
         return multimap;
     }
 
-    public static int getRandomAttackDamage() {
+    private static int getRandomAttackDamage() {
         return ThreadLocalRandom.current().nextInt(0, MoreFeaturesConfig.corruptedToolAttackDamageMax + 1);
     }
 
-    public static float getRandomAttackSpeed() {
+    private static float getRandomAttackSpeed() {
         return (float) ThreadLocalRandom.current().nextDouble(0, MoreFeaturesConfig.corruptedToolAttackSpeedMax + 1);
     }
 }

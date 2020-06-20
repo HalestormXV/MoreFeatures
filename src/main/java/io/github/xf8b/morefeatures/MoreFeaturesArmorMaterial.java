@@ -13,6 +13,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.function.Supplier;
 
 public enum MoreFeaturesArmorMaterial implements IArmorMaterial {
+    CORRUPTED(MoreFeatures.MOD_ID + ":corrupted", 10, new int[] {0, 0, 0, 0}, 0, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f, () -> {
+        return Ingredient.fromItems(MoreFeaturesRegistries.CORRUPTED_ITEM.get());
+    }),
     MASK(MoreFeatures.MOD_ID + ":mask", 2, new int[] {1, 1, 2, 1}, 5, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0f, () -> {
         return Ingredient.fromItems(Items.WHITE_WOOL);
     }),

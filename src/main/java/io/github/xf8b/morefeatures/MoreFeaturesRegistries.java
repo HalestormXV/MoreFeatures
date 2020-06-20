@@ -19,6 +19,10 @@ import io.github.xf8b.morefeatures.items.armor.coal.CoalBoots;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalChestplate;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalHelmet;
 import io.github.xf8b.morefeatures.items.armor.coal.CoalLeggings;
+import io.github.xf8b.morefeatures.items.armor.corrupted.CorruptedBoots;
+import io.github.xf8b.morefeatures.items.armor.corrupted.CorruptedChestplate;
+import io.github.xf8b.morefeatures.items.armor.corrupted.CorruptedHelmet;
+import io.github.xf8b.morefeatures.items.armor.corrupted.CorruptedLeggings;
 import io.github.xf8b.morefeatures.items.armor.emerald.EmeraldBoots;
 import io.github.xf8b.morefeatures.items.armor.emerald.EmeraldChestplate;
 import io.github.xf8b.morefeatures.items.armor.emerald.EmeraldHelmet;
@@ -84,6 +88,11 @@ public class MoreFeaturesRegistries {
     public static final RegistryObject<Item> CORRUPTED_HOE = ITEMS.register("corrupted_hoe", () -> new CorruptedHoe());
 
     //Armor
+    //Corrupted
+    public static final RegistryObject<Item> CORRUPTED_HELMET = ITEMS.register("corrupted_helmet", () -> new CorruptedHelmet());
+    public static final RegistryObject<Item> CORRUPTED_CHESTPLATE = ITEMS.register("corrupted_chestplate", () -> new CorruptedChestplate());
+    public static final RegistryObject<Item> CORRUPTED_LEGGINGS = ITEMS.register("corrupted_leggings", () -> new CorruptedLeggings());
+    public static final RegistryObject<Item> CORRUPTED_BOOTS = ITEMS.register("corrupted_boots", () -> new CorruptedBoots());
     //Mask
     public static final RegistryObject<Item> MASK = ITEMS.register("mask", () -> new Mask());
     //Coal

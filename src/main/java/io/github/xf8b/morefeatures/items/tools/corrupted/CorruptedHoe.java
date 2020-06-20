@@ -61,7 +61,7 @@ public class CorruptedHoe extends HoeItem {
         return multimap;
     }
 
-    public static float getRandomAttackSpeed() {
+    private static float getRandomAttackSpeed() {
         return (float) ThreadLocalRandom.current().nextDouble(0, MoreFeaturesConfig.corruptedToolAttackSpeedMax + 1);
     }
 }

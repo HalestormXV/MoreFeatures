@@ -22,7 +22,7 @@ public class CoalBoots extends ArmorItem {
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
         DamageSource engulfedInFireWhileWearingCoal = new DamageSource("morefeatures.engulfedInFireWhileWearingCoal").setDamageBypassesArmor();
         if (player.isBurning() && !player.isCreative()) {
-            player.attackEntityFrom(engulfedInFireWhileWearingCoal, 20f);
+            player.attackEntityFrom(engulfedInFireWhileWearingCoal, player.getHealth() * 10);
         }
     }
 

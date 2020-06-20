@@ -21,6 +21,8 @@ public class ServerConfig {
 
     //Armor Settings
     public final ForgeConfigSpec.IntValue lapisArmorExperienceGiven;
+    public final ForgeConfigSpec.IntValue corruptedArmorProtectionMax;
+    public final ForgeConfigSpec.DoubleValue corruptedArmorToughnessMax;
 
     //Tool Settings
     public final ForgeConfigSpec.IntValue corruptedToolAttackDamageMax;
@@ -76,6 +78,14 @@ public class ServerConfig {
                 .comment("The amount of experience given every 2 minutes if Lapis Armor is worn")
                 .translation(MoreFeatures.MOD_ID + ".config." + "lapisArmorExperienceGiven")
                 .defineInRange("lapisArmorExperienceGiven", 1, 0, Integer.MAX_VALUE);
+        corruptedArmorProtectionMax = builder
+                .comment("The maximum protection for Corrupted Armor")
+                .translation(MoreFeatures.MOD_ID + ".config." + "corruptedArmorProtectionMax")
+                .defineInRange("corruptedArmorProtectionMax", 15, 0, Integer.MAX_VALUE);
+        corruptedArmorToughnessMax = builder
+                .comment("The maximum toughness for Corrupted Armor")
+                .translation(MoreFeatures.MOD_ID + ".config." + "corruptedArmorToughnessMax")
+                .defineInRange("corruptedArmorToughnessMax", 5d, 0d, Integer.MAX_VALUE);
         builder.pop();
 
         builder.push("Tool Settings");

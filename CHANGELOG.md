@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added:
 - Added some side checks (hopefully in the correct places)
+- Added corrupted armor
 
 ### Changed:
 - Changed config to be for server, not client
 - Changed saving grace to have 3 levels, each with a higher chance of survival
 - Changed the amount of XP given for lapis armor
+- Changed coal armor to harm players when they were burning quicker
 
 ## [1.15.2-1.0.0] - 2020-6-18
 ### Added:

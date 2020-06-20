@@ -35,6 +35,8 @@ public class MoreFeaturesConfig {
 
     //Armor Settings
     public static int lapisArmorExperienceGiven;
+    public static int corruptedArmorProtectionMax;
+    public static double corruptedArmorToughnessMax;
 
     //Tool Settings
     public static int corruptedToolAttackDamageMax;
@@ -48,15 +50,27 @@ public class MoreFeaturesConfig {
     }
 
     public static void bakeConfig() {
+        //Generation Settings
         isFeatureGenerationEnabled = SERVER.isFeatureGenerationEnabled.get();
         isOreGenerationEnabled = SERVER.isOreGenerationEnabled.get();
         isTreeGenerationEnabled = SERVER.isTreeGenerationEnabled.get();
+
+        //Enchantment Settings
         savingGraceChanceIncrease = SERVER.savingGraceChanceIncrease.get();
         soulsRequiredForSharpnessLevelUp = SERVER.soulsRequiredForSharpnessLevelUp.get();
+        //Curses
         slownessCurseSlownessLevel = SERVER.slownessCurseSlownessLevel.get();
         harmingCurseDamageGiven = SERVER.harmingCurseDamageGiven.get();
+
+        //Effect Settings
         asbestosisDamageGiven = SERVER.asbestosisDamageGiven.get();
+
+        //Armor Settings
         lapisArmorExperienceGiven = SERVER.lapisArmorExperienceGiven.get();
+        corruptedArmorProtectionMax = SERVER.corruptedArmorProtectionMax.get();
+        corruptedArmorToughnessMax = SERVER.corruptedArmorToughnessMax.get();
+
+        //Tool Settings
         corruptedToolAttackDamageMax = SERVER.corruptedToolAttackDamageMax.get();
         corruptedToolAttackSpeedMax = SERVER.corruptedToolAttackSpeedMax.get();
     }
