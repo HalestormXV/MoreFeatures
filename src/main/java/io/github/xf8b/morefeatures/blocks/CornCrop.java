@@ -24,7 +24,7 @@ public class CornCrop extends CropsBlock {
     };
 
     public CornCrop() {
-        super(Properties.from(Blocks.WHEAT));
+        super(Block.Properties.from(Blocks.WHEAT));
     }
 
     @Override

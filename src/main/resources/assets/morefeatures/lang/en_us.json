@@ -68,6 +68,26 @@
   "block.morefeatures.lemon_planks": "Lemon Planks",
   "block.morefeatures.orange_planks": "Orange Planks",
 
+  "block.morefeatures.lemon_slab": "Lemon Slab",
+  "block.morefeatures.orange_slab": "Orange Slab",
+
+  "block.morefeatures.lemon_stairs": "Lemon Stairs",
+  "block.morefeatures.orange_stairs": "Orange Stairs",
+
+  "block.morefeatures.lemon_fence": "Lemon Fence",
+  "block.morefeatures.orange_fence": "Orange Fence",
+  "block.morefeatures.lemon_fence_gate": "Lemon Fence Gate",
+  "block.morefeatures.orange_fence_gate": "Orange Fence Gate",
+
+  "block.morefeatures.lemon_button": "Lemon Button",
+  "block.morefeatures.orange_button": "Orange Button",
+
+  "block.morefeatures.lemon_pressure_plate": "Lemon Pressure Plate",
+  "block.morefeatures.orange_pressure_plate": "Orange Pressure Plate",
+
+  "block.morefeatures.lemon_door": "Lemon Door",
+  "block.morefeatures.orange_door": "Orange Door",
+
   "block.morefeatures.corn_crop": "Corn Seeds",
 
   "block.morefeatures.sapphire_ore": "Sapphire Ore",

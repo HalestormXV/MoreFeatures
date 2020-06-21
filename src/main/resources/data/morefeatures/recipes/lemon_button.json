@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "x"
+  ],
+  "key": {
+    "x": {
+      "item": "morefeatures:lemon_planks"
+    }
+  },
+  "result": {
+    "item": "morefeatures:lemon_button"
+  }
+}

@@ -14,9 +14,17 @@ public class ClientEventBusSubscriber {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
         //Set render types for blocks
+        //Saplings
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.LEMON_SAPLING.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.ORANGE_SAPLING.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.BLAST_PROOF_GLASS.get(), RenderType.getCutout());
+
+        //Crops
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.CORN_CROP.get(), RenderType.getCutout());
+
+        //Doors
+        RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.LEMON_DOOR.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.ORANGE_DOOR.get(), RenderType.getCutout());
+
+        RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.BLAST_PROOF_GLASS.get(), RenderType.getCutout());
     }
 }

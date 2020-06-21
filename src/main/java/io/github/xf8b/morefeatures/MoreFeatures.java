@@ -57,23 +57,81 @@ public class MoreFeatures {
     private void setup(final FMLCommonSetupEvent event) {
         //Register items to be compostable
         DeferredWorkQueue.runLater(() -> {
+            //Leaves
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.LEMON_LEAVES.get().asItem(), 0.3f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE_LEAVES.get().asItem(), 0.3f);
+
+            //Saplings
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.LEMON_SAPLING.get().asItem(), 0.3f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE_SAPLING.get().asItem(), 0.3f);
+
+            //Seeds
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.CORN_SEEDS.get().asItem(), 0.3f);
+
+            //Foods
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.LEMON.get().asItem(), 0.65f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.ORANGE.get().asItem(), 0.65f);
             ComposterBlock.CHANCES.put(MoreFeaturesRegistries.CORN.get().asItem(), 0.65f);
         });
         //Set flammable blocks to be flammable
         DeferredWorkQueue.runLater(() -> {
+            //Planks
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_PLANKS.get(), 5, 20);
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_PLANKS.get(), 5, 20);
+
+            //Slabs
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_SLAB.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_SLAB.get(), 5, 20);
+
+            //Logs
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_LOG.get(), 5, 5);
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_LOG.get(), 5, 5);
+
+            //Leaves
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_LEAVES.get(), 30, 60);
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_LEAVES.get(), 30, 60);
+
+            //Fences
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_FENCE.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_FENCE.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_FENCE_GATE.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_FENCE_GATE.get(), 5, 20);
+
+            //Stairs
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_STAIRS.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_STAIRS.get(), 5, 20);
+
+            //Buttons
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.OAK_BUTTON, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.SPRUCE_BUTTON, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.BIRCH_BUTTON, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.JUNGLE_BUTTON, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.ACACIA_BUTTON, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.DARK_OAK_BUTTON, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_BUTTON.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_BUTTON.get(), 5, 20);
+
+            //Pressure Plates
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.OAK_PRESSURE_PLATE, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.SPRUCE_PRESSURE_PLATE, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.BIRCH_PRESSURE_PLATE, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.JUNGLE_PRESSURE_PLATE, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.ACACIA_PRESSURE_PLATE, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.DARK_OAK_PRESSURE_PLATE, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_PRESSURE_PLATE.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_PRESSURE_PLATE.get(), 5, 20);
+
+            //Doors
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.OAK_DOOR, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.SPRUCE_DOOR, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.BIRCH_DOOR, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.JUNGLE_DOOR, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.ACACIA_DOOR, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.DARK_OAK_DOOR, 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_DOOR.get(), 5, 20);
+            ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_DOOR.get(), 5, 20);
+
+            //Crops
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.CORN_CROP.get(), 40, 60);
             ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.WHEAT, 70, 90);
         });

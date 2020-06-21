@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "morefeatures:block/lemon_slab"
+    },
+    "type=top": {
+      "model": "morefeatures:block/lemon_slab_top"
+    },
+    "type=double": {
+      "model": "morefeatures:block/lemon_planks"
+    }
+  }
+}

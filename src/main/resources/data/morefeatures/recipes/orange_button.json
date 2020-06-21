@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "x"
+  ],
+  "key": {
+    "x": {
+      "item": "morefeatures:orange_planks"
+    }
+  },
+  "result": {
+    "item": "morefeatures:orange_button"
+  }
+}
