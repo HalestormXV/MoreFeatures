@@ -13,13 +13,14 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class OrangeTree extends Tree {
-    public static final TreeFeatureConfig ORANGE_TREE_CONFIG = (new TreeFeatureConfig.Builder(
+    public static final TreeFeatureConfig ORANGE_TREE_CONFIG = new TreeFeatureConfig.Builder(
             new SimpleBlockStateProvider(MoreFeaturesRegistries.ORANGE_LOG.get().getDefaultState()),
             new SimpleBlockStateProvider(MoreFeaturesRegistries.ORANGE_LEAVES.get().getDefaultState()),
-            new BlobFoliagePlacer(2, 0)))
+            new BlobFoliagePlacer(2, 0))
             .baseHeight(4)
             .heightRandA(2)
-            .foliageHeight(2)
+            .foliageHeight(3)
+            .ignoreVines()
             .setSapling((IPlantable) MoreFeaturesRegistries.ORANGE_SAPLING.get())
             .build();
 

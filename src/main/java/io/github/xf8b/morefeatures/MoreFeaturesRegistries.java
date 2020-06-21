@@ -56,11 +56,14 @@ import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireLeggings;
 import io.github.xf8b.morefeatures.items.food.*;
 import io.github.xf8b.morefeatures.items.tools.corrupted.*;
 import io.github.xf8b.morefeatures.items.tools.sapphire.*;
+import io.github.xf8b.morefeatures.world.biome.LemonTreePlains;
+import io.github.xf8b.morefeatures.world.biome.OrangeTreePlains;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Effect;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -71,6 +74,7 @@ public class MoreFeaturesRegistries {
     public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, MoreFeatures.MOD_ID);
     public static final DeferredRegister<Enchantment> ENCHANTMENTS = new DeferredRegister<>(ForgeRegistries.ENCHANTMENTS, MoreFeatures.MOD_ID);
     public static final DeferredRegister<Effect> EFFECTS = new DeferredRegister<>(ForgeRegistries.POTIONS, MoreFeatures.MOD_ID);
+    public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, MoreFeatures.MOD_ID);
 
     //Registry Objects
     //Items
@@ -207,4 +211,8 @@ public class MoreFeaturesRegistries {
 
     //Effects
     public static final RegistryObject<Effect> ASBESTOSIS = EFFECTS.register("asbestosis", () -> new Asbestosis());
+
+    //Biomes
+    public static final RegistryObject<Biome> LEMON_TREE_PLAINS = BIOMES.register("lemon_tree_plains", () -> new LemonTreePlains());
+    public static final RegistryObject<Biome> ORANGE_TREE_PLAINS = BIOMES.register("orange_tree_plains", () -> new OrangeTreePlains());
 }

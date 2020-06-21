@@ -10,6 +10,9 @@ import net.minecraft.block.ComposterBlock;
 import net.minecraft.block.FireBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,10 +22,7 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -39,9 +39,6 @@ public class MoreFeatures {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         MinecraftForge.EVENT_BUS.register(this);
 
         //Register deferred registries
@@ -49,6 +46,7 @@ public class MoreFeatures {
         MoreFeaturesRegistries.ITEMS.register(modEventBus);
         MoreFeaturesRegistries.BLOCKS.register(modEventBus);
         MoreFeaturesRegistries.EFFECTS.register(modEventBus);
+        MoreFeaturesRegistries.BIOMES.register(modEventBus);
 
         //Register config
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, MoreFeaturesConfig.SERVER_SPEC);
@@ -131,21 +129,30 @@ public class MoreFeatures {
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.LEMON_DOOR.get(), 5, 20);
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.ORANGE_DOOR.get(), 5, 20);
 
+            //Beds
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.WHITE_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.ORANGE_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.MAGENTA_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.LIGHT_BLUE_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.YELLOW_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.LIME_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.PINK_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.GRAY_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.LIGHT_GRAY_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.CYAN_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.PURPLE_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.BLUE_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.BROWN_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.GREEN_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.RED_BED, 60, 80);
+            ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.BLACK_BED, 60, 80);
+
             //Crops
             ((FireBlock) Blocks.FIRE).setFireInfo(MoreFeaturesRegistries.CORN_CROP.get(), 40, 60);
             ((FireBlock) Blocks.FIRE).setFireInfo(Blocks.WHEAT, 70, 90);
         });
         //Generate features in the world
         DeferredWorkQueue.runLater(MoreFeaturesGeneration::generateFeatures);
-    }
-
-    private void doClientStuff(final FMLClientSetupEvent event) {
-    }
-
-    private void enqueueIMC(final InterModEnqueueEvent event) {
-    }
-
-    private void processIMC(final InterModProcessEvent event) {
     }
 
     @SubscribeEvent
@@ -169,6 +176,22 @@ public class MoreFeatures {
                 blockItem.setRegistryName(block.getRegistryName());
                 registry.register(blockItem);
             });
+        }
+
+        @SubscribeEvent
+        public static void onBiomeRegistry(final RegistryEvent.Register<Biome> event) {
+            registerBiomes();
+        }
+
+        public static void registerBiomes() {
+            registerBiome(MoreFeaturesRegistries.LEMON_TREE_PLAINS.get(), 5, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.OVERWORLD);
+            registerBiome(MoreFeaturesRegistries.ORANGE_TREE_PLAINS.get(), 5, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.OVERWORLD);
+        }
+
+        private static void registerBiome(Biome biome, int weight, BiomeDictionary.Type... types) {
+            BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(biome, weight));
+            BiomeDictionary.addTypes(biome, types);
+            BiomeManager.addSpawnBiome(biome);
         }
     }
 }

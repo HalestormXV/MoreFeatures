@@ -23,12 +23,8 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class CorruptedHoe extends HoeItem {
-    private static float randomAttackSpeed = (float) ThreadLocalRandom.current().nextDouble(
-            0, MoreFeaturesConfig.corruptedToolAttackSpeedMax + 1
-    );
-
     public CorruptedHoe() {
-        super(MoreFeaturesItemTier.CORRUPTED, randomAttackSpeed, new Item.Properties()
+        super(MoreFeaturesItemTier.CORRUPTED, 0, new Item.Properties()
                 .maxStackSize(1)
                 .group(MoreFeatures.instance.itemGroup)
         );

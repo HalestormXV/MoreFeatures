@@ -1,11 +1,12 @@
 package io.github.xf8b.morefeatures.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
+import io.github.xf8b.morefeatures.MoreFeatures;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.command.arguments.EntityArgument;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class InformationCommand {
@@ -26,7 +27,7 @@ public class InformationCommand {
             double playerPosX = playerEntity.getPosX();
             double playerPosY = playerEntity.getPosY();
             double playerPosZ = playerEntity.getPosZ();
-            source.sendFeedback(new StringTextComponent("Username: " + username + ", UUID: " + playerUUID + ", Coordinates: " + playerPosX + " " + playerPosY + " " + playerPosZ), true);
+            source.sendFeedback(new TranslationTextComponent("command." + MoreFeatures.MOD_ID + ".information.success", username, playerUUID, playerPosX, playerPosY, playerPosZ), true);
         }
         return 1;
     }

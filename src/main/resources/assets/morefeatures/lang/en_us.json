@@ -101,8 +101,15 @@
 
   "effect.morefeatures.asbestosis": "Asbestosis",
 
-  "command.morefeatures.hunger.invalid_type": "The action (get or set) is invalid.",
-  "command.morefeatures.hunger.invalid_typeToBeSet": "The type to be set (saturation or food) is invalid.",
+  "biome.morefeatures.lemon_tree_plains": "Lemon Tree Plains",
+  "biome.morefeatures.orange_tree_plains": "Orange Tree Plains",
+
+  "command.morefeatures.information.success": "Username: %s, UUID: %s, Coordinates: %s %s %s",
+  "command.morefeatures.hunger.invalid_action": "The action %s does not exist.",
+  "command.morefeatures.hunger.invalid_stat": "The stat %s does not exist.",
+  "command.morefeatures.hunger.query_success": "Food Level: %s, Saturation Level: %s",
+  "command.morefeatures.hunger.set_food_success": "Old Food Level: %s, New Food Level: %s",
+  "command.morefeatures.hunger.set_saturation_success": "Old Saturation Level: %s, New Saturation Level: %s",
 
   "death.attack.morefeatures.engulfedInFireWhileWearingCoal": "%1$s was engulfed in flames while wearing coal",
   "death.attack.morefeatures.engulfedInFireWhileWearingCoal.player": "%1$s was engulfed in flames in coal armor while being attacked by %2$s",

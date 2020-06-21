@@ -8,12 +8,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added:
 - Added some side checks (hopefully in the correct places)
 - Added corrupted armor
+- Added lemon and orange slabs, stairs, fences, buttons, pressure plates, and doors
+- Added lemon and orange plain biomes (can toggle biome generation on or off in config)
 
 ### Changed:
 - Changed config to be for server, not client
 - Changed saving grace to have 3 levels, each with a higher chance of survival
 - Changed the amount of XP given for lapis armor
 - Changed coal armor to harm players when they were burning quicker
+- Changed hunger command to suggest command arguments and changed it to return a `TranslationTextComponent`
+- Changed beds to be flammable
+
+### Removed:
+- Removed config options for feature generation due to configs being loaded after world generation
 
 ## [1.15.2-1.0.0] - 2020-6-18
 ### Added:
