@@ -1,7 +1,7 @@
 package io.github.xf8b.morefeatures.util;
 
-import io.github.xf8b.morefeatures.MoreFeatures;
-import io.github.xf8b.morefeatures.MoreFeaturesRegistries;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
+import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;

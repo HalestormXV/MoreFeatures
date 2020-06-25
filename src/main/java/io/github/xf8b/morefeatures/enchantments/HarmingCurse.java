@@ -1,7 +1,7 @@
 package io.github.xf8b.morefeatures.enchantments;
 
-import io.github.xf8b.morefeatures.MoreFeatures;
-import io.github.xf8b.morefeatures.MoreFeaturesRegistries;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
+import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
 import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import io.github.xf8b.morefeatures.util.handler.TickHandler;
 import net.minecraft.enchantment.Enchantment;

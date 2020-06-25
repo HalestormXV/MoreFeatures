@@ -1,7 +1,7 @@
 package io.github.xf8b.morefeatures.items.armor.emerald;
 
-import io.github.xf8b.morefeatures.MoreFeatures;
-import io.github.xf8b.morefeatures.MoreFeaturesArmorMaterial;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
+import io.github.xf8b.morefeatures.items.armor.MoreFeaturesArmorMaterial;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -15,7 +15,7 @@ public class EmeraldHelmet extends ArmorItem {
     public EmeraldHelmet() {
         super(MoreFeaturesArmorMaterial.EMERALD, EquipmentSlotType.HEAD, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.instance.itemGroup)
+                .group(MoreFeatures.itemGroup)
         );
     }
 

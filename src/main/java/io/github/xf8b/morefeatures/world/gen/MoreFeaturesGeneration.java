@@ -1,6 +1,6 @@
 package io.github.xf8b.morefeatures.world.gen;
 
-import io.github.xf8b.morefeatures.MoreFeaturesRegistries;
+import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
 import io.github.xf8b.morefeatures.world.feature.LemonTree;
 import io.github.xf8b.morefeatures.world.feature.OrangeTree;
 import net.minecraft.world.biome.Biome;

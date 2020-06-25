@@ -1,7 +1,7 @@
 package io.github.xf8b.morefeatures.items.armor.obsidian;
 
-import io.github.xf8b.morefeatures.MoreFeatures;
-import io.github.xf8b.morefeatures.MoreFeaturesArmorMaterial;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
+import io.github.xf8b.morefeatures.items.armor.MoreFeaturesArmorMaterial;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -15,7 +15,7 @@ public class ObsidianHelmet extends ArmorItem {
     public ObsidianHelmet() {
         super(MoreFeaturesArmorMaterial.OBSIDIAN, EquipmentSlotType.HEAD, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.instance.itemGroup)
+                .group(MoreFeatures.itemGroup)
         );
     }
 

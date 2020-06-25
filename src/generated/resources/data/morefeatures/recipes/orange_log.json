@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "morefeatures:orange_planks"
+    }
+  ],
+  "result": {
+    "item": "morefeatures:orange_log",
+    "count": 4
+  }
+}

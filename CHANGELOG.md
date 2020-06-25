@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added some side checks (hopefully in the correct places)
 - Added corrupted armor
 - Added lemon and orange slabs, stairs, fences, buttons, pressure plates, and doors
-- Added lemon and orange plain biomes (can toggle biome generation on or off in config)
+- Added lemon and orange plain biomes
+- Added datagen
 
 ### Changed:
 - Changed config to be for server, not client
@@ -18,6 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed coal armor to harm players when they were burning quicker
 - Changed hunger command to suggest command arguments and changed it to return a `TranslationTextComponent`
 - Changed beds to be flammable
+- Changed lemon and orange tree settings slightly
+- Changed corrupted tools to initialize with 0 attack speed and damage
+- Changed some classes to be in different packages
 
 ### Removed:
 - Removed config options for feature generation due to configs being loaded after world generation

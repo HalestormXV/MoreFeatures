@@ -1,6 +1,6 @@
 package io.github.xf8b.morefeatures.config;
 
-import io.github.xf8b.morefeatures.MoreFeatures;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ServerConfig {

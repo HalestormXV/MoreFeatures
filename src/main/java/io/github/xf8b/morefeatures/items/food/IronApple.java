@@ -1,6 +1,6 @@
 package io.github.xf8b.morefeatures.items.food;
 
-import io.github.xf8b.morefeatures.MoreFeatures;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.potion.EffectInstance;
@@ -9,7 +9,7 @@ import net.minecraft.potion.Effects;
 public class IronApple extends Item {
     public IronApple() {
         super(new Item.Properties()
-                .group(MoreFeatures.instance.itemGroup)
+                .group(MoreFeatures.itemGroup)
                 .food(new Food.Builder()
                         .setAlwaysEdible()
                         .hunger(4)

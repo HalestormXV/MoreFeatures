@@ -1,6 +1,6 @@
 package io.github.xf8b.morefeatures.blocks;
 
-import io.github.xf8b.morefeatures.MoreFeaturesRegistries;
+import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;

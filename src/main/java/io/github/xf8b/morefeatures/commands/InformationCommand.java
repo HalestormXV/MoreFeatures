@@ -1,7 +1,7 @@
 package io.github.xf8b.morefeatures.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
-import io.github.xf8b.morefeatures.MoreFeatures;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.command.arguments.EntityArgument;

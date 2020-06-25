@@ -1,7 +1,6 @@
 package io.github.xf8b.morefeatures.items.armor;
 
-import io.github.xf8b.morefeatures.MoreFeatures;
-import io.github.xf8b.morefeatures.MoreFeaturesArmorMaterial;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
@@ -9,7 +8,7 @@ import net.minecraft.item.Item;
 public class Mask extends ArmorItem {
     public Mask() {
         super(MoreFeaturesArmorMaterial.MASK, EquipmentSlotType.HEAD, new Item.Properties()
-                .group(MoreFeatures.instance.itemGroup)
+                .group(MoreFeatures.itemGroup)
                 .maxStackSize(1)
         );
     }

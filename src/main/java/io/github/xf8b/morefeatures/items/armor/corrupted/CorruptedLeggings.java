@@ -2,8 +2,8 @@ package io.github.xf8b.morefeatures.items.armor.corrupted;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import io.github.xf8b.morefeatures.MoreFeatures;
-import io.github.xf8b.morefeatures.MoreFeaturesArmorMaterial;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
+import io.github.xf8b.morefeatures.items.armor.MoreFeaturesArmorMaterial;
 import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import io.github.xf8b.morefeatures.util.helpers.KeyboardChecker;
 import net.minecraft.client.util.ITooltipFlag;
@@ -30,10 +30,11 @@ public class CorruptedLeggings extends ArmorItem {
             UUID.fromString("9F3D476D-C118-4544-8365-64846904B48E"),
             UUID.fromString("2AD3F246-FEE1-4E67-B886-69FD380BB150")
     };
+
     public CorruptedLeggings() {
         super(MoreFeaturesArmorMaterial.CORRUPTED, EquipmentSlotType.LEGS, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.instance.itemGroup)
+                .group(MoreFeatures.itemGroup)
         );
     }
 

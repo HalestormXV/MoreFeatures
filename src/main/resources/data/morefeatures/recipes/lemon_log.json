@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "morefeatures:lemon_planks"
+    }
+  ],
+  "result": {
+    "item": "morefeatures:lemon_log",
+    "count": 4
+  }
+}

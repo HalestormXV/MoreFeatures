@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "morefeatures:corrupted_shovel"
+    ]
+  },
+  "criteria": {
+    "has_corrupted_item": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "morefeatures:corrupted_item"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "morefeatures:corrupted_shovel"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_corrupted_item",
+      "has_the_recipe"
+    ]
+  ]
+}

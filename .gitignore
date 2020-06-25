@@ -20,9 +20,7 @@ build
 # other
 eclipse
 run
-
-# Files from Forge MDK
-forge*changelog.txt
+src/generated/resources/.cache/
 
 # MacOS generated files
 .DS_Store

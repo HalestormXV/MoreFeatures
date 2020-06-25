@@ -1,7 +1,7 @@
 package io.github.xf8b.morefeatures.items.armor.obsidian;
 
-import io.github.xf8b.morefeatures.MoreFeatures;
-import io.github.xf8b.morefeatures.MoreFeaturesArmorMaterial;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
+import io.github.xf8b.morefeatures.items.armor.MoreFeaturesArmorMaterial;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -14,7 +14,7 @@ public class ObsidianLeggings extends ArmorItem {
     public ObsidianLeggings() {
         super(MoreFeaturesArmorMaterial.OBSIDIAN, EquipmentSlotType.LEGS, new Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.instance.itemGroup)
+                .group(MoreFeatures.itemGroup)
         );
     }
 

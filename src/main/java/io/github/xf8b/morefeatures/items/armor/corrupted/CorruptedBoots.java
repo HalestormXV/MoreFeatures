@@ -2,8 +2,8 @@ package io.github.xf8b.morefeatures.items.armor.corrupted;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import io.github.xf8b.morefeatures.MoreFeatures;
-import io.github.xf8b.morefeatures.MoreFeaturesArmorMaterial;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
+import io.github.xf8b.morefeatures.items.armor.MoreFeaturesArmorMaterial;
 import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import io.github.xf8b.morefeatures.util.helpers.KeyboardChecker;
 import net.minecraft.client.util.ITooltipFlag;
@@ -34,7 +34,7 @@ public class CorruptedBoots extends ArmorItem {
     public CorruptedBoots() {
         super(MoreFeaturesArmorMaterial.CORRUPTED, EquipmentSlotType.FEET, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.instance.itemGroup)
+                .group(MoreFeatures.itemGroup)
         );
     }
 

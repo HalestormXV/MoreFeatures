@@ -1,6 +1,6 @@
 package io.github.xf8b.morefeatures.config;
 
-import io.github.xf8b.morefeatures.MoreFeatures;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

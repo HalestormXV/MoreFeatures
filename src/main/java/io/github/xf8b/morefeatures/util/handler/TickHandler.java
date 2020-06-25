@@ -1,6 +1,6 @@
 package io.github.xf8b.morefeatures.util.handler;
 
-import io.github.xf8b.morefeatures.MoreFeatures;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

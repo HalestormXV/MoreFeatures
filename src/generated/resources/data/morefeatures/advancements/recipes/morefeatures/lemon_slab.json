@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "morefeatures:lemon_slab"
+    ]
+  },
+  "criteria": {
+    "has_lemon_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "morefeatures:lemon_planks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "morefeatures:lemon_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lemon_planks",
+      "has_the_recipe"
+    ]
+  ]
+}
