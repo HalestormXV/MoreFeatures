@@ -2,10 +2,10 @@ package io.github.xf8b.morefeatures.datagen;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import io.github.xf8b.morefeatures.blocks.DisplayCaseBlock;
 import io.github.xf8b.morefeatures.blocks.IFoodDroppingCrop;
 import io.github.xf8b.morefeatures.blocks.IFoodDroppingLeaves;
 import io.github.xf8b.morefeatures.blocks.IGemDroppingOre;
-import io.github.xf8b.morefeatures.blocks.ISaplingDroppingLeaves;
 import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
 import net.minecraft.advancements.criterion.EnchantmentPredicate;
 import net.minecraft.advancements.criterion.ItemPredicate;
@@ -55,91 +55,18 @@ public class LootTablesDataGen extends LootTableProvider {
                 .stream()
                 .map(RegistryObject::get)
                 .forEach(block -> {
-                    if (block instanceof GlassBlock) {
-                        LootPool.Builder builder = LootPool.builder()
-                                .rolls(ConstantRange.of(1))
-                                .addEntry(ItemLootEntry.builder(block))
-                                .acceptCondition(MatchTool.builder(ItemPredicate.Builder.create()
-                                        .enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1)))));
-                        lootTables.put(block, LootTable.builder().addLootPool(builder));
+                    if (block instanceof GlassBlock || block instanceof DisplayCaseBlock) {
+                        lootTables.put(block, glassTable(block));
                     } else if (block instanceof CropsBlock && block instanceof IFoodDroppingCrop) {
-                        LootTable.Builder builder = LootTable.builder()
-                                .addLootPool(LootPool.builder()
-                                        .addEntry(ItemLootEntry.builder(((IFoodDroppingCrop) block).getFood())
-                                                .acceptCondition(BlockStateProperty.builder(block)
-                                                        .fromProperties(StatePropertiesPredicate.Builder.newBuilder()
-                                                                .withIntProp(CropsBlock.AGE, 7)))
-                                                .alternatively(ItemLootEntry.builder(((IFoodDroppingCrop) block).getSeeds()))))
-                                .addLootPool(LootPool.builder()
-                                        .acceptCondition(BlockStateProperty.builder(block)
-                                                .fromProperties(StatePropertiesPredicate.Builder.newBuilder()
-                                                        .withIntProp(CropsBlock.AGE, 7)))
-                                        .addEntry(ItemLootEntry.builder(((IFoodDroppingCrop) block).getSeeds())
-                                                .acceptFunction(ApplyBonus.binomialWithBonusCount(Enchantments.FORTUNE, 0.5714286F, 3))))
-                                .acceptFunction(ExplosionDecay.builder());
-                        lootTables.put(block, builder);
-                    } else if (block instanceof LeavesBlock &&
-                            block instanceof IFoodDroppingLeaves &&
-                            block instanceof ISaplingDroppingLeaves) {
-                        LootTable.Builder builder = LootTable.builder()
-                                .addLootPool(LootPool.builder()
-                                        .rolls(ConstantRange.of(1))
-                                        .addEntry(ItemLootEntry.builder(block)
-                                                .acceptCondition(MatchTool.builder(ItemPredicate.Builder.create()
-                                                        .item(Items.SHEARS))
-                                                        .alternative(MatchTool.builder(ItemPredicate.Builder.create()
-                                                                .enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))))))
-                                                .alternatively(ItemLootEntry.builder(((ISaplingDroppingLeaves) block).getSapling())
-                                                        .acceptCondition(SurvivesExplosion.builder())
-                                                        .acceptCondition(TableBonus.builder(Enchantments.FORTUNE, 0.05F, 0.0625F, 0.083333336F, 0.1F)))))
-                                .addLootPool(LootPool.builder().rolls(ConstantRange.of(1))
-                                        .acceptCondition(MatchTool.builder(ItemPredicate.Builder.create()
-                                                .item(Items.SHEARS))
-                                                .alternative(MatchTool.builder(ItemPredicate.Builder.create()
-                                                        .enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1)))))
-                                                .inverted())
-                                        .addEntry(ItemLootEntry.builder(Items.STICK)
-                                                .acceptFunction(SetCount.builder(RandomValueRange.of(1.0F, 2.0F)))
-                                                .acceptFunction(ExplosionDecay.builder())
-                                                .acceptCondition(TableBonus.builder(Enchantments.FORTUNE, 0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F))))
-                                .addLootPool(LootPool.builder()
-                                        .rolls(ConstantRange.of(1))
-                                        .acceptCondition(MatchTool.builder(ItemPredicate.Builder.create()
-                                                .item(Items.SHEARS))
-                                                .alternative(MatchTool.builder(ItemPredicate.Builder.create()
-                                                        .enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1)))))
-                                                .inverted())
-                                        .addEntry(ItemLootEntry.builder(((IFoodDroppingLeaves) block).getDroppedFood()).acceptCondition(SurvivesExplosion.builder())
-                                                .acceptCondition(TableBonus.builder(Enchantments.FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
-                        lootTables.put(block, builder);
+                        lootTables.put(block, cropTable(block));
+                    } else if (block instanceof LeavesBlock && block instanceof IFoodDroppingLeaves) {
+                        lootTables.put(block, leavesTable(block));
                     } else if (block instanceof IGemDroppingOre) {
-                        LootTable.Builder builder = LootTable.builder()
-                                .addLootPool(LootPool.builder()
-                                        .rolls(ConstantRange.of(1))
-                                        .addEntry(ItemLootEntry.builder(((IGemDroppingOre) block).getGem()))
-                                        .acceptCondition(SurvivesExplosion.builder()));
-                        lootTables.put(block, builder);
+                        lootTables.put(block, oreTable(block));
                     } else if (block instanceof SlabBlock) {
-                        LootTable.Builder builder = LootTable.builder()
-                                .addLootPool(LootPool.builder()
-                                        .rolls(ConstantRange.of(1))
-                                        .addEntry(ItemLootEntry.builder(block)
-                                                .acceptFunction(SetCount.builder(ConstantRange.of(2))
-                                                        .acceptCondition(BlockStateProperty.builder(block)
-                                                                .fromProperties(StatePropertiesPredicate.Builder.newBuilder()
-                                                                        .withProp(SlabBlock.TYPE, SlabType.DOUBLE))))
-                                                .acceptFunction(ExplosionDecay.builder())));
-                        lootTables.put(block, builder);
+                        lootTables.put(block, slabTable(block));
                     } else if (block instanceof DoorBlock) {
-                        LootTable.Builder builder = LootTable.builder()
-                                .addLootPool(LootPool.builder()
-                                        .rolls(ConstantRange.of(1))
-                                        .addEntry(ItemLootEntry.builder(block)
-                                                .acceptCondition(BlockStateProperty.builder(block)
-                                                        .fromProperties(StatePropertiesPredicate.Builder.newBuilder()
-                                                                .withProp(DoorBlock.HALF, DoubleBlockHalf.LOWER))))
-                                        .acceptCondition(SurvivesExplosion.builder()));
-                        lootTables.put(block, builder);
+                        lootTables.put(block, doorTable(block));
                     } else {
                         lootTables.put(block, regularTable(block));
                     }
@@ -152,6 +79,96 @@ public class LootTablesDataGen extends LootTableProvider {
                 .addEntry(ItemLootEntry.builder(block))
                 .acceptCondition(SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
+    }
+
+    private LootTable.Builder glassTable(Block block) {
+        return LootTable.builder()
+                .addLootPool(LootPool.builder()
+                        .rolls(ConstantRange.of(1))
+                        .addEntry(ItemLootEntry.builder(block))
+                        .acceptCondition(MatchTool.builder(ItemPredicate.Builder.create()
+                                .enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))))));
+    }
+
+    private LootTable.Builder cropTable(Block block) {
+        return LootTable.builder()
+                .addLootPool(LootPool.builder()
+                        .addEntry(ItemLootEntry.builder(((IFoodDroppingCrop) block).getFood())
+                                .acceptCondition(BlockStateProperty.builder(block)
+                                        .fromProperties(StatePropertiesPredicate.Builder.newBuilder()
+                                                .withIntProp(CropsBlock.AGE, 7)))
+                                .alternatively(ItemLootEntry.builder(((IFoodDroppingCrop) block).getSeeds()))))
+                .addLootPool(LootPool.builder()
+                        .acceptCondition(BlockStateProperty.builder(block)
+                                .fromProperties(StatePropertiesPredicate.Builder.newBuilder()
+                                        .withIntProp(CropsBlock.AGE, 7)))
+                        .addEntry(ItemLootEntry.builder(((IFoodDroppingCrop) block).getSeeds())
+                                .acceptFunction(ApplyBonus.binomialWithBonusCount(Enchantments.FORTUNE, 0.5714286F, 3))))
+                .acceptFunction(ExplosionDecay.builder());
+    }
+
+    private LootTable.Builder oreTable(Block block) {
+        return LootTable.builder()
+                .addLootPool(LootPool.builder()
+                        .rolls(ConstantRange.of(1))
+                        .addEntry(ItemLootEntry.builder(((IGemDroppingOre) block).getGem()))
+                        .acceptCondition(SurvivesExplosion.builder()));
+    }
+
+    private LootTable.Builder slabTable(Block block) {
+        return LootTable.builder()
+                .addLootPool(LootPool.builder()
+                        .rolls(ConstantRange.of(1))
+                        .addEntry(ItemLootEntry.builder(block)
+                                .acceptFunction(SetCount.builder(ConstantRange.of(2))
+                                        .acceptCondition(BlockStateProperty.builder(block)
+                                                .fromProperties(StatePropertiesPredicate.Builder.newBuilder()
+                                                        .withProp(SlabBlock.TYPE, SlabType.DOUBLE))))
+                                .acceptFunction(ExplosionDecay.builder())));
+    }
+
+    private LootTable.Builder doorTable(Block block) {
+        return LootTable.builder()
+                .addLootPool(LootPool.builder()
+                        .rolls(ConstantRange.of(1))
+                        .addEntry(ItemLootEntry.builder(block)
+                                .acceptCondition(BlockStateProperty.builder(block)
+                                        .fromProperties(StatePropertiesPredicate.Builder.newBuilder()
+                                                .withProp(DoorBlock.HALF, DoubleBlockHalf.LOWER))))
+                        .acceptCondition(SurvivesExplosion.builder()));
+    }
+
+    private LootTable.Builder leavesTable(Block block) {
+        return LootTable.builder()
+                .addLootPool(LootPool.builder()
+                        .rolls(ConstantRange.of(1))
+                        .addEntry(ItemLootEntry.builder(block)
+                                .acceptCondition(MatchTool.builder(ItemPredicate.Builder.create()
+                                        .item(Items.SHEARS))
+                                        .alternative(MatchTool.builder(ItemPredicate.Builder.create()
+                                                .enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))))))
+                                .alternatively(ItemLootEntry.builder(((IFoodDroppingLeaves) block).getSapling())
+                                        .acceptCondition(SurvivesExplosion.builder())
+                                        .acceptCondition(TableBonus.builder(Enchantments.FORTUNE, 0.05F, 0.0625F, 0.083333336F, 0.1F)))))
+                .addLootPool(LootPool.builder().rolls(ConstantRange.of(1))
+                        .acceptCondition(MatchTool.builder(ItemPredicate.Builder.create()
+                                .item(Items.SHEARS))
+                                .alternative(MatchTool.builder(ItemPredicate.Builder.create()
+                                        .enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1)))))
+                                .inverted())
+                        .addEntry(ItemLootEntry.builder(Items.STICK)
+                                .acceptFunction(SetCount.builder(RandomValueRange.of(1.0F, 2.0F)))
+                                .acceptFunction(ExplosionDecay.builder())
+                                .acceptCondition(TableBonus.builder(Enchantments.FORTUNE, 0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F))))
+                .addLootPool(LootPool.builder()
+                        .rolls(ConstantRange.of(1))
+                        .acceptCondition(MatchTool.builder(ItemPredicate.Builder.create()
+                                .item(Items.SHEARS))
+                                .alternative(MatchTool.builder(ItemPredicate.Builder.create()
+                                        .enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1)))))
+                                .inverted())
+                        .addEntry(ItemLootEntry.builder(((IFoodDroppingLeaves) block).getDroppedFood()).acceptCondition(SurvivesExplosion.builder())
+                                .acceptCondition(TableBonus.builder(Enchantments.FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
     }
 
     @Override

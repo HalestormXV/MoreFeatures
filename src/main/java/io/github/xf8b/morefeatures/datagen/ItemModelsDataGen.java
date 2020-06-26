@@ -3,10 +3,7 @@ package io.github.xf8b.morefeatures.datagen;
 import io.github.xf8b.morefeatures.core.MoreFeatures;
 import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
 import io.github.xf8b.morefeatures.items.CornSeeds;
-import net.minecraft.block.BushBlock;
-import net.minecraft.block.CropsBlock;
-import net.minecraft.block.DoorBlock;
-import net.minecraft.block.FenceBlock;
+import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -45,6 +42,8 @@ public class ItemModelsDataGen extends ItemModelProvider {
                         getBuilder(name).parent(new ModelFile.UncheckedModelFile(MoreFeatures.MOD_ID + ":block/" + name + "_inventory"));
                     } else if (block instanceof DoorBlock) {
                         getBuilder(name).parent(new ModelFile.UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/" + name));
+                    } else if (block instanceof WoodButtonBlock) {
+                        getBuilder(name).parent(new ModelFile.UncheckedModelFile(MoreFeatures.MOD_ID + ":block/" + name + "_inventory"));
                     } else {
                         getBuilder(name).parent(new ModelFile.UncheckedModelFile(MoreFeatures.MOD_ID + ":block/" + name));
                     }

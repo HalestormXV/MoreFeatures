@@ -52,6 +52,7 @@ public class LanguagesDataGen extends LanguageProvider {
         this.add("death.attack." + MoreFeatures.MOD_ID + ".asbestosis.player", "%1$s died from asbestosis while being attacked by %2$s");
         this.add("death.attack." + MoreFeatures.MOD_ID + ".killedByArmor", "%1$s was killed by their armor");
         this.add("death.attack." + MoreFeatures.MOD_ID + ".killedByArmor.player", "%1$s was killed by their armor while being attacked by %2$s");
+        this.add("container." + MoreFeatures.MOD_ID + ".display_case", "Display Case");
     }
 
     @Override

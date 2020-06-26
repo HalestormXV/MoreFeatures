@@ -1,13 +1,10 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "x"
-  ],
-  "key": {
-    "x": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "morefeatures:orange_log"
     }
-  },
+  ],
   "result": {
     "item": "morefeatures:orange_planks",
     "count": 4

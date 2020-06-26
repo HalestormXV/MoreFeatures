@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added lemon and orange slabs, stairs, fences, buttons, pressure plates, and doors
 - Added lemon and orange plain biomes
 - Added datagen
+- Added display box
 
 ### Changed:
 - Changed config to be for server, not client
@@ -22,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed lemon and orange tree settings slightly
 - Changed corrupted tools to initialize with 0 attack speed and damage
 - Changed some classes to be in different packages
+- Changed the button item models to point to the correct block model
 
 ### Removed:
 - Removed config options for feature generation due to configs being loaded after world generation

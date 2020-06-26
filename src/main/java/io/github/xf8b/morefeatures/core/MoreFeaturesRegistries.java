@@ -23,6 +23,7 @@ import io.github.xf8b.morefeatures.blocks.slab.LemonSlab;
 import io.github.xf8b.morefeatures.blocks.slab.OrangeSlab;
 import io.github.xf8b.morefeatures.blocks.stairs.LemonStairs;
 import io.github.xf8b.morefeatures.blocks.stairs.OrangeStairs;
+import io.github.xf8b.morefeatures.container.DisplayCaseContainer;
 import io.github.xf8b.morefeatures.effects.Asbestosis;
 import io.github.xf8b.morefeatures.enchantments.*;
 import io.github.xf8b.morefeatures.items.CornSeeds;
@@ -56,14 +57,18 @@ import io.github.xf8b.morefeatures.items.armor.sapphire.SapphireLeggings;
 import io.github.xf8b.morefeatures.items.food.*;
 import io.github.xf8b.morefeatures.items.tools.corrupted.*;
 import io.github.xf8b.morefeatures.items.tools.sapphire.*;
+import io.github.xf8b.morefeatures.tileentity.DisplayCaseTileEntity;
 import io.github.xf8b.morefeatures.world.biome.LemonTreePlains;
 import io.github.xf8b.morefeatures.world.biome.OrangeTreePlains;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Effect;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -75,6 +80,8 @@ public class MoreFeaturesRegistries {
     public static final DeferredRegister<Enchantment> ENCHANTMENTS = new DeferredRegister<>(ForgeRegistries.ENCHANTMENTS, MoreFeatures.MOD_ID);
     public static final DeferredRegister<Effect> EFFECTS = new DeferredRegister<>(ForgeRegistries.POTIONS, MoreFeatures.MOD_ID);
     public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, MoreFeatures.MOD_ID);
+    public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = new DeferredRegister<>(ForgeRegistries.CONTAINERS, MoreFeatures.MOD_ID);
+    public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, MoreFeatures.MOD_ID);
 
     //Registry Objects
     //Items
@@ -150,6 +157,7 @@ public class MoreFeaturesRegistries {
     public static final RegistryObject<Block> SAPPHIRE_BLOCK = BLOCKS.register("sapphire_block", () -> new SapphireBlock());
     public static final RegistryObject<Block> BLAST_PROOF_GLASS = BLOCKS.register("blast_proof_glass", () -> new BlastProofGlass());
     public static final RegistryObject<Block> ASBESTOS = BLOCKS.register("asbestos", () -> new Asbestos());
+    public static final RegistryObject<Block> DISPLAY_CASE = BLOCKS.register("display_case", () -> new DisplayCaseBlock());
 
     //Saplings
     public static final RegistryObject<Block> LEMON_SAPLING = BLOCKS.register("lemon_sapling", () -> new LemonSapling());
@@ -215,4 +223,15 @@ public class MoreFeaturesRegistries {
     //Biomes
     public static final RegistryObject<Biome> LEMON_TREE_PLAINS = BIOMES.register("lemon_tree_plains", () -> new LemonTreePlains());
     public static final RegistryObject<Biome> ORANGE_TREE_PLAINS = BIOMES.register("orange_tree_plains", () -> new OrangeTreePlains());
+
+    //Tile Entity Types
+    public static final RegistryObject<TileEntityType<DisplayCaseTileEntity>> DISPLAY_CASE_TILE_ENTITY = TILE_ENTITY_TYPES.register(
+            "display_case",
+            () -> TileEntityType.Builder.create(DisplayCaseTileEntity::new, MoreFeaturesRegistries.DISPLAY_CASE.get())
+                    .build(null));
+
+    //Container Types
+    public static final RegistryObject<ContainerType<DisplayCaseContainer>> DISPLAY_CASE_CONTAINER = CONTAINER_TYPES.register(
+            "display_case",
+            () -> IForgeContainerType.create(DisplayCaseContainer::new));
 }

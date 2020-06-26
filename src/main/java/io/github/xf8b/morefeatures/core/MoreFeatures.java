@@ -27,13 +27,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod(MoreFeatures.MOD_ID)
 public class MoreFeatures {
     public static final String MOD_ID = "morefeatures";
-    private static final Logger LOGGER = LogManager.getLogger();
     public static ItemGroup itemGroup = new ItemGroup(MOD_ID) {
         @OnlyIn(Dist.CLIENT)
         @Override
@@ -52,6 +49,8 @@ public class MoreFeatures {
         MoreFeaturesRegistries.ENCHANTMENTS.register(modEventBus);
         MoreFeaturesRegistries.ITEMS.register(modEventBus);
         MoreFeaturesRegistries.BLOCKS.register(modEventBus);
+        MoreFeaturesRegistries.TILE_ENTITY_TYPES.register(modEventBus);
+        MoreFeaturesRegistries.CONTAINER_TYPES.register(modEventBus);
         MoreFeaturesRegistries.EFFECTS.register(modEventBus);
         MoreFeaturesRegistries.BIOMES.register(modEventBus);
 

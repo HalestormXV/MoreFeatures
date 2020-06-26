@@ -1,11 +1,15 @@
 package io.github.xf8b.morefeatures.util;
 
+import io.github.xf8b.morefeatures.client.gui.DisplayCaseScreen;
+import io.github.xf8b.morefeatures.client.tileentity.renderer.DisplayCaseRenderer;
 import io.github.xf8b.morefeatures.core.MoreFeatures;
 import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
@@ -26,5 +30,12 @@ public class ClientEventBusSubscriber {
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.ORANGE_DOOR.get(), RenderType.getCutout());
 
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.BLAST_PROOF_GLASS.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.DISPLAY_CASE.get(), RenderType.getCutout());
+
+        //Bind GUIs to containers
+        ScreenManager.registerFactory(MoreFeaturesRegistries.DISPLAY_CASE_CONTAINER.get(), DisplayCaseScreen::new);
+
+        //Bind tile entity renderers
+        ClientRegistry.bindTileEntityRenderer(MoreFeaturesRegistries.DISPLAY_CASE_TILE_ENTITY.get(), DisplayCaseRenderer::new);
     }
 }

@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "morefeatures:lemon_log"
+      "morefeatures:lemon_planks"
     ]
   },
   "criteria": {
-    "has_lemon_planks": {
+    "has_lemon_log": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "morefeatures:lemon_planks"
+            "item": "morefeatures:lemon_log"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "morefeatures:lemon_log"
+        "recipe": "morefeatures:lemon_planks"
       }
     }
   },
   "requirements": [
     [
-      "has_lemon_planks",
+      "has_lemon_log",
       "has_the_recipe"
     ]
   ]

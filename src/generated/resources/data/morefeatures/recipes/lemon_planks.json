@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "morefeatures:lemon_planks"
+      "item": "morefeatures:lemon_log"
     }
   ],
   "result": {
-    "item": "morefeatures:lemon_log",
+    "item": "morefeatures:lemon_planks",
     "count": 4
   }
 }

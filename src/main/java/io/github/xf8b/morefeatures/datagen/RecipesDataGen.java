@@ -1,6 +1,7 @@
 package io.github.xf8b.morefeatures.datagen;
 
 import io.github.xf8b.morefeatures.blocks.BlastProofGlass;
+import io.github.xf8b.morefeatures.blocks.DisplayCaseBlock;
 import io.github.xf8b.morefeatures.blocks.IPlanksBlock;
 import io.github.xf8b.morefeatures.blocks.IWoodenBlock;
 import io.github.xf8b.morefeatures.core.MoreFeatures;
@@ -117,7 +118,7 @@ public class RecipesDataGen extends RecipeProvider {
                         } else if (block instanceof FenceGateBlock) {
                             fenceGateRecipe(((IWoodenBlock) block).getWood(), block).build(consumer);
                         } else if (block instanceof LogBlock) {
-                            planksRecipe(((IWoodenBlock) block).getWood(), block).build(consumer);
+                            planksRecipe(block, ((IWoodenBlock) block).getWood()).build(consumer);
                         } else if (block instanceof PressurePlateBlock) {
                             pressurePlateRecipe(((IWoodenBlock) block).getWood(), block).build(consumer);
                         } else if (block instanceof SlabBlock) {
@@ -133,7 +134,18 @@ public class RecipesDataGen extends RecipeProvider {
                                 .patternLine("xxx")
                                 .key('x', Blocks.IRON_BLOCK)
                                 .key('y', Blocks.GLASS)
-                                .addCriterion("has_" + Blocks.IRON_BLOCK.getTranslationKey().replace("block.minecraft.", ""), hasItem(Blocks.IRON_BLOCK)).build(consumer);
+                                .addCriterion("has_" + Blocks.IRON_BLOCK.getTranslationKey()
+                                        .replace("block.minecraft.", ""), hasItem(Blocks.IRON_BLOCK))
+                                .build(consumer);
+                    } else if (block instanceof DisplayCaseBlock) {
+                        ShapedRecipeBuilder.shapedRecipe(block)
+                                .patternLine("xxx")
+                                .patternLine("x x")
+                                .patternLine("xxx")
+                                .key('x', Blocks.GLASS)
+                                .addCriterion("has_" + Blocks.GLASS.getTranslationKey()
+                                        .replace("block.minecraft.", ""), hasItem(Blocks.GLASS))
+                                .build(consumer);
                     }
                 });
     }
