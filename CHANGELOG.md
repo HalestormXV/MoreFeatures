@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.15.2-1.1.0] - 2020-6-27
 ### Added:
 - Added some side checks (hopefully in the correct places)
 - Added corrupted armor
@@ -12,13 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added lemon and orange plain biomes
 - Added datagen
 - Added display box
+- Added events (for people who want to link with this mod)
 
 ### Changed:
 - Changed config to be for server, not client
 - Changed saving grace to have 3 levels, each with a higher chance of survival
 - Changed the amount of XP given for lapis armor
 - Changed coal armor to harm players when they were burning quicker
-- Changed hunger command to suggest command arguments and changed it to return a `TranslationTextComponent`
 - Changed beds to be flammable
 - Changed lemon and orange tree settings slightly
 - Changed corrupted tools to initialize with 0 attack speed and damage
@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed:
 - Removed config options for feature generation due to configs being loaded after world generation
+- Removed all tooltips/command feedback using `StringTextComponent` and changed them to use `TranslationTextComponent`
 
 ## [1.15.2-1.0.0] - 2020-6-18
 ### Added:
@@ -197,6 +198,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added sapphire block
 
 [Unreleased]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0...1.15.2-development
+[1.15.2-1.1.0]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0...v1.15.2-1.1.0
 [1.15.2-1.0.0]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta3...v1.15.2-1.0.0
 [1.15.2-1.0.0-beta3]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta2...v1.15.2-1.0.0-beta3
 [1.15.2-1.0.0-beta2]: https://github.com/xf8b/MoreFeatures/compare/v1.15.2-1.0.0-beta1...v1.15.2-1.0.0-beta2

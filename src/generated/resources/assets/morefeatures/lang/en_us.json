@@ -91,5 +91,12 @@
   "item.morefeatures.sapphire_pickaxe": "Sapphire Pickaxe",
   "item.morefeatures.sapphire_shovel": "Sapphire Shovel",
   "item.morefeatures.sapphire_sword": "Sapphire Sword",
-  "itemGroup.morefeatures": "MoreFeatures"
+  "itemGroup.morefeatures": "MoreFeatures",
+  "tooltip.morefeatures.corrupted_armor.line.one": "This armor has been corrupted.",
+  "tooltip.morefeatures.corrupted_armor.line.three": "Good luck, and pray to the RNG gods.",
+  "tooltip.morefeatures.corrupted_armor.line.two": "The protection and toughness will be random.",
+  "tooltip.morefeatures.corrupted_tools.line.one": "This tool has been corrupted.",
+  "tooltip.morefeatures.corrupted_tools.line.three": "Good luck, and pray to the RNG gods.",
+  "tooltip.morefeatures.corrupted_tools.line.two": "The attack damage and speed will be random.",
+  "tooltip.morefeatures.hold_shift": "Hold \u00A7eSHIFT \u00A7rto see info."
 }

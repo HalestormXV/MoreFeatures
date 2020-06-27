@@ -1,9 +1,9 @@
 package io.github.xf8b.morefeatures.items.armor.lapis;
 
-import io.github.xf8b.morefeatures.core.MoreFeatures;
-import io.github.xf8b.morefeatures.items.armor.MoreFeaturesArmorMaterial;
-import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
 import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
+import io.github.xf8b.morefeatures.core.MoreFeatures;
+import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
+import io.github.xf8b.morefeatures.items.armor.MoreFeaturesArmorMaterial;
 import io.github.xf8b.morefeatures.util.handler.TickHandler;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;

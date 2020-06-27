@@ -6,7 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
 
-public class SapphireOre extends Block implements IGemDroppingOre{
+public class SapphireOre extends Block implements IGemDroppingOre {
     public SapphireOre() {
         super(Block.Properties.create(Material.IRON)
                 .harvestTool(ToolType.PICKAXE)

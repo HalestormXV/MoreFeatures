@@ -31,8 +31,10 @@ public class DisplayCaseRenderer extends TileEntityRenderer<DisplayCaseTileEntit
                 matrixStackIn.push();
                 matrixStackIn.translate(0.5d, 0.5d, 0.5d);
                 matrixStackIn.scale(0.9f, 0.9f, 0.9f);
-                //matrixStackIn.translate(0d, Math.sin(Math.PI) / 4d, 0d);
                 angle = angle + 0.5f;
+                if (angle > 360) {
+                    angle = 0;
+                }
                 matrixStackIn.rotate(Vector3f.YP.rotationDegrees(angle));
                 renderItem(stack, matrixStackIn, bufferIn, combinedLightIn);
                 matrixStackIn.pop();

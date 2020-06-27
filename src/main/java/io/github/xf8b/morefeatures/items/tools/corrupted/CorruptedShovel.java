@@ -2,9 +2,9 @@ package io.github.xf8b.morefeatures.items.tools.corrupted;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import io.github.xf8b.morefeatures.core.MoreFeatures;
 import io.github.xf8b.morefeatures.items.tools.MoreFeaturesItemTier;
-import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import io.github.xf8b.morefeatures.util.helpers.KeyboardChecker;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -34,11 +35,11 @@ public class CorruptedShovel extends ShovelItem {
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         if (KeyboardChecker.isHoldingShift()) {
-            tooltip.add(new StringTextComponent("This tool has been corrupted."));
+
             tooltip.add(new StringTextComponent("The attack damage and speed will be random."));
             tooltip.add(new StringTextComponent("Good luck, and pray to the RNG gods."));
         } else {
-            tooltip.add(new StringTextComponent("Hold " + "\u00A7e" + "SHIFT " + "\u00A7r" + "to see info."));
+            tooltip.add(new TranslationTextComponent("tooltip." + MoreFeatures.MOD_ID + ".hold_shift"));
         }
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }

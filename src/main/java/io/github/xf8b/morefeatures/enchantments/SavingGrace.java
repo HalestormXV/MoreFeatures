@@ -1,8 +1,9 @@
 package io.github.xf8b.morefeatures.enchantments;
 
+import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
 import io.github.xf8b.morefeatures.core.MoreFeatures;
 import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
-import io.github.xf8b.morefeatures.config.MoreFeaturesConfig;
+import io.github.xf8b.morefeatures.events.SavedEvent;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentType;
@@ -11,6 +12,7 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -47,12 +49,15 @@ public class SavingGrace extends Enchantment {
         int randomInt = random.nextInt(100);
         if (enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.SAVING_GRACE.get())) {
             if (randomInt > 100 - (MoreFeaturesConfig.savingGraceChanceIncrease * enchantmentsOnItemOnFeet.get(MoreFeaturesRegistries.SAVING_GRACE.get()))) {
+                int chanceOfBeingSaved = MoreFeaturesConfig.savingGraceChanceIncrease * enchantmentsOnItemOnFeet.get(MoreFeaturesRegistries.SAVING_GRACE.get());
                 LivingEntity livingEntity = event.getEntityLiving();
-                livingEntity.setHealth(1.0F);
-                livingEntity.clearActivePotions();
-                livingEntity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 900, 1));
-                livingEntity.addPotionEffect(new EffectInstance(Effects.ABSORPTION, 100, 1));
-                event.setCanceled(true);
+                if (!MinecraftForge.EVENT_BUS.post(new SavedEvent(event.getSource(), chanceOfBeingSaved, livingEntity, itemOnFeet))) {
+                    livingEntity.setHealth(1.0F);
+                    livingEntity.clearActivePotions();
+                    livingEntity.addPotionEffect(new EffectInstance(Effects.REGENERATION, 900, 1));
+                    livingEntity.addPotionEffect(new EffectInstance(Effects.ABSORPTION, 100, 1));
+                    event.setCanceled(true);
+                }
             }
         }
     }
