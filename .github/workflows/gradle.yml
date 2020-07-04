@@ -20,7 +20,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
         env:
-          curseForgeApiKey = ${{ secrets.CURSEFORGE_API_KEY }}
+          curseForgeApiKey: ${{ secrets.CURSEFORGE_API_KEY }}
       - name: Run client
         run: ./gradlew runClient
       - name: Run server
