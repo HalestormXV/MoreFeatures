@@ -14,10 +14,10 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew build --stacktrace
       # - name: Run client
       #   run: ./gradlew runClient
       - name: Run server
-        run: mkdir -p run/server && echo "eula=true" > run/server/eula.text && ./gradlew runServer
+        run: mkdir -p run/server && echo "eula=true" > run/server/eula.text && ./gradlew runServer --stacktrace
 env:
   CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
