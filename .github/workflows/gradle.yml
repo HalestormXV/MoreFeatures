@@ -1,10 +1,6 @@
 name: Java CI with Gradle
 
-on:
-  push:
-    branches: [ 1.15.2-development ]
-  pull_request:
-    branches: [ 1.15.2-development ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -19,13 +15,9 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build
-        env:
-          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
-      - name: Run client
-        run: ./gradlew runClient
-        env:
-          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+      # - name: Run client
+      #   run: ./gradlew runClient
       - name: Run server
         run: mkdir -p run/server && echo "eula=true" > run/server/eula.text && ./gradlew runServer
-        env:
-          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+env:
+  CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
