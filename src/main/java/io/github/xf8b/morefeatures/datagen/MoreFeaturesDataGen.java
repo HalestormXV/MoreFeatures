@@ -6,7 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = MoreFeatures.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MoreFeaturesDataGen {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
@@ -14,7 +14,7 @@ public class MoreFeaturesDataGen {
         if (event.includeClient()) {
             generator.addProvider(new BlockStatesDataGen(generator, MoreFeatures.MOD_ID, event.getExistingFileHelper()));
             generator.addProvider(new ItemModelsDataGen(generator, MoreFeatures.MOD_ID, event.getExistingFileHelper()));
-            generator.addProvider(new LanguagesDataGen(generator, MoreFeatures.MOD_ID, "en_us"));
+            generator.addProvider(new LanguageFilesDataGen(generator, MoreFeatures.MOD_ID, "en_us"));
         }
 
         if (event.includeServer()) {

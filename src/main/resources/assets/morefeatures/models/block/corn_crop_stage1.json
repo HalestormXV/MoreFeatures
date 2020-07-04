@@ -1,6 +1,6 @@
 {
-  "parent": "block/crop",
+  "parent": "block/cross",
   "textures": {
-    "crop": "morefeatures:block/corn_crop_stage1"
+    "cross": "morefeatures:block/corn_crop_stage1"
   }
 }

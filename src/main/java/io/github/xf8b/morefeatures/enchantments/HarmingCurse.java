@@ -71,7 +71,7 @@ public class HarmingCurse extends Enchantment {
                         enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.HARMING_CURSE.get()) &&
                                 TickHandler.serverTicksPassed % 20 == 0) {
                     DamageSource killedByArmor = new DamageSource(MoreFeatures.MOD_ID + ".killedByArmor");
-                    event.player.attackEntityFrom(killedByArmor, (float) MoreFeaturesConfig.harmingCurseDamageGiven);
+                    event.player.attackEntityFrom(killedByArmor, MoreFeaturesConfig.COMMON.harmingCurseDamageGiven.get().floatValue());
                 }
             }
         }

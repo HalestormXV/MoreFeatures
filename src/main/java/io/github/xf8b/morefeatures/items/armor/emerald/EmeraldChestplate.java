@@ -14,7 +14,7 @@ public class EmeraldChestplate extends ArmorItem {
     public EmeraldChestplate() {
         super(MoreFeaturesArmorMaterial.EMERALD, EquipmentSlotType.CHEST, new Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

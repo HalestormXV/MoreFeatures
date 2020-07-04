@@ -10,7 +10,7 @@ public class SapphireLeggings extends ArmorItem {
     public SapphireLeggings() {
         super(MoreFeaturesArmorMaterial.SAPPHIRE, EquipmentSlotType.LEGS, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }

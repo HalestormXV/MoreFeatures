@@ -117,7 +117,7 @@ public class BlockStatesDataGen extends BlockStateProvider {
                             getVariantBuilder(block).partialState()
                                     .with(CropsBlock.AGE, age)
                                     .modelForState()
-                                    .modelFile(models().crop(name + "_stage" + age, modLoc("block/" + name + "_stage" + age)))
+                                    .modelFile(models().cross(name + "_stage" + age, modLoc("block/" + name + "_stage" + age)))
                                     .addModel();
                         }
                     } else {

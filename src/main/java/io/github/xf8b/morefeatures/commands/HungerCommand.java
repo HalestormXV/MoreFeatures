@@ -23,12 +23,12 @@ import java.lang.reflect.Field;
 
 public class HungerCommand {
     private static final SuggestionProvider<CommandSource> all_actions = SuggestionProviders.register(
-            new ResourceLocation("hunger", "all_actions"),
+            new ResourceLocation(MoreFeatures.MOD_ID, "hunger_command_all_actions"),
             (context, builder) -> ISuggestionProvider.suggest(new String[] {"get", "set"}, builder)
     );
 
     private static final SuggestionProvider<CommandSource> all_stats = SuggestionProviders.register(
-            new ResourceLocation("hunger", "all_stats"),
+            new ResourceLocation(MoreFeatures.MOD_ID, "hunger_command_all_stats"),
             (context, builder) -> ISuggestionProvider.suggest(new String[] {"saturation", "food"}, builder)
     );
 

@@ -1,9 +1,6 @@
 package io.github.xf8b.morefeatures.datagen;
 
-import io.github.xf8b.morefeatures.blocks.BlastProofGlass;
-import io.github.xf8b.morefeatures.blocks.DisplayCaseBlock;
-import io.github.xf8b.morefeatures.blocks.IPlanksBlock;
-import io.github.xf8b.morefeatures.blocks.IWoodenBlock;
+import io.github.xf8b.morefeatures.blocks.*;
 import io.github.xf8b.morefeatures.core.MoreFeatures;
 import io.github.xf8b.morefeatures.core.MoreFeaturesRegistries;
 import io.github.xf8b.morefeatures.items.food.IronApple;
@@ -11,6 +8,7 @@ import io.github.xf8b.morefeatures.items.food.RedstoneApple;
 import net.minecraft.block.*;
 import net.minecraft.data.*;
 import net.minecraft.item.*;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
@@ -146,6 +144,17 @@ public class RecipesDataGen extends RecipeProvider {
                                 .addCriterion("has_" + Blocks.GLASS.getTranslationKey()
                                         .replace("block.minecraft.", ""), hasItem(Blocks.GLASS))
                                 .build(consumer);
+                    } else if (block instanceof IGemDroppingOre) {
+                        String charactersToReplace;
+                        if (((IGemDroppingOre) block).getGem().getTranslationKey().contains("minecraft")) {
+                            charactersToReplace = "item.minecraft.";
+                        } else {
+                            charactersToReplace = "item." + MoreFeatures.MOD_ID + ".";
+                        }
+
+                        String gemName = ((IGemDroppingOre) block).getGem().getTranslationKey().replace(charactersToReplace, "");
+                        oreSmelting(((IGemDroppingOre) block).getGem(), block).build(consumer, new ResourceLocation(MoreFeatures.MOD_ID, gemName + "_from_smelting"));
+                        oreBlasting(((IGemDroppingOre) block).getGem(), block).build(consumer, new ResourceLocation(MoreFeatures.MOD_ID, gemName + "_from_blasting"));
                     }
                 });
     }
@@ -271,10 +280,16 @@ public class RecipesDataGen extends RecipeProvider {
 
     private ShapedRecipeBuilder helmetRecipe(IItemProvider material, IItemProvider result) {
         String charactersToReplace;
-        if (material.asItem().getTranslationKey().contains("minecraft")) {
-            charactersToReplace = "item.minecraft.";
+        String materialType;
+        if (material instanceof BlockItem) {
+            materialType = "block";
         } else {
-            charactersToReplace = "item." + MoreFeatures.MOD_ID + ".";
+            materialType = "item";
+        }
+        if (material.asItem().getTranslationKey().contains("minecraft")) {
+            charactersToReplace = materialType + ".minecraft.";
+        } else {
+            charactersToReplace = materialType + "." + MoreFeatures.MOD_ID + ".";
         }
         String name = material.asItem().getTranslationKey().replace(charactersToReplace, "");
         return ShapedRecipeBuilder.shapedRecipe(result)
@@ -286,10 +301,16 @@ public class RecipesDataGen extends RecipeProvider {
 
     private ShapedRecipeBuilder chestplateRecipe(IItemProvider material, IItemProvider result) {
         String charactersToReplace;
-        if (material.asItem().getTranslationKey().contains("minecraft")) {
-            charactersToReplace = "item.minecraft.";
+        String materialType;
+        if (material instanceof BlockItem) {
+            materialType = "block";
         } else {
-            charactersToReplace = "item." + MoreFeatures.MOD_ID + ".";
+            materialType = "item";
+        }
+        if (material.asItem().getTranslationKey().contains("minecraft")) {
+            charactersToReplace = materialType + ".minecraft.";
+        } else {
+            charactersToReplace = materialType + "." + MoreFeatures.MOD_ID + ".";
         }
         String name = material.asItem().getTranslationKey().replace(charactersToReplace, "");
         return ShapedRecipeBuilder.shapedRecipe(result)
@@ -302,10 +323,16 @@ public class RecipesDataGen extends RecipeProvider {
 
     private ShapedRecipeBuilder leggingsRecipe(IItemProvider material, IItemProvider result) {
         String charactersToReplace;
-        if (material.asItem().getTranslationKey().contains("minecraft")) {
-            charactersToReplace = "item.minecraft.";
+        String materialType;
+        if (material instanceof BlockItem) {
+            materialType = "block";
         } else {
-            charactersToReplace = "item." + MoreFeatures.MOD_ID + ".";
+            materialType = "item";
+        }
+        if (material.asItem().getTranslationKey().contains("minecraft")) {
+            charactersToReplace = materialType + ".minecraft.";
+        } else {
+            charactersToReplace = materialType + "." + MoreFeatures.MOD_ID + ".";
         }
         String name = material.asItem().getTranslationKey().replace(charactersToReplace, "");
         return ShapedRecipeBuilder.shapedRecipe(result)
@@ -318,10 +345,16 @@ public class RecipesDataGen extends RecipeProvider {
 
     private ShapedRecipeBuilder bootsRecipe(IItemProvider material, IItemProvider result) {
         String charactersToReplace;
-        if (material.asItem().getTranslationKey().contains("minecraft")) {
-            charactersToReplace = "item.minecraft.";
+        String materialType;
+        if (material instanceof BlockItem) {
+            materialType = "block";
         } else {
-            charactersToReplace = "item." + MoreFeatures.MOD_ID + ".";
+            materialType = "item";
+        }
+        if (material.asItem().getTranslationKey().contains("minecraft")) {
+            charactersToReplace = materialType + ".minecraft.";
+        } else {
+            charactersToReplace = materialType + "." + MoreFeatures.MOD_ID + ".";
         }
         String name = material.asItem().getTranslationKey().replace(charactersToReplace, "");
         return ShapedRecipeBuilder.shapedRecipe(result)
@@ -463,6 +496,34 @@ public class RecipesDataGen extends RecipeProvider {
                 .patternLine("xxx")
                 .key('x', wood)
                 .addCriterion("has_" + name, hasItem(wood));
+    }
+
+    private CookingRecipeBuilder oreSmelting(IItemProvider gem, IItemProvider ore) {
+        String charactersToReplace;
+        if (ore.asItem().getTranslationKey().contains("minecraft")) {
+            charactersToReplace = "block.minecraft.";
+        } else {
+            charactersToReplace = "block." + MoreFeatures.MOD_ID + ".";
+        }
+
+        String oreName = ore.asItem().getTranslationKey().replace(charactersToReplace, "");
+
+        return CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(ore.asItem()), gem, 1.0F, 200)
+                .addCriterion("has_" + oreName, hasItem(ore));
+    }
+
+    private CookingRecipeBuilder oreBlasting(IItemProvider gem, IItemProvider ore) {
+        String charactersToReplace;
+        if (ore.asItem().getTranslationKey().contains("minecraft")) {
+            charactersToReplace = "block.minecraft.";
+        } else {
+            charactersToReplace = "block." + MoreFeatures.MOD_ID + ".";
+        }
+
+        String oreName = ore.asItem().getTranslationKey().replace(charactersToReplace, "");
+
+        return CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(ore.asItem()), gem, 1.0F, 100)
+                .addCriterion("has_" + oreName, hasItem(ore));
     }
 
     @Override

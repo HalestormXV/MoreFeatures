@@ -9,7 +9,7 @@ public class SapphirePickaxe extends PickaxeItem {
     public SapphirePickaxe() {
         super(MoreFeaturesItemTier.SAPPHIRE, -3, -2.8f, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }

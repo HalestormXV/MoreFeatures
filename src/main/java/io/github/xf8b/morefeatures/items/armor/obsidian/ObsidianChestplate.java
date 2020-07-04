@@ -14,7 +14,7 @@ public class ObsidianChestplate extends ArmorItem {
     public ObsidianChestplate() {
         super(MoreFeaturesArmorMaterial.OBSIDIAN, EquipmentSlotType.CHEST, new Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

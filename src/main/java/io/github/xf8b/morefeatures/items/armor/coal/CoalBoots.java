@@ -21,7 +21,7 @@ public class CoalBoots extends ArmorItem {
     public CoalBoots() {
         super(MoreFeaturesArmorMaterial.COAL, EquipmentSlotType.FEET, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

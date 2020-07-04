@@ -6,8 +6,10 @@
 
 ## Description
 **MoreFeatures** is a **Minecraft mod** that adds **more features** to Minecraft to enhance the **Player Experience™**.
-## Download Links:
+## License
+MoreFeatures is licensed under GPLv3. You can see details at [COPYING.md](https://github.com/xf8b/MoreFeatures/blob/1.15.2/COPYING.md).
+## Download Links
 - Get at [Curseforge](https://www.curseforge.com/minecraft/mc-mods/morefeatures/files/)  
 - Get at [Github](https://github.com/xf8b/MoreFeatures/releases)
-## Changelog:
+## Changelog
 See [CHANGELOG.md](https://github.com/xf8b/MoreFeatures/blob/1.15.2/CHANGELOG.md).

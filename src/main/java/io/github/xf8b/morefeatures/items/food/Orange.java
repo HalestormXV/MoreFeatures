@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 public class Orange extends Item {
     public Orange() {
         super(new Item.Properties()
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
                 .food(new Food.Builder()
                         .hunger(4)
                         .saturation(0.3f)

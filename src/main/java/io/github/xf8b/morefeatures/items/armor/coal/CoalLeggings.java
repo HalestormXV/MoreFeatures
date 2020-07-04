@@ -21,7 +21,7 @@ public class CoalLeggings extends ArmorItem {
     public CoalLeggings() {
         super(MoreFeaturesArmorMaterial.COAL, EquipmentSlotType.LEGS, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

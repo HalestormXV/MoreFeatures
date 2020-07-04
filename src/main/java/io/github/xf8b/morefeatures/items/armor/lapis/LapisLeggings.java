@@ -17,7 +17,7 @@ public class LapisLeggings extends ArmorItem {
     public LapisLeggings() {
         super(MoreFeaturesArmorMaterial.LAPIS, EquipmentSlotType.LEGS, new Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 
@@ -30,7 +30,7 @@ public class LapisLeggings extends ArmorItem {
                 }
                 ItemStack itemOnLegs = event.player.getItemStackFromSlot(EquipmentSlotType.LEGS);
                 if (itemOnLegs.getItem() == MoreFeaturesRegistries.LAPIS_LEGGINGS.get() && TickHandler.serverTicksPassed % 2400 == 0) {
-                    event.player.giveExperiencePoints(MoreFeaturesConfig.lapisArmorExperienceGiven);
+                    event.player.giveExperiencePoints(MoreFeaturesConfig.COMMON.lapisArmorExperienceGiven.get());
                 }
             }
         }

@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -18,6 +19,9 @@ public class ClientEventBusSubscriber {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
         //Set render types for blocks
+        RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.BLAST_PROOF_GLASS.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.DISPLAY_CASE.get(), RenderType.getCutout());
+
         //Saplings
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.LEMON_SAPLING.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.ORANGE_SAPLING.get(), RenderType.getCutout());
@@ -29,13 +33,12 @@ public class ClientEventBusSubscriber {
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.LEMON_DOOR.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.ORANGE_DOOR.get(), RenderType.getCutout());
 
-        RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.BLAST_PROOF_GLASS.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(MoreFeaturesRegistries.DISPLAY_CASE.get(), RenderType.getCutout());
-
-        //Bind GUIs to containers
-        ScreenManager.registerFactory(MoreFeaturesRegistries.DISPLAY_CASE_CONTAINER.get(), DisplayCaseScreen::new);
-
         //Bind tile entity renderers
         ClientRegistry.bindTileEntityRenderer(MoreFeaturesRegistries.DISPLAY_CASE_TILE_ENTITY.get(), DisplayCaseRenderer::new);
+
+        DeferredWorkQueue.runLater(() -> {
+            //Register screen factories
+            ScreenManager.registerFactory(MoreFeaturesRegistries.DISPLAY_CASE_CONTAINER.get(), DisplayCaseScreen::new);
+        });
     }
 }

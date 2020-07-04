@@ -14,7 +14,7 @@ public class ObsidianBoots extends ArmorItem {
     public ObsidianBoots() {
         super(MoreFeaturesArmorMaterial.OBSIDIAN, EquipmentSlotType.FEET, new Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

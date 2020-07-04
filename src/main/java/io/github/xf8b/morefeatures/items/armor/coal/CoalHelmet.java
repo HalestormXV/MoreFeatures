@@ -21,7 +21,7 @@ public class CoalHelmet extends ArmorItem {
     public CoalHelmet() {
         super(MoreFeaturesArmorMaterial.COAL, EquipmentSlotType.HEAD, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

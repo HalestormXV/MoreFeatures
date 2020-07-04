@@ -10,7 +10,7 @@ public class SapphireHelmet extends ArmorItem {
     public SapphireHelmet() {
         super(MoreFeaturesArmorMaterial.SAPPHIRE, EquipmentSlotType.HEAD, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }

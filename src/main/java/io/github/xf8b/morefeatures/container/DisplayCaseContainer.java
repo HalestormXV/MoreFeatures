@@ -62,26 +62,26 @@ public class DisplayCaseContainer extends Container {
 
     @Override
     public ItemStack transferStackInSlot(PlayerEntity playerIn, int index) {
-        ItemStack itemstack = ItemStack.EMPTY;
+        ItemStack itemStack = ItemStack.EMPTY;
         Slot slot = this.inventorySlots.get(index);
         if (slot != null && slot.getHasStack()) {
-            ItemStack itemstack1 = slot.getStack();
-            itemstack = itemstack1.copy();
+            ItemStack itemStack1 = slot.getStack();
+            itemStack = itemStack1.copy();
             if (index < 1) {
-                if (!this.mergeItemStack(itemstack1, 1, this.inventorySlots.size(), true)) {
+                if (!this.mergeItemStack(itemStack1, 1, this.inventorySlots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
+            } else if (!this.mergeItemStack(itemStack1, 0, 1, false)) {
                 return ItemStack.EMPTY;
             }
 
-            if (itemstack1.isEmpty()) {
+            if (itemStack1.isEmpty()) {
                 slot.putStack(ItemStack.EMPTY);
             } else {
                 slot.onSlotChanged();
             }
         }
 
-        return itemstack;
+        return itemStack;
     }
 }

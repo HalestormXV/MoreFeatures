@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 public class CornSeeds extends BlockItem {
     public CornSeeds() {
         super(MoreFeaturesRegistries.CORN_CROP.get(), new Item.Properties()
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }

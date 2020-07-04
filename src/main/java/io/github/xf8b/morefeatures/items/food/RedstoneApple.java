@@ -9,7 +9,7 @@ import net.minecraft.potion.Effects;
 public class RedstoneApple extends Item {
     public RedstoneApple() {
         super(new Item.Properties()
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
                 .food(new Food.Builder()
                         .setAlwaysEdible()
                         .hunger(4)

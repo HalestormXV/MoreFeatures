@@ -4,13 +4,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+### Added:
+- Added ore smelting and blasting recipe data generation
+- Added generation config (No biome generation config sadly)
+- Added github workflow/actions
+
+### Changed:
+- Changed hunger command suggestions to have a `ResourceLocation` pointing to the modid instead of "hunger"
+- Changed ores to drop themselves when broken with silk touch and drop more gems when broken with fortune
+- Changed armor recipe advancements to be named correctly when the repair material was a block
+- Changed asbestos to not harm the player if broken with silk touch
+- Changed sapphire ore to work with silk touch and fortune
+- Changed corn crop's hitbox to match the size of the crop and changed corn crop's model to use `cross` instead of `crop`
+- Changed the license to be in markdown and have a notice for the block loot table data generator
+- Changed screen factory registration to be done using `DeferredWorkQueue`
+- Changed `LanguageFilesDataGen` to give the correct name to curse enchantments and have support for other languages
+- Changed config to be common, not server
+- Changed sapphire and corrupted tools to have a harvest level of 3
+- Changed build.gradle to have the curseforge plugin (for publishing from the command line)
+
+### Fixed:
+- Fixed config not changing how things work
+- Fixed ores generating in the nether or end (might not have even happened, but just in case)
+
+### Removed:
+- Removed `registerBiomes()`
+
 ## [1.15.2-1.1.0] - 2020-6-27
 ### Added:
 - Added some side checks (hopefully in the correct places)
 - Added corrupted armor
 - Added lemon and orange slabs, stairs, fences, buttons, pressure plates, and doors
 - Added lemon and orange plain biomes
-- Added datagen
+- Added data generation
 - Added display box
 - Added events (for people who want to link with this mod)
 

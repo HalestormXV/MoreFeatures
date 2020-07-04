@@ -26,7 +26,7 @@ public class CorruptedHoe extends HoeItem {
     public CorruptedHoe() {
         super(MoreFeaturesItemTier.CORRUPTED, 0, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 
@@ -58,6 +58,6 @@ public class CorruptedHoe extends HoeItem {
     }
 
     private static float getRandomAttackSpeed() {
-        return (float) ThreadLocalRandom.current().nextDouble(0, MoreFeaturesConfig.corruptedToolAttackSpeedMax + 1);
+        return (float) ThreadLocalRandom.current().nextDouble(0, MoreFeaturesConfig.COMMON.corruptedToolAttackSpeedMax.get() + 1);
     }
 }

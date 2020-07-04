@@ -14,7 +14,7 @@ public class EmeraldBoots extends ArmorItem {
     public EmeraldBoots() {
         super(MoreFeaturesArmorMaterial.EMERALD, EquipmentSlotType.FEET, new Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

@@ -9,7 +9,7 @@ public class SapphireHoe extends HoeItem {
     public SapphireHoe() {
         super(MoreFeaturesItemTier.SAPPHIRE, 0f, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }

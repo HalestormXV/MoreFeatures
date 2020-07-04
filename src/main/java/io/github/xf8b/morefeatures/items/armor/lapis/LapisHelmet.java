@@ -18,7 +18,7 @@ public class LapisHelmet extends ArmorItem {
     public LapisHelmet() {
         super(MoreFeaturesArmorMaterial.LAPIS, EquipmentSlotType.HEAD, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 
@@ -31,7 +31,7 @@ public class LapisHelmet extends ArmorItem {
                 }
                 ItemStack itemOnHead = event.player.getItemStackFromSlot(EquipmentSlotType.HEAD);
                 if (itemOnHead.getItem() == MoreFeaturesRegistries.LAPIS_HELMET.get() && TickHandler.serverTicksPassed % 2400 == 0) {
-                    event.player.giveExperiencePoints(MoreFeaturesConfig.lapisArmorExperienceGiven);
+                    event.player.giveExperiencePoints(MoreFeaturesConfig.COMMON.lapisArmorExperienceGiven.get());
                 }
             }
         }

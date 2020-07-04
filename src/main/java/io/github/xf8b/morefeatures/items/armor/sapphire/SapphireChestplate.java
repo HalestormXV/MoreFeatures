@@ -10,7 +10,7 @@ public class SapphireChestplate extends ArmorItem {
     public SapphireChestplate() {
         super(MoreFeaturesArmorMaterial.SAPPHIRE, EquipmentSlotType.CHEST, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }

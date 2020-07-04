@@ -9,7 +9,7 @@ public class SapphireAxe extends AxeItem {
     public SapphireAxe() {
         super(MoreFeaturesItemTier.SAPPHIRE, 1, -3f, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }

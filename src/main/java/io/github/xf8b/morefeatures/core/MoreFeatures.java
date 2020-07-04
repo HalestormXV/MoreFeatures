@@ -31,7 +31,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod(MoreFeatures.MOD_ID)
 public class MoreFeatures {
     public static final String MOD_ID = "morefeatures";
-    public static ItemGroup itemGroup = new ItemGroup(MOD_ID) {
+    public static final ItemGroup ITEM_GROUP = new ItemGroup(MoreFeatures.MOD_ID) {
         @OnlyIn(Dist.CLIENT)
         @Override
         public ItemStack createIcon() {
@@ -55,7 +55,7 @@ public class MoreFeatures {
         MoreFeaturesRegistries.BIOMES.register(modEventBus);
 
         //Register config
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, MoreFeaturesConfig.SERVER_SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MoreFeaturesConfig.COMMON_SPEC);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -81,7 +81,7 @@ public class MoreFeatures {
             MoreFeaturesRegistries.BLOCKS.getEntries().stream()
                     .filter(block -> !(block.get() instanceof CornCrop))
                     .map(RegistryObject::get).forEach(block -> {
-                final Item.Properties properties = new Item.Properties().group(MoreFeatures.itemGroup);
+                final Item.Properties properties = new Item.Properties().group(MoreFeatures.ITEM_GROUP);
                 final BlockItem blockItem = new BlockItem(block, properties);
                 blockItem.setRegistryName(block.getRegistryName());
                 registry.register(blockItem);
@@ -90,10 +90,6 @@ public class MoreFeatures {
 
         @SubscribeEvent
         public static void onBiomeRegistry(final RegistryEvent.Register<Biome> event) {
-            registerBiomes();
-        }
-
-        public static void registerBiomes() {
             registerBiome(MoreFeaturesRegistries.LEMON_TREE_PLAINS.get(), 5, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.OVERWORLD);
             registerBiome(MoreFeaturesRegistries.ORANGE_TREE_PLAINS.get(), 5, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.OVERWORLD);
         }

@@ -48,8 +48,8 @@ public class SavingGrace extends Enchantment {
         Random random = new Random();
         int randomInt = random.nextInt(100);
         if (enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.SAVING_GRACE.get())) {
-            if (randomInt > 100 - (MoreFeaturesConfig.savingGraceChanceIncrease * enchantmentsOnItemOnFeet.get(MoreFeaturesRegistries.SAVING_GRACE.get()))) {
-                int chanceOfBeingSaved = MoreFeaturesConfig.savingGraceChanceIncrease * enchantmentsOnItemOnFeet.get(MoreFeaturesRegistries.SAVING_GRACE.get());
+            if (randomInt > 100 - (MoreFeaturesConfig.COMMON.savingGraceChanceIncrease.get() * enchantmentsOnItemOnFeet.get(MoreFeaturesRegistries.SAVING_GRACE.get()))) {
+                int chanceOfBeingSaved = MoreFeaturesConfig.COMMON.savingGraceChanceIncrease.get() * enchantmentsOnItemOnFeet.get(MoreFeaturesRegistries.SAVING_GRACE.get());
                 LivingEntity livingEntity = event.getEntityLiving();
                 if (!MinecraftForge.EVENT_BUS.post(new SavedEvent(event.getSource(), chanceOfBeingSaved, livingEntity, itemOnFeet))) {
                     livingEntity.setHealth(1.0F);

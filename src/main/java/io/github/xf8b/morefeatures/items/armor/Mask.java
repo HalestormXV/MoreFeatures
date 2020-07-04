@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 public class Mask extends ArmorItem {
     public Mask() {
         super(MoreFeaturesArmorMaterial.MASK, EquipmentSlotType.HEAD, new Item.Properties()
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
                 .maxStackSize(1)
         );
     }

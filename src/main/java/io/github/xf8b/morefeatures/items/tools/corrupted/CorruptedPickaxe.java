@@ -26,7 +26,7 @@ public class CorruptedPickaxe extends PickaxeItem {
     public CorruptedPickaxe() {
         super(MoreFeaturesItemTier.CORRUPTED, 0, 0, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 
@@ -64,10 +64,10 @@ public class CorruptedPickaxe extends PickaxeItem {
     }
 
     private static int getRandomAttackDamage() {
-        return ThreadLocalRandom.current().nextInt(0, MoreFeaturesConfig.corruptedToolAttackDamageMax + 1);
+        return ThreadLocalRandom.current().nextInt(0, MoreFeaturesConfig.COMMON.corruptedToolAttackDamageMax.get() + 1);
     }
 
     private static float getRandomAttackSpeed() {
-        return (float) ThreadLocalRandom.current().nextDouble(0, MoreFeaturesConfig.corruptedToolAttackSpeedMax + 1);
+        return (float) ThreadLocalRandom.current().nextDouble(0, MoreFeaturesConfig.COMMON.corruptedToolAttackSpeedMax.get() + 1);
     }
 }

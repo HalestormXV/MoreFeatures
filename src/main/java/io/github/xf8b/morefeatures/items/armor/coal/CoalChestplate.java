@@ -21,7 +21,7 @@ public class CoalChestplate extends ArmorItem {
     public CoalChestplate() {
         super(MoreFeaturesArmorMaterial.COAL, EquipmentSlotType.CHEST, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

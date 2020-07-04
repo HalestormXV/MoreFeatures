@@ -3,7 +3,11 @@ package io.github.xf8b.morefeatures.config;
 import io.github.xf8b.morefeatures.core.MoreFeatures;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-public class ServerConfig {
+public class CommonConfig {
+    //Generation Settings
+    public final ForgeConfigSpec.BooleanValue isOreGenerationEnabled;
+    public final ForgeConfigSpec.BooleanValue isTreeGenerationEnabled;
+
     //Enchantment Settings
     public final ForgeConfigSpec.IntValue savingGraceChanceIncrease;
     public final ForgeConfigSpec.IntValue soulsRequiredForSharpnessLevelUp;
@@ -23,9 +27,20 @@ public class ServerConfig {
     public final ForgeConfigSpec.IntValue corruptedToolAttackDamageMax;
     public final ForgeConfigSpec.DoubleValue corruptedToolAttackSpeedMax;
 
-    public ServerConfig(ForgeConfigSpec.Builder builder) {
+    public CommonConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("The config file for MoreFeatures. Edit values below to change how certain things work");
-        builder.push("Enchantment Settings");
+        builder.push("Generation");
+        isOreGenerationEnabled = builder
+                .comment("Toggles ore generation on or off")
+                .translation(MoreFeatures.MOD_ID + ".config." + "isOreGenerationEnabled")
+                .define("isOreGenerationEnabled", true);
+        isTreeGenerationEnabled = builder
+                .comment("Toggles tree generation on or off")
+                .translation(MoreFeatures.MOD_ID + ".config." + "isTreeGenerationEnabled")
+                .define("isTreeGenerationEnabled", true);
+        builder.pop();
+
+        builder.push("Enchantments");
         savingGraceChanceIncrease = builder
                 .comment("The amount of increase in chance every level (e.g 20% for level 1, 40% for level 2)")
                 .translation(MoreFeatures.MOD_ID + ".config." + "savingGraceChanceIncrease")
@@ -46,14 +61,14 @@ public class ServerConfig {
         builder.pop();
         builder.pop();
 
-        builder.push("Effect Settings");
+        builder.push("Effects");
         asbestosisDamageGiven = builder
                 .comment("The amount of damage given to the player if they have Asbestosis")
                 .translation(MoreFeatures.MOD_ID + ".config." + "asbestosisDamageGiven")
                 .defineInRange("asbestosisDamageGiven", 0.5, 0, 20);
         builder.pop();
 
-        builder.push("Armor Settings");
+        builder.push("Armor");
         lapisArmorExperienceGiven = builder
                 .comment("The amount of experience given every 2 minutes if Lapis Armor is worn")
                 .translation(MoreFeatures.MOD_ID + ".config." + "lapisArmorExperienceGiven")
@@ -68,7 +83,7 @@ public class ServerConfig {
                 .defineInRange("corruptedArmorToughnessMax", 5d, 0d, Integer.MAX_VALUE);
         builder.pop();
 
-        builder.push("Tool Settings");
+        builder.push("Tools");
         corruptedToolAttackDamageMax = builder
                 .comment("The maximum attack damage for Corrupted Tools")
                 .translation(MoreFeatures.MOD_ID + ".config." + "corruptedToolAttackDamageMax")
@@ -77,5 +92,6 @@ public class ServerConfig {
                 .comment("The maximum attack speed for Corrupted Tools")
                 .translation(MoreFeatures.MOD_ID + ".config." + "corruptedToolAttackSpeedMax")
                 .defineInRange("corruptedToolAttackSpeedMax", 3d, 0d, Integer.MAX_VALUE);
+        builder.pop();
     }
 }

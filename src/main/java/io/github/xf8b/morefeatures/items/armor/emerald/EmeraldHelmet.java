@@ -15,7 +15,7 @@ public class EmeraldHelmet extends ArmorItem {
     public EmeraldHelmet() {
         super(MoreFeaturesArmorMaterial.EMERALD, EquipmentSlotType.HEAD, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

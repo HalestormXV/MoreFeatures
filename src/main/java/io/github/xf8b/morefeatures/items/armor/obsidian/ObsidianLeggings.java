@@ -14,7 +14,7 @@ public class ObsidianLeggings extends ArmorItem {
     public ObsidianLeggings() {
         super(MoreFeaturesArmorMaterial.OBSIDIAN, EquipmentSlotType.LEGS, new Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

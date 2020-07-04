@@ -10,7 +10,7 @@ public class SapphireBoots extends ArmorItem {
     public SapphireBoots() {
         super(MoreFeaturesArmorMaterial.SAPPHIRE, EquipmentSlotType.FEET, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }

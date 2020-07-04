@@ -34,7 +34,7 @@ public class CorruptedBoots extends ArmorItem {
     public CorruptedBoots() {
         super(MoreFeaturesArmorMaterial.CORRUPTED, EquipmentSlotType.FEET, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 
@@ -72,10 +72,10 @@ public class CorruptedBoots extends ArmorItem {
     }
 
     private static int getRandomArmorProtection() {
-        return ThreadLocalRandom.current().nextInt(0, MoreFeaturesConfig.corruptedArmorProtectionMax + 1);
+        return ThreadLocalRandom.current().nextInt(0, MoreFeaturesConfig.COMMON.corruptedArmorProtectionMax.get() + 1);
     }
 
     private static float getRandomArmorToughness() {
-        return (float) ThreadLocalRandom.current().nextDouble(0, MoreFeaturesConfig.corruptedArmorToughnessMax + 1);
+        return (float) ThreadLocalRandom.current().nextDouble(0, MoreFeaturesConfig.COMMON.corruptedArmorToughnessMax.get() + 1);
     }
 }

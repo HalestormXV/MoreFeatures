@@ -14,7 +14,7 @@ public class EmeraldLeggings extends ArmorItem {
     public EmeraldLeggings() {
         super(MoreFeaturesArmorMaterial.EMERALD, EquipmentSlotType.LEGS, new Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

@@ -30,7 +30,7 @@ public class Asbestosis extends Effect {
     public void performEffect(LivingEntity entityLivingBaseIn, int amplifier) {
         if (TickHandler.serverTicksPassed % 30 == 0) {
             DamageSource asbestosDisease = new DamageSource("morefeatures.asbestosis");
-            entityLivingBaseIn.attackEntityFrom(asbestosDisease, (float) MoreFeaturesConfig.asbestosisDamageGiven);
+            entityLivingBaseIn.attackEntityFrom(asbestosDisease, MoreFeaturesConfig.COMMON.asbestosisDamageGiven.get().floatValue());
         }
     }
 
@@ -41,7 +41,7 @@ public class Asbestosis extends Effect {
                 Map<Effect, EffectInstance> effects = event.player.getActivePotionMap();
                 if (effects.containsKey(MoreFeaturesRegistries.ASBESTOSIS.get()) && TickHandler.serverTicksPassed % 30 == 0) {
                     DamageSource asbestosDisease = new DamageSource("morefeatures.asbestosis");
-                    event.player.attackEntityFrom(asbestosDisease, (float) MoreFeaturesConfig.asbestosisDamageGiven);
+                    event.player.attackEntityFrom(asbestosDisease, MoreFeaturesConfig.COMMON.asbestosisDamageGiven.get().floatValue());
                 }
             }
         }

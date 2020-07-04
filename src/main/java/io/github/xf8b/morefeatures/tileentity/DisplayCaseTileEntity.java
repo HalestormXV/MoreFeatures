@@ -127,7 +127,7 @@ public class DisplayCaseTileEntity extends LockableLootTileEntity {
 
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
-        return !stack.isDamaged();
+        return true;
     }
 
     @Override

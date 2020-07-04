@@ -3,5 +3,7 @@
   "ingredient": {
     "item": "morefeatures:sapphire_ore"
   },
-  "result": "morefeatures:sapphire"
+  "result": "morefeatures:sapphire",
+  "experience": 1.0,
+  "cookingtime": 200
 }

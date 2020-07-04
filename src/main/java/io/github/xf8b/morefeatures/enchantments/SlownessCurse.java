@@ -69,7 +69,7 @@ public class SlownessCurse extends Enchantment {
                         enchantmentsOnItemOnChest.containsKey(MoreFeaturesRegistries.SLOWNESS_CURSE.get()) ||
                         enchantmentsOnItemOnLegs.containsKey(MoreFeaturesRegistries.SLOWNESS_CURSE.get()) ||
                         enchantmentsOnItemOnFeet.containsKey(MoreFeaturesRegistries.SLOWNESS_CURSE.get())) {
-                    event.player.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 20, MoreFeaturesConfig.slownessCurseSlownessLevel));
+                    event.player.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 20, MoreFeaturesConfig.COMMON.slownessCurseSlownessLevel.get()));
                 }
             }
         }

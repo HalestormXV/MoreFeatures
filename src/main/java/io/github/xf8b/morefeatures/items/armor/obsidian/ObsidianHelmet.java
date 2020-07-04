@@ -15,7 +15,7 @@ public class ObsidianHelmet extends ArmorItem {
     public ObsidianHelmet() {
         super(MoreFeaturesArmorMaterial.OBSIDIAN, EquipmentSlotType.HEAD, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 

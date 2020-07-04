@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 public class CorruptedItem extends Item {
     public CorruptedItem() {
         super(new Item.Properties()
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }

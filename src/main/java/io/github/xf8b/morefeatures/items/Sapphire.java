@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 public class Sapphire extends Item {
     public Sapphire() {
         super(new Item.Properties()
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }

@@ -17,7 +17,7 @@ public class LapisChestplate extends ArmorItem {
     public LapisChestplate() {
         super(MoreFeaturesArmorMaterial.LAPIS, EquipmentSlotType.CHEST, new Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 
@@ -30,7 +30,7 @@ public class LapisChestplate extends ArmorItem {
                 }
                 ItemStack itemOnChest = event.player.getItemStackFromSlot(EquipmentSlotType.CHEST);
                 if (itemOnChest.getItem() == MoreFeaturesRegistries.LAPIS_CHESTPLATE.get() && TickHandler.serverTicksPassed % 2400 == 0) {
-                    event.player.giveExperiencePoints(MoreFeaturesConfig.lapisArmorExperienceGiven);
+                    event.player.giveExperiencePoints(MoreFeaturesConfig.COMMON.lapisArmorExperienceGiven.get());
                 }
             }
         }

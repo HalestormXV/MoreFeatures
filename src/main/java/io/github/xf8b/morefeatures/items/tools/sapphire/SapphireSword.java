@@ -9,7 +9,7 @@ public class SapphireSword extends SwordItem {
     public SapphireSword() {
         super(MoreFeaturesItemTier.SAPPHIRE, -1, -2.4f, new Item.Properties()
                 .maxStackSize(1)
-                .group(MoreFeatures.itemGroup)
+                .group(MoreFeatures.ITEM_GROUP)
         );
     }
 }
