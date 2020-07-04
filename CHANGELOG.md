@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added:
 - Added ore smelting and blasting recipe data generation
 - Added generation config (No biome generation config sadly)
-- Added github workflow/actions
+- Added Travis CI
 
 ### Changed:
 - Changed hunger command suggestions to have a `ResourceLocation` pointing to the modid instead of "hunger"
@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed config to be common, not server
 - Changed sapphire and corrupted tools to have a harvest level of 3
 - Changed build.gradle to have the curseforge plugin (for publishing from the command line)
+- Changed MCP mappings version
 
 ### Fixed:
 - Fixed config not changing how things work
@@ -30,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed:
 - Removed `registerBiomes()`
+- Removed the `1.15.2-development` branch
 
 ## [1.15.2-1.1.0] - 2020-6-27
 ### Added:

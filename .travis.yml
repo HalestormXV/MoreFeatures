@@ -4,10 +4,7 @@ jdk:
   - openjdk11
 os: linux
 dist: bionic
-before_script:
-  - "export JAVA_OPTS=-Xmx4G"
-  - "echo $JAVA_OPTS"
 script:
   - ./gradlew build --stacktrace
   # - ./gradlew runClient
-  - mkdir -p run/server && echo "eula=true" > run/server/eula.text && ./gradlew runServer
+  # - mkdir -p run/server && echo "eula=true" > run/server/eula.text && ./gradlew runServer
