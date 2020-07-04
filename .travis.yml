@@ -1,7 +1,11 @@
 language: java
 jdk:
   - openjdk8
+  - openjdk11
+os: linux
 dist: bionic
+before_script:
+  - "echo $JAVA_OPTS"
 script:
   - ./gradlew build --stacktrace
   # - ./gradlew runClient
