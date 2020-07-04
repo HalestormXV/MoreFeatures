@@ -168,7 +168,7 @@ processResources {
 }
 
 curseforge {
-    apiKey = project.findProperty('curseForgeApiKey') ?: System.getenv('curseForgeApiKey')
+    apiKey = project.findProperty('CURSEFORGE_API_KEY') ?: System.getenv('CURSEFORGE_API_KEY')
 
     project {
         id = '382035'
