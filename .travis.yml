@@ -1,9 +1,8 @@
 language: java
 jdk:
-  - oraclejdk8
   - openjdk8
+dist: bionic
 script:
-  - chmod +x gradlew
   - ./gradlew build --stacktrace
   # - ./gradlew runClient
-  # - mkdir -p run/server && echo "eula=true" > run/server/eula.text && ./gradlew runServer
+  - mkdir -p run/server && echo "eula=true" > run/server/eula.text && ./gradlew runServer
