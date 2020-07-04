@@ -18,6 +18,6 @@ jobs:
       # - name: Run client
       #   run: ./gradlew runClient
       - name: Run server
-        run: mkdir -p run/server && echo "eula=true" > run/server/eula.text && ./gradlew runServer --stacktrace
+        run: mkdir -p run/server && echo "eula=true" > run/server/eula.text && ./gradlew runServer --stacktrace --debug
 env:
   CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
