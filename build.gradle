@@ -172,7 +172,7 @@ curseforge {
 
     project {
         id = '382035'
-        changelog = new URL('https://github.com/xf8b/MoreFeatures/blob/1.15.2/CHANGELOG.md?raw=true').getText()
+        changelog = new URL('https://raw.githubusercontent.com/xf8b/MoreFeatures/1.15.2/CHANGELOG.md').getText()
         changelogType = 'markdown'
         releaseType = 'release'
         addGameVersion '1.15.2'
