@@ -5,6 +5,7 @@ jdk:
 os: linux
 dist: bionic
 before_script:
+  - "export JAVA_OPTS=-Xmx3G"
   - "echo $JAVA_OPTS"
 script:
   - ./gradlew build --stacktrace
