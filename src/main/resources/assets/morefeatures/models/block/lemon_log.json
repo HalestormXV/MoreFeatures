@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "side": "morefeatures:block/lemon_log",
+    "end": "morefeatures:block/lemon_log_top"
+  }
+}

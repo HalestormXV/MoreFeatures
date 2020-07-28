@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xx",
+    "xy",
+    " y"
+  ],
+  "key": {
+    "x": {
+      "item": "morefeatures:sapphire"
+    },
+    "y": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "morefeatures:sapphire_axe"
+  }
+}

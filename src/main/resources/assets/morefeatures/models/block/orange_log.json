@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "side": "morefeatures:block/orange_log",
+    "end": "morefeatures:block/orange_log_top"
+  }
+}

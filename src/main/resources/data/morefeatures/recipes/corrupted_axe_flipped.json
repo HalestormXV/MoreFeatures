@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xx",
+    "yx",
+    "y "
+  ],
+  "key": {
+    "x": {
+      "item": "morefeatures:corrupted_item"
+    },
+    "y": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "morefeatures:corrupted_axe"
+  }
+}

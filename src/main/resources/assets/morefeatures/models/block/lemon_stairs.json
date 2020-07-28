@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "side": "morefeatures:block/lemon_planks",
+    "bottom": "morefeatures:block/lemon_planks",
+    "top": "morefeatures:block/lemon_planks"
+  }
+}

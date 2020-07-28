@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "morefeatures",
+  "version": "${version}",
+  "name": "MoreFeatures",
+  "description": "MoreFeatures is a Minecraft mod that adds more features to Minecraft to enhance the Player Experience™.",
+  "authors": [
+    "xf8b"
+  ],
+  "contact": {
+    "homepage": "https://curseforge.com/minecraft/mc-mods/morefeatures/",
+    "sources": "https://github.com/xf8b/MoreFeatures/",
+    "issues": "https://github.com/xf8b/MoreFeatures/issues/"
+  },
+  "license": "GPL v3",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.xf8b.morefeatures.core.MoreFeatures"
+    ]
+  },
+  "mixins": [
+    "morefeatures.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

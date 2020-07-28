@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "morefeatures:block/corn_crop_stage3"
+  }
+}
