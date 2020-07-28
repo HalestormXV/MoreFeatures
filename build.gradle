@@ -39,38 +39,6 @@ processResources {
     }
 }
 
-curseforge {
-    apiKey = project.findProperty('CURSEFORGE_API_KEY') ?: System.getenv('CURSEFORGE_API_KEY')
-
-    project {
-        id = '382035'
-        changelog = new URL('https://raw.githubusercontent.com/xf8b/MoreFeatures/1.16-Fabric/CHANGELOG.md').getText()
-        changelogType = 'markdown'
-        releaseType = 'release'
-        addGameVersion '1.16.1'
-        addGameVersion 'Fabric'
-        mainArtifact(jar) {
-            displayName = "MoreFeatures ${project.version}"
-        }
-        addArtifact sourcesJar
-        afterEvaluate {
-            uploadTask.dependsOn("remapJar")
-        }
-    }
-    options {
-        forgeGradleIntegration = false
-    }
-}
-
-license {
-    header rootProject.file('LICENSE_HEADER.txt')
-    ext {
-        name = 'xf8b'
-        year = 2020
-    }
-    include '**/*.java'
-}
-
 // ensure that the encoding is set to UTF-8, no matter what the system default is
 // this fixes some edge cases with special characters not displaying correctly
 // see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
@@ -88,6 +56,39 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 
 jar {
     from "LICENSE"
+}
+
+curseforge {
+    apiKey = project.findProperty('CURSEFORGE_API_KEY') ?: System.getenv('CURSEFORGE_API_KEY')
+
+    project {
+        id = '382035'
+        changelog = new URL('https://raw.githubusercontent.com/xf8b/MoreFeatures/1.16-Fabric/CHANGELOG.md').getText()
+        changelogType = 'markdown'
+        releaseType = 'release'
+        addGameVersion '1.16.1'
+        addGameVersion 'Fabric'
+        mainArtifact(jar) {
+            displayName = "MoreFeatures Fabric ${project.version}"
+        }
+        addArtifact sourcesJar
+        afterEvaluate {
+            uploadTask.dependsOn("remapJar")
+        }
+    }
+    options {
+        forgeGradleIntegration = false
+    }
+}
+
+license {
+    header rootProject.file('LICENSE_HEADER.txt')
+    ext {
+        name = 'xf8b'
+        years = '2020'
+    }
+    include '**/*.java'
+    ignoreFailures = true
 }
 
 // configure the maven publication

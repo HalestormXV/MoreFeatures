@@ -1,4 +1,4 @@
-Copyright (c) ${year} ${name}
+Copyright (c) ${years} ${name}
 
 This file is part of MoreFeatures.
 
