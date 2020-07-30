@@ -1,4 +1,4 @@
-# MoreFeatures for Forge
+# MoreFeatures for Fabric
 <p align="center"><img src="https://github.com/xf8b/MoreFeatures/blob/1.16-Fabric/src/main/resources/icon.png?raw=true"></p>
 
 ![MoreFeatures Downloads](http://cf.way2muchnoise.eu/full_382035_downloads.svg)
