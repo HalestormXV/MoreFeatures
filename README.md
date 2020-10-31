@@ -6,10 +6,13 @@
 [![Build Status](https://travis-ci.com/xf8b/MoreFeatures.svg?branch=1.15.2)](https://travis-ci.com/xf8b/MoreFeatures)
 
 ## Drop of Support
-I have decided that I will **drop support** for MoreFeatures, both Fabric and Forge, today (October 30, 2020).
-This work will be **relicensed under CC0**, so that you, the reader, can use this code without any restrictions.
-**Thank you** for using this mod.
-- xf8b, 2020
+> I have decided that I will **drop support** for MoreFeatures, both Fabric and Forge, today (October 30, 2020).
+>
+> This work will be **relicensed under CC0**, so that you, the reader, can use this code without any restrictions.
+>
+> **Thank you** for using this mod.
+
+\- xf8b, 2020
 ## Description
 **MoreFeatures** is a **Minecraft mod** that adds **more features** to Minecraft to enhance the **Player Experience™**.
 ## License
